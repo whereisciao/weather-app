@@ -26,4 +26,22 @@ class Meteomatics
 
     self.class.get("/#{path.join("/")}", @options)
   end
+
+  def forecast(geocoordinates, days:)
+    parameters = [
+      "t_2m:F",
+      "t_2m:C"
+    ]
+
+    period = [ Time.now, Time.now + days.days ].map(&:utc).map(&:iso8601).join("--")
+
+    path = [
+      "#{period}:P1D",
+      parameters.join(","),
+      geocoordinates.join(","),
+      "json"
+    ]
+
+    self.class.get("/#{path.join("/")}", @options)
+  end
 end
