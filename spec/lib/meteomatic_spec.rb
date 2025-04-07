@@ -19,7 +19,7 @@ RSpec.describe Meteomatics do
   describe ".forecast" do
     it "fetches future dates" do
       VCR.use_cassette("forecast", record: :all) do
-        response = client.forecast(geocoordinate, days: 8)
+        response = client.forecast(geocoordinate, days_ahead: 8)
         expect(response).to be_present
       end
     end
