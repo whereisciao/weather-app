@@ -18,32 +18,42 @@ class Meteomatics
   end
 
   def current(geocoordinates)
-    path = [
-      Time.now.utc.iso8601,
-      build_parameters(:temp_surface_fahrenheit, :temp_surface_celsius),
-      geocoordinates.join(","),
-      "json"
-    ]
+    path = build_path(
+      period: Time.now.utc.iso8601,
+      weather_params: [ :temp_surface_fahrenheit, :temp_surface_celsius ],
+      geocoordinates: geocoordinates
+    )
 
-    self.class.get("/#{path.join("/")}", @options)
+
+    self.class.get(path, @options)
   end
 
   def forecast(geocoordinates, days_ahead:)
     period = [ Time.now, Time.now + days_ahead.days ].map(&:utc).map(&:iso8601).join("--")
 
-    path = [
-      "#{period}:P1D",
-      build_parameters(:temp_surface_fahrenheit, :temp_surface_celsius),
-      geocoordinates.join(","),
-      "json"
-    ]
+    path = build_path(
+      period: "#{period}:PT1H",
+      weather_params: [ :temp_surface_fahrenheit, :temp_surface_celsius ],
+      geocoordinates: geocoordinates
+    )
 
-    self.class.get("/#{path.join("/")}", @options)
+    self.class.get(path, @options)
   end
 
   private
 
   def build_parameters(*parameter_keys)
      Meteomatics::PARAMETERS.values_at(*parameter_keys).join(",")
+  end
+
+  def build_path(period:, weather_params:, geocoordinates:)
+    path = [
+      period,
+      build_parameters(*weather_params),
+      geocoordinates.join(","),
+      "json"
+    ]
+
+    "/#{path.join("/")}"
   end
 end
