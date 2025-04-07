@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Meteomatics do
-  include ActiveSupport::Testing::TimeHelpers
-
   let(:client) { described_class.new }
   let(:geocoordinate) { [ 47.4799078, -122.2034496 ] }
 
