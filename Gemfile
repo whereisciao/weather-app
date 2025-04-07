@@ -17,6 +17,8 @@ gem "bootsnap", require: false
 gem "kamal", require: false
 gem "thruster", require: false
 
+gem "httparty"
+gem "dotenv"
 gem "geocoder"
 
 group :development, :test do
@@ -34,4 +36,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webmock"
+  gem "vcr"
 end
