@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.meteomatics.com/2025-04-07T00:00:00Z/t_2m:F,t_2m:C/47.4799078,-122.2034496/json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic cGVyc29uYWx1c2VfY2hhdV9zdGV2ZW46OHhPQjkwNG1YYQ==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 07 Apr 2025 19:12:06 GMT
+      Server:
+      - Apache
+      Content-Length:
+      - '371'
+      Content-Type:
+      - application/json; charset=utf-8
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET,POST,OPTIONS
+      Access-Control-Allow-Headers:
+      - Origin, X-Requested-With, Content-Type, Accept, Authorization
+      Access-Control-Max-Age:
+      - '7200'
+      Vary:
+      - Origin
+    body:
+      encoding: UTF-8
+      string: '{"version":"3.0","user":"personaluse_chau_steven","dateGenerated":"2025-04-07T19:12:06Z","status":"OK","data":[{"parameter":"t_2m:F","coordinates":[{"lat":47.479908,"lon":-122.20345,"dates":[{"date":"2025-04-07T00:00:00Z","value":53.2}]}]},{"parameter":"t_2m:C","coordinates":[{"lat":47.479908,"lon":-122.20345,"dates":[{"date":"2025-04-07T00:00:00Z","value":11.8}]}]}]}
+
+        '
+  recorded_at: Mon, 07 Apr 2025 00:00:00 GMT
+recorded_with: VCR 6.3.1
