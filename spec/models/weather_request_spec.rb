@@ -33,5 +33,10 @@ RSpec.describe WeatherRequest, type: :model do
         expect(Rails.cache.exist?("weather_98105")).to eq(true)
       end
     end
+
+    it "detects incomplete US addresses" do
+      request = WeatherRequest.new(location: "2651 NE 49th St, Seattle, WA")
+      expect(request.valid?).to eq(false)
+    end
   end
 end

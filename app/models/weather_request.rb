@@ -1,5 +1,6 @@
 class WeatherRequest
   attr_reader :location,
+    :parsed_address,
     :lat,
     :lon,
     :weather_response,
@@ -11,10 +12,11 @@ class WeatherRequest
 
   def initialize(location:)
     @location = location
+    @parsed_address = StreetAddress::US.parse(location)
   end
 
   def valid?
-    geocode_results.count >= 1
+    parsed_address.postal_code.present? && geocode_results.count >= 1
   end
 
   def perform
