@@ -44,7 +44,7 @@ class WeatherRequest
       high_temp: response.dig("daily", 0, "temp", "max"),
       low_temp: response.dig("daily", 0, "temp", "min"),
       summary: nil,
-      weather: nil
+      weather: response.dig("current", "weather")
     )
 
     @daily_forecasts = response["daily"].map do |daily|
