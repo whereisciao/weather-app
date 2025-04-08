@@ -1,24 +1,37 @@
 require 'rails_helper'
 
 RSpec.describe WeatherRequest, type: :model do
-  context "when a location is found" do
-    before { VCR.insert_cassette("weather_forcast") }
+  describe "#perform" do
+    context "when a location is found" do
+      include_context "cache enabled"
 
-    after { VCR.eject_cassette }
+      before { VCR.insert_cassette("show_weather") }
 
-    it "returns the current forecast" do
-      request = WeatherRequest.new(location: "Seattle, WA")
-      request.perform
+      after { VCR.eject_cassette }
 
-      expect(request.current_forecast).to be_kind_of(WeatherRequest::Forecast)
-    end
+      it "returns the current forecast" do
+        request = WeatherRequest.new(location: "2651 NE 49th St, Seattle, WA 98105")
+        request.perform
 
-    it "returns forecast for the next several days" do
-      request = WeatherRequest.new(location: "Seattle, WA")
-      request.perform
+        expect(request.current_forecast).to be_kind_of(WeatherRequest::Forecast)
+      end
 
-      expect(request.daily_forecasts.size).to eq(8)
-      expect(request.daily_forecasts).to all(be_kind_of(WeatherRequest::Forecast))
+      it "returns forecast for the next several days" do
+        request = WeatherRequest.new(location: "2651 NE 49th St, Seattle, WA 98105")
+        request.perform
+
+        expect(request.daily_forecasts.size).to eq(8)
+        expect(request.daily_forecasts).to all(be_kind_of(WeatherRequest::Forecast))
+      end
+
+      it "caches the results by postal code" do
+        expect(Rails.cache.exist?("weather_98105")).to eq(false)
+
+        request = WeatherRequest.new(location: "2651 NE 49th St, Seattle, WA 98105")
+        request.perform
+
+        expect(Rails.cache.exist?("weather_98105")).to eq(true)
+      end
     end
   end
 end
