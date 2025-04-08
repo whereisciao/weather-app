@@ -29,7 +29,8 @@ class Meteomatics
   end
 
   def forecast(geocoordinates, days_ahead:)
-    period = [ Time.now, Time.now + days_ahead.days ].map(&:utc).map(&:iso8601).join("--")
+    days_ahead += 1
+    period = [ Time.zone.now, Time.zone.now + days_ahead.days ].map(&:utc).map(&:iso8601).join("--")
 
     path = build_path(
       period: "#{period}:PT1H",
