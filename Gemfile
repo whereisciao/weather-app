@@ -38,4 +38,5 @@ group :test do
   gem "webmock"
   gem "vcr"
   gem "rails-controller-testing"
+  gem "simplecov", require: false
 end
