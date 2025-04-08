@@ -1,19 +1,34 @@
 class WeatherRequest
-  attr_reader :current_temp, :current_high_temp, :current_low_temp, :location, :daily_forecast
+  attr_reader :location,
+    :lat,
+    :lon,
+    :weather_response,
+    :current_forecast,
+    :daily_forecasts
+
+  Forecast = Data.define(:summary, :high_temp, :low_temp, :weather, :temp)
 
   def initialize(location:)
     @location = location
   end
 
+  def valid?
+    geocode_results.count >= 1
+  end
+
   def perform
-    geocode_results = Geocoder.search(location)
+    return false unless valid?
 
-    if geocode_results.count == 1
-      lat, lon = geocode_results.first.coordinates
-      response = weather_source.one_call(lat: lat, lon: lon)
+    @lat, @lon = geocode_results.first.coordinates
+    @weather_response = weather_source.one_call(lat: lat, lon: lon)
 
-      set_weather_attributes(response)
-    end
+    set_weather_attributes(weather_response)
+
+    true
+  end
+
+  def geocode_results
+    @geocode_results ||= Geocoder.search(location)
   end
 
   private
@@ -23,15 +38,24 @@ class WeatherRequest
   end
 
   def set_weather_attributes(response)
-    @current_temp = response.dig("current", "temp")
-    @current_high_temp = response.dig("daily", 0, "temp", "max")
-    @current_low_temp = response.dig("daily", 0, "temp", "min")
-    @daily_forecast = response["daily"].map do |daily|
-      {
-        temp: daily["temp"].slice("min", "max"),
+    @current_forecast = Forecast.new(
+      temp: response.dig("current", "temp"),
+      high_temp: response.dig("daily", 0, "temp", "max"),
+      low_temp: response.dig("daily", 0, "temp", "min"),
+      summary: nil,
+      weather: nil
+    )
+
+    @daily_forecasts = response["daily"].map do |daily|
+      temp_hash = daily["temp"].slice("min", "max")
+
+      Forecast.new(
+        temp: nil,
+        high_temp: temp_hash["max"],
+        low_temp: temp_hash["min"],
         summary: daily["summary"],
         weather: daily["weather"]
-      }
+      )
     end
   end
 end
