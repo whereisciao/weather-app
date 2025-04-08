@@ -6,7 +6,7 @@ class WeatherRequest
     :current_forecast,
     :daily_forecasts
 
-  Forecast = Data.define(:summary, :high_temp, :low_temp, :weather, :temp)
+  Forecast = Data.define(:timestamp, :summary, :high_temp, :low_temp, :weather, :temp)
 
   def initialize(location:)
     @location = location
@@ -39,6 +39,7 @@ class WeatherRequest
 
   def set_weather_attributes(response)
     @current_forecast = Forecast.new(
+      timestamp: Time.zone.today,
       temp: response.dig("current", "temp"),
       high_temp: response.dig("daily", 0, "temp", "max"),
       low_temp: response.dig("daily", 0, "temp", "min"),
@@ -50,6 +51,7 @@ class WeatherRequest
       temp_hash = daily["temp"].slice("min", "max")
 
       Forecast.new(
+        timestamp: Time.at(daily["dt"]),
         temp: nil,
         high_temp: temp_hash["max"],
         low_temp: temp_hash["min"],

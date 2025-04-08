@@ -15,6 +15,9 @@
   <h2>Daily Forecast</h2>
   <% @request.daily_forecasts.each do |forecast| %>
     <dl>
+      <dt>Date</dt>
+      <dd><%= forecast.timestamp.strftime("%a, %b %e") %></dd>
+      <dd></dd>
       <dt>Summary</dt>
       <dd><%= forecast.summary %></dd>
       <dt>High Temperature</dt>
