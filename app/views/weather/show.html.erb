@@ -13,17 +13,22 @@
 </section>
 <section class="forecast-daily pb-5">
   <h2>Daily Forecast</h2>
-  <% @request.daily_forecasts.each do |forecast| %>
-    <dl>
-      <dt>Date</dt>
-      <dd><%= forecast.timestamp.strftime("%a, %b %e") %></dd>
-      <dd></dd>
-      <dt>Summary</dt>
-      <dd><%= forecast.summary %></dd>
-      <dt>High Temperature</dt>
-      <dd><%= forecast.high_temp %>
-      <dt>Low Temperature</dt>
-      <dd><%= forecast.low_temp %>
-    </dl>
-  <% end %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Summary</th>
+        <th scope="col">Temperature</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @request.daily_forecasts.each do |forecast| %>
+        <tr>
+          <td><%= forecast.timestamp.strftime("%a, %b %e") %></td>
+          <td><%= forecast.summary %></td>
+          <td><%= forecast.high_temp %> / <%= forecast.low_temp %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </section>
