@@ -1,6 +1,6 @@
 class OpenWeatherMap
   include HTTParty
-  base_uri "api.openweathermap.org"
+  base_uri "https://api.openweathermap.org"
 
   DEFAULT_UNITS = "imperial".freeze
   DEFAULT_EXCLUDED = "minutely,hourly".freeze

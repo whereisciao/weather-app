@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.openweathermap.org/data/3.0/onecall?appid=BAD_KEY&exclude=minutely,hourly&lat=47.479908&lon=-122.20345&units=imperial
+    uri: https://api.openweathermap.org/data/3.0/onecall?appid=BAD_KEY&exclude=minutely,hourly&lat=47.479908&lon=-122.20345&units=imperial
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Tue, 08 Apr 2025 17:40:31 GMT
+      - Tue, 08 Apr 2025 18:48:56 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -43,5 +43,5 @@ http_interactions:
         If you have a valid subscription to the One Call by Call plan, but still receive
         this error, then please see https://openweathermap.org/faq#error401 for more
         info."}'
-  recorded_at: Tue, 08 Apr 2025 17:40:31 GMT
+  recorded_at: Tue, 08 Apr 2025 18:48:56 GMT
 recorded_with: VCR 6.3.1
