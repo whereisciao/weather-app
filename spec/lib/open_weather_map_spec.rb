@@ -22,8 +22,19 @@ RSpec.describe OpenWeatherMap do
         VCR.eject_cassette
       end
 
-      it "returns current weather by lat/lon" do
-        expect(request).to be_success
+      it "returns several current weather details" do
+        expect(request["current"]).to include(
+                                        "temp" => 47.26,
+                                        "weather" => kind_of(Array)
+                                      )
+      end
+
+      it "returns forecast for the next 8 days" do
+        expect(request["daily"].size).to eq(8)
+        expect(request["daily"]).to all(include(
+                                          "temp" => hash_including("max", "min"),
+                                          "weather" => kind_of(Array)
+                                        ))
       end
     end
 
