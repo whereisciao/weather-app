@@ -7,6 +7,7 @@ class WeatherRequest
     :daily_forecasts
 
   Forecast = Data.define(:timestamp, :summary, :high_temp, :low_temp, :weather, :temp)
+  CACHE_TTL = 30.minutes
 
   def initialize(location:)
     @location = location
@@ -19,8 +20,10 @@ class WeatherRequest
   def perform
     return false unless valid?
 
-    @lat, @lon = geocode_results.first.coordinates
-    @weather_response = weather_source.one_call(lat: lat, lon: lon)
+    geocode_result = geocode_results.first
+
+    @lat, @lon = geocode_result.coordinates
+    @weather_response = fetch_weather_forecast(lat: lat, lon: lon, postal_code: geocode_result.postal_code)
 
     set_weather_attributes(weather_response)
 
@@ -31,7 +34,25 @@ class WeatherRequest
     @geocode_results ||= Geocoder.search(location)
   end
 
+  def cache_hit?
+    @cache_hit
+  end
+
   private
+
+  def fetch_weather_forecast(lat:, lon:, postal_code:)
+    cache_key = "weather_#{postal_code}"
+
+    @cache_hit = Rails.cache.exist?(cache_key)
+
+    Rails.cache.fetch(cache_key, expires_in: CACHE_TTL) do
+      response = weather_source.one_call(lat: lat, lon: lon)
+
+      if response.success? && !(response.body.nil? || response.body.empty?)
+        response.parsed_response
+      end
+    end
+  end
 
   def weather_source
     @weather_source ||= OpenWeatherMap.new(api_key: ENV["OPEN_WEATHER_MAP_API"])

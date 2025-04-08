@@ -2,6 +2,191 @@
 http_interactions:
 - request:
     method: get
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=2901%20NE%20Blakeley%20St,%20Seattle,%20WA%2098105
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 08 Apr 2025 22:11:12 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '798'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=20
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sicGxhY2VfaWQiOjMwMTI2MjM3OCwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwOi8vb3NtLm9yZy9jb3B5cmlnaHQiLCJvc21fdHlwZSI6Im5vZGUiLCJvc21faWQiOjI0NjIzMjU1OTUsImxhdCI6IjQ3LjY2NTc4NDUiLCJsb24iOiItMTIyLjI5NzAzNzEiLCJjbGFzcyI6InBsYWNlIiwidHlwZSI6ImhvdXNlIiwicGxhY2VfcmFuayI6MzAsImltcG9ydGFuY2UiOjcuNzI5ODM5MDE3MzE0NDRlLTA1LCJhZGRyZXNzdHlwZSI6InBsYWNlIiwibmFtZSI6IiIsImRpc3BsYXlfbmFtZSI6IjI5MDEsIE5vcnRoZWFzdCBCbGFrZWxleSBTdHJlZXQsIFVuaXZlcnNpdHkgUGFyaywgVW5pdmVyc2l0eSBEaXN0cmljdCwgU2VhdHRsZSwgS2luZyBDb3VudHksIFdhc2hpbmd0b24sIDk4MTA1LCBVbml0ZWQgU3RhdGVzIiwiYWRkcmVzcyI6eyJob3VzZV9udW1iZXIiOiIyOTAxIiwicm9hZCI6Ik5vcnRoZWFzdCBCbGFrZWxleSBTdHJlZXQiLCJuZWlnaGJvdXJob29kIjoiVW5pdmVyc2l0eSBQYXJrIiwic3VidXJiIjoiVW5pdmVyc2l0eSBEaXN0cmljdCIsImNpdHkiOiJTZWF0dGxlIiwiY291bnR5IjoiS2luZyBDb3VudHkiLCJzdGF0ZSI6Ildhc2hpbmd0b24iLCJJU08zMTY2LTItbHZsNCI6IlVTLVdBIiwicG9zdGNvZGUiOiI5ODEwNSIsImNvdW50cnkiOiJVbml0ZWQgU3RhdGVzIiwiY291bnRyeV9jb2RlIjoidXMifSwiYm91bmRpbmdib3giOlsiNDcuNjY1NzM0NSIsIjQ3LjY2NTgzNDUiLCItMTIyLjI5NzA4NzEiLCItMTIyLjI5Njk4NzEiXX1d
+  recorded_at: Tue, 08 Apr 2025 22:11:12 GMT
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/3.0/onecall?appid=<OPEN_WEATHER_MAP_API>&exclude=minutely,hourly&lat=47.6657845&lon=-122.2970371&units=imperial
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Tue, 08 Apr 2025 22:11:13 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '4795'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/3.0/onecall?exclude=minutely%2Chourly&lat=47.67&lon=-122.3&units=imperial"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"lat":47.6658,"lon":-122.297,"timezone":"America/Los_Angeles","timezone_offset":-25200,"current":{"dt":1744150272,"sunrise":1744119174,"sunset":1744166911,"temp":48.97,"feels_like":43.07,"pressure":1013,"humidity":86,"dew_point":44.98,"uvi":0.69,"clouds":75,"visibility":8047,"wind_speed":16.11,"wind_deg":190,"wind_gust":34.52,"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}]},"daily":[{"dt":1744142400,"sunrise":1744119174,"sunset":1744166911,"moonrise":1744151820,"moonset":1744114380,"moon_phase":0.37,"summary":"Expect
+        a day of partly cloudy with rain","temp":{"day":49.93,"min":45.32,"max":50.02,"night":45.63,"eve":49.98,"morn":45.7},"feels_like":{"day":44.87,"night":40.08,"eve":44.83,"morn":40.96},"pressure":1013,"humidity":86,"dew_point":45.91,"wind_speed":15.21,"wind_deg":199,"wind_gust":33.31,"weather":[{"id":502,"main":"Rain","description":"heavy
+        intensity rain","icon":"10d"}],"clouds":85,"pop":1,"rain":18.3,"uvi":1.3},{"dt":1744228800,"sunrise":1744205456,"sunset":1744253396,"moonrise":1744242300,"moonset":1744201740,"moon_phase":0.4,"summary":"There
+        will be partly cloudy today","temp":{"day":58.24,"min":39.9,"max":60.21,"night":49.33,"eve":55.02,"morn":39.9},"feels_like":{"day":55.83,"night":49.33,"eve":52.75,"morn":37.2},"pressure":1024,"humidity":44,"dew_point":36.14,"wind_speed":11.14,"wind_deg":195,"wind_gust":27.11,"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"clouds":81,"pop":0,"uvi":4.62},{"dt":1744315200,"sunrise":1744291739,"sunset":1744339881,"moonrise":1744332720,"moonset":1744288920,"moon_phase":0.43,"summary":"Expect
+        a day of partly cloudy with rain","temp":{"day":55.09,"min":45.09,"max":60.26,"night":45.09,"eve":49.71,"morn":48.04},"feels_like":{"day":53.69,"night":40.46,"eve":45.05,"morn":46.53},"pressure":1016,"humidity":72,"dew_point":45.81,"wind_speed":16.35,"wind_deg":199,"wind_gust":31.99,"weather":[{"id":501,"main":"Rain","description":"moderate
+        rain","icon":"10d"}],"clouds":100,"pop":1,"rain":7.66,"uvi":3.88},{"dt":1744401600,"sunrise":1744378022,"sunset":1744426366,"moonrise":1744423080,"moonset":1744376100,"moon_phase":0.46,"summary":"Expect
+        a day of partly cloudy with rain","temp":{"day":51.35,"min":38.71,"max":52,"night":41.86,"eve":44.1,"morn":38.86},"feels_like":{"day":49.15,"night":38.86,"eve":40.84,"morn":35.98},"pressure":1025,"humidity":63,"dew_point":39.09,"wind_speed":8.32,"wind_deg":189,"wind_gust":18.66,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"clouds":84,"pop":1,"rain":0.84,"uvi":3.82},{"dt":1744488000,"sunrise":1744464306,"sunset":1744512851,"moonrise":1744513440,"moonset":1744463280,"moon_phase":0.5,"summary":"There
+        will be partly cloudy until morning, then rain","temp":{"day":52.39,"min":39.76,"max":52.39,"night":39.76,"eve":42.57,"morn":40.05},"feels_like":{"day":49.82,"night":37.53,"eve":40.69,"morn":37},"pressure":1021,"humidity":53,"dew_point":35.83,"wind_speed":8.12,"wind_deg":69,"wind_gust":9.42,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"clouds":97,"pop":1,"rain":3.93,"uvi":3.52},{"dt":1744574400,"sunrise":1744550590,"sunset":1744599336,"moonrise":1744603920,"moonset":1744550580,"moon_phase":0.52,"summary":"There
+        will be partly cloudy today","temp":{"day":57.6,"min":38.23,"max":57.6,"night":43.68,"eve":47.48,"morn":41.05},"feels_like":{"day":54.9,"night":41.86,"eve":45.07,"morn":41.05},"pressure":1026,"humidity":39,"dew_point":32.86,"wind_speed":5.3,"wind_deg":354,"wind_gust":11.92,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":4},{"dt":1744660800,"sunrise":1744636876,"sunset":1744685821,"moonrise":1744694460,"moonset":1744638060,"moon_phase":0.55,"summary":"You
+        can expect partly cloudy in the morning, with rain in the afternoon","temp":{"day":57.87,"min":40.37,"max":57.87,"night":47.88,"eve":49.19,"morn":43.32},"feels_like":{"day":55.47,"night":47.88,"eve":48.67,"morn":41.05},"pressure":1015,"humidity":45,"dew_point":35.91,"wind_speed":4.85,"wind_deg":327,"wind_gust":9.08,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"clouds":100,"pop":0.2,"rain":0.21,"uvi":4},{"dt":1744747200,"sunrise":1744723162,"sunset":1744772306,"moonrise":1744785060,"moonset":1744725720,"moon_phase":0.58,"summary":"You
+        can expect rain in the morning, with partly cloudy in the afternoon","temp":{"day":54.34,"min":45.72,"max":54.34,"night":45.72,"eve":46.98,"morn":46.22},"feels_like":{"day":52.9,"night":42.85,"eve":43.05,"morn":42.21},"pressure":1017,"humidity":73,"dew_point":45.41,"wind_speed":12.03,"wind_deg":205,"wind_gust":24.47,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"clouds":100,"pop":1,"rain":7.53,"uvi":4}]}'
+  recorded_at: Tue, 08 Apr 2025 22:11:13 GMT
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=One%20Apple%20Park%20Way,%20Cupertino,%20CA%2095014
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 08 Apr 2025 22:11:15 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '696'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=20
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sicGxhY2VfaWQiOjI5OTU1ODcwNiwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwOi8vb3NtLm9yZy9jb3B5cmlnaHQiLCJvc21fdHlwZSI6IndheSIsIm9zbV9pZCI6Nzc5NDk2NjM3LCJsYXQiOiIzNy4zMjkwODM3MjczMDM1NyIsImxvbiI6Ii0xMjIuMDA4OTU3NDE5OTU0MzEiLCJjbGFzcyI6ImhpZ2h3YXkiLCJ0eXBlIjoidW5jbGFzc2lmaWVkIiwicGxhY2VfcmFuayI6MjYsImltcG9ydGFuY2UiOjAuMDUzMzk4OTA4MjE2OTgzMjYsImFkZHJlc3N0eXBlIjoicm9hZCIsIm5hbWUiOiJBcHBsZSBQYXJrIFdheSIsImRpc3BsYXlfbmFtZSI6IkFwcGxlIFBhcmsgV2F5LCBDdXBlcnRpbm8sIFNhbnRhIENsYXJhIENvdW50eSwgQ2FsaWZvcm5pYSwgOTUwMTQsIFVuaXRlZCBTdGF0ZXMiLCJhZGRyZXNzIjp7InJvYWQiOiJBcHBsZSBQYXJrIFdheSIsImNpdHkiOiJDdXBlcnRpbm8iLCJjb3VudHkiOiJTYW50YSBDbGFyYSBDb3VudHkiLCJzdGF0ZSI6IkNhbGlmb3JuaWEiLCJJU08zMTY2LTItbHZsNCI6IlVTLUNBIiwicG9zdGNvZGUiOiI5NTAxNCIsImNvdW50cnkiOiJVbml0ZWQgU3RhdGVzIiwiY291bnRyeV9jb2RlIjoidXMifSwiYm91bmRpbmdib3giOlsiMzcuMzI4ODAzNyIsIjM3LjMyOTQ2NzEiLCItMTIyLjAwOTU1MTAiLCItMTIyLjAwODMxOTIiXX1d
+  recorded_at: Tue, 08 Apr 2025 22:11:15 GMT
+- request:
+    method: get
+    uri: https://api.openweathermap.org/data/3.0/onecall?appid=<OPEN_WEATHER_MAP_API>&exclude=minutely,hourly&lat=37.32908372730357&lon=-122.00895741995431&units=imperial
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Tue, 08 Apr 2025 22:11:15 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '4705'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/3.0/onecall?exclude=minutely%2Chourly&lat=37.33&lon=-122.01&units=imperial"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"lat":37.3291,"lon":-122.009,"timezone":"America/Los_Angeles","timezone_offset":-25200,"current":{"dt":1744150275,"sunrise":1744119755,"sunset":1744166191,"temp":69.28,"feels_like":68.25,"pressure":1020,"humidity":50,"dew_point":49.87,"uvi":5.81,"clouds":0,"visibility":10000,"wind_speed":8.05,"wind_deg":330,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}]},"daily":[{"dt":1744142400,"sunrise":1744119755,"sunset":1744166191,"moonrise":1744152720,"moonset":1744113120,"moon_phase":0.37,"summary":"The
+        day will start with partly cloudy through the late morning hours, transitioning
+        to clearing","temp":{"day":68.29,"min":48.72,"max":69.28,"night":53.11,"eve":64.04,"morn":48.72},"feels_like":{"day":67.5,"night":51.46,"eve":62.69,"morn":48.72},"pressure":1020,"humidity":57,"dew_point":52.48,"wind_speed":10.02,"wind_deg":343,"wind_gust":10.36,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":4,"pop":0,"uvi":7.72},{"dt":1744228800,"sunrise":1744206069,"sunset":1744252645,"moonrise":1744242720,"moonset":1744200960,"moon_phase":0.4,"summary":"You
+        can expect clear sky in the morning, with partly cloudy in the afternoon","temp":{"day":76.78,"min":50.54,"max":78.13,"night":57.52,"eve":67.32,"morn":50.92},"feels_like":{"day":75.67,"night":56.03,"eve":65.95,"morn":49.37},"pressure":1020,"humidity":32,"dew_point":43.74,"wind_speed":8.25,"wind_deg":342,"wind_gust":10.54,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":2,"pop":0,"uvi":7.89},{"dt":1744315200,"sunrise":1744292383,"sunset":1744339098,"moonrise":1744332600,"moonset":1744288680,"moon_phase":0.43,"summary":"Expect
+        a day of partly cloudy with clear spells","temp":{"day":72.14,"min":51.8,"max":74.25,"night":57.63,"eve":64.2,"morn":51.8},"feels_like":{"day":70.75,"night":56.86,"eve":63.05,"morn":50.4},"pressure":1023,"humidity":36,"dew_point":43.32,"wind_speed":10.8,"wind_deg":326,"wind_gust":15.55,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":93,"pop":0,"uvi":7.55},{"dt":1744401600,"sunrise":1744378697,"sunset":1744425552,"moonrise":1744422480,"moonset":1744376280,"moon_phase":0.46,"summary":"There
+        will be partly cloudy today","temp":{"day":71.62,"min":48.6,"max":72,"night":48.6,"eve":52.86,"morn":54.41},"feels_like":{"day":70.03,"night":47.44,"eve":51.33,"morn":53.87},"pressure":1019,"humidity":33,"dew_point":40.42,"wind_speed":9.44,"wind_deg":318,"wind_gust":11.05,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":7.25},{"dt":1744488000,"sunrise":1744465013,"sunset":1744512006,"moonrise":1744512360,"moonset":1744463940,"moon_phase":0.5,"summary":"Expect
+        a day of partly cloudy with clear spells","temp":{"day":67.91,"min":44.08,"max":67.91,"night":50.65,"eve":54.21,"morn":48.13},"feels_like":{"day":65.53,"night":48.85,"eve":52.48,"morn":47.5},"pressure":1016,"humidity":24,"dew_point":29.21,"wind_speed":9.44,"wind_deg":320,"wind_gust":9.37,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":7.09},{"dt":1744574400,"sunrise":1744551328,"sunset":1744598459,"moonrise":1744602300,"moonset":1744551720,"moon_phase":0.52,"summary":"There
+        will be clear sky today","temp":{"day":74.88,"min":48.16,"max":75.38,"night":55.38,"eve":59.92,"morn":53.24},"feels_like":{"day":72.91,"night":53.4,"eve":57.87,"morn":51.31},"pressure":1014,"humidity":18,"dew_point":28.65,"wind_speed":8.14,"wind_deg":340,"wind_gust":7.05,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":8},{"dt":1744660800,"sunrise":1744637645,"sunset":1744684913,"moonrise":1744692360,"moonset":1744639680,"moon_phase":0.55,"summary":"There
+        will be partly cloudy today","temp":{"day":74.79,"min":50.38,"max":74.79,"night":50.38,"eve":53.29,"morn":54.95},"feels_like":{"day":73.27,"night":49.01,"eve":51.75,"morn":52.88},"pressure":1014,"humidity":28,"dew_point":38.23,"wind_speed":8.72,"wind_deg":303,"wind_gust":9.8,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":8},{"dt":1744747200,"sunrise":1744723962,"sunset":1744771367,"moonrise":1744782420,"moonset":1744727880,"moon_phase":0.58,"summary":"There
+        will be partly cloudy today","temp":{"day":66.09,"min":48.83,"max":66.09,"night":50.65,"eve":52.39,"morn":53.8},"feels_like":{"day":64.47,"night":49.46,"eve":50.9,"morn":52.36},"pressure":1020,"humidity":44,"dew_point":42.44,"wind_speed":11.83,"wind_deg":305,"wind_gust":17,"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"clouds":53,"pop":0,"uvi":8}]}'
+  recorded_at: Tue, 08 Apr 2025 22:11:15 GMT
+- request:
+    method: get
     uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=2651%20NE%2049th%20St,%20Seattle,%20WA%2098105
     body:
       encoding: US-ASCII
@@ -21,7 +206,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 08 Apr 2025 20:21:44 GMT
+      - Tue, 08 Apr 2025 22:11:15 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -34,7 +219,7 @@ http_interactions:
       encoding: ASCII-8BIT
       string: !binary |-
         W3sicGxhY2VfaWQiOjMwMzEzNDEzNywibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwOi8vb3NtLm9yZy9jb3B5cmlnaHQiLCJvc21fdHlwZSI6IndheSIsIm9zbV9pZCI6NjQxMzk2MiwibGF0IjoiNDcuNjY0NDEyMjQ2ODQwOTkiLCJsb24iOiItMTIyLjMwMTMxMzk5NTQyMDgzIiwiY2xhc3MiOiJoaWdod2F5IiwidHlwZSI6InJlc2lkZW50aWFsIiwicGxhY2VfcmFuayI6MjYsImltcG9ydGFuY2UiOjAuMDUzNDEwNjMxNzIzNTA2NDksImFkZHJlc3N0eXBlIjoicm9hZCIsIm5hbWUiOiJOb3J0aGVhc3QgNDl0aCBTdHJlZXQiLCJkaXNwbGF5X25hbWUiOiJOb3J0aGVhc3QgNDl0aCBTdHJlZXQsIFVuaXZlcnNpdHkgUGFyaywgVW5pdmVyc2l0eSBEaXN0cmljdCwgU2VhdHRsZSwgS2luZyBDb3VudHksIFdhc2hpbmd0b24sIDk4MTA1LCBVbml0ZWQgU3RhdGVzIiwiYWRkcmVzcyI6eyJyb2FkIjoiTm9ydGhlYXN0IDQ5dGggU3RyZWV0IiwibmVpZ2hib3VyaG9vZCI6IlVuaXZlcnNpdHkgUGFyayIsInN1YnVyYiI6IlVuaXZlcnNpdHkgRGlzdHJpY3QiLCJjaXR5IjoiU2VhdHRsZSIsImNvdW50eSI6IktpbmcgQ291bnR5Iiwic3RhdGUiOiJXYXNoaW5ndG9uIiwiSVNPMzE2Ni0yLWx2bDQiOiJVUy1XQSIsInBvc3Rjb2RlIjoiOTgxMDUiLCJjb3VudHJ5IjoiVW5pdGVkIFN0YXRlcyIsImNvdW50cnlfY29kZSI6InVzIn0sImJvdW5kaW5nYm94IjpbIjQ3LjY2NDM5NjAiLCI0Ny42NjQ0MTUzIiwiLTEyMi4zMDE3MTkzIiwiLTEyMi4zMDA5MDYwIl19LHsicGxhY2VfaWQiOjMwMDQxMTQ4NywibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwOi8vb3NtLm9yZy9jb3B5cmlnaHQiLCJvc21fdHlwZSI6IndheSIsIm9zbV9pZCI6NDg1MjMzMjY1LCJsYXQiOiI0Ny42NjQyODkzMDU3NTM3NCIsImxvbiI6Ii0xMjIuMjk2Mjk4NjQ0NzY1NSIsImNsYXNzIjoiaGlnaHdheSIsInR5cGUiOiJzZXJ2aWNlIiwicGxhY2VfcmFuayI6MjcsImltcG9ydGFuY2UiOjAuMDQwMDc3Mjk4MzkwMTczMTgsImFkZHJlc3N0eXBlIjoicm9hZCIsIm5hbWUiOiJOb3J0aGVhc3QgNDl0aCBTdHJlZXQiLCJkaXNwbGF5X25hbWUiOiJOb3J0aGVhc3QgNDl0aCBTdHJlZXQsIFVuaXZlcnNpdHkgRGlzdHJpY3QsIFNlYXR0bGUsIEtpbmcgQ291bnR5LCBXYXNoaW5ndG9uLCA5ODEwNSwgVW5pdGVkIFN0YXRlcyIsImFkZHJlc3MiOnsicm9hZCI6Ik5vcnRoZWFzdCA0OXRoIFN0cmVldCIsInN1YnVyYiI6IlVuaXZlcnNpdHkgRGlzdHJpY3QiLCJjaXR5IjoiU2VhdHRsZSIsImNvdW50eSI6IktpbmcgQ291bnR5Iiwic3RhdGUiOiJXYXNoaW5ndG9uIiwiSVNPMzE2Ni0yLWx2bDQiOiJVUy1XQSIsInBvc3Rjb2RlIjoiOTgxMDUiLCJjb3VudHJ5IjoiVW5pdGVkIFN0YXRlcyIsImNvdW50cnlfY29kZSI6InVzIn0sImJvdW5kaW5nYm94IjpbIjQ3LjY2NDEyMzIiLCI0Ny42NjQyODk4IiwiLTEyMi4yOTcwMDExIiwiLTEyMi4yOTU2MjU4Il19LHsicGxhY2VfaWQiOjMwMDAwNTYwOSwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwOi8vb3NtLm9yZy9jb3B5cmlnaHQiLCJvc21fdHlwZSI6IndheSIsIm9zbV9pZCI6ODAxMzk0NCwibGF0IjoiNDcuNjY0MzI3MjcxNzUyMDkiLCJsb24iOiItMTIyLjI5OTk5MjY1OTA2MzQ2IiwiY2xhc3MiOiJoaWdod2F5IiwidHlwZSI6InNlcnZpY2UiLCJwbGFjZV9yYW5rIjoyNywiaW1wb3J0YW5jZSI6MC4wNDAwNzcyOTgzOTAxNzMxOCwiYWRkcmVzc3R5cGUiOiJyb2FkIiwibmFtZSI6Ik5vcnRoZWFzdCA0OXRoIFN0cmVldCIsImRpc3BsYXlfbmFtZSI6Ik5vcnRoZWFzdCA0OXRoIFN0cmVldCwgVW5pdmVyc2l0eSBWaWxsYWdlLCBVbml2ZXJzaXR5IERpc3RyaWN0LCBTZWF0dGxlLCBLaW5nIENvdW50eSwgV2FzaGluZ3RvbiwgOTgxMDUsIFVuaXRlZCBTdGF0ZXMiLCJhZGRyZXNzIjp7InJvYWQiOiJOb3J0aGVhc3QgNDl0aCBTdHJlZXQiLCJyZXRhaWwiOiJVbml2ZXJzaXR5IFZpbGxhZ2UiLCJzdWJ1cmIiOiJVbml2ZXJzaXR5IERpc3RyaWN0IiwiY2l0eSI6IlNlYXR0bGUiLCJjb3VudHkiOiJLaW5nIENvdW50eSIsInN0YXRlIjoiV2FzaGluZ3RvbiIsIklTTzMxNjYtMi1sdmw0IjoiVVMtV0EiLCJwb3N0Y29kZSI6Ijk4MTA1IiwiY291bnRyeSI6IlVuaXRlZCBTdGF0ZXMiLCJjb3VudHJ5X2NvZGUiOiJ1cyJ9LCJib3VuZGluZ2JveCI6WyI0Ny42NjQyODkxIiwiNDcuNjY0NDA0NyIsIi0xMjIuMzAwNTEzOSIsIi0xMjIuMjk5NDY4MyJdfSx7InBsYWNlX2lkIjoyOTk4NDQ3MTksImxpY2VuY2UiOiJEYXRhIMKpIE9wZW5TdHJlZXRNYXAgY29udHJpYnV0b3JzLCBPRGJMIDEuMC4gaHR0cDovL29zbS5vcmcvY29weXJpZ2h0Iiwib3NtX3R5cGUiOiJ3YXkiLCJvc21faWQiOjEwMDg0OTI1NDEsImxhdCI6IjQ3LjY2NDQxMTI1Mzk5MTAwNSIsImxvbiI6Ii0xMjIuMzAwNzA5OTEwNjk4NDMiLCJjbGFzcyI6ImhpZ2h3YXkiLCJ0eXBlIjoic2VydmljZSIsInBsYWNlX3JhbmsiOjI3LCJpbXBvcnRhbmNlIjowLjA0MDA3NzI5ODM5MDE3MzE4LCJhZGRyZXNzdHlwZSI6InJvYWQiLCJuYW1lIjoiTm9ydGhlYXN0IDQ5dGggU3RyZWV0IiwiZGlzcGxheV9uYW1lIjoiTm9ydGhlYXN0IDQ5dGggU3RyZWV0LCBVbml2ZXJzaXR5IFBhcmssIFVuaXZlcnNpdHkgRGlzdHJpY3QsIFNlYXR0bGUsIEtpbmcgQ291bnR5LCBXYXNoaW5ndG9uLCA5ODEwNSwgVW5pdGVkIFN0YXRlcyIsImFkZHJlc3MiOnsicm9hZCI6Ik5vcnRoZWFzdCA0OXRoIFN0cmVldCIsIm5laWdoYm91cmhvb2QiOiJVbml2ZXJzaXR5IFBhcmsiLCJzdWJ1cmIiOiJVbml2ZXJzaXR5IERpc3RyaWN0IiwiY2l0eSI6IlNlYXR0bGUiLCJjb3VudHkiOiJLaW5nIENvdW50eSIsInN0YXRlIjoiV2FzaGluZ3RvbiIsIklTTzMxNjYtMi1sdmw0IjoiVVMtV0EiLCJwb3N0Y29kZSI6Ijk4MTA1IiwiY291bnRyeSI6IlVuaXRlZCBTdGF0ZXMiLCJjb3VudHJ5X2NvZGUiOiJ1cyJ9LCJib3VuZGluZ2JveCI6WyI0Ny42NjQ0MDQ3IiwiNDcuNjY0NDE1MyIsIi0xMjIuMzAwOTA2MCIsIi0xMjIuMzAwNTEzOSJdfV0=
-  recorded_at: Tue, 08 Apr 2025 20:21:44 GMT
+  recorded_at: Tue, 08 Apr 2025 22:11:15 GMT
 - request:
     method: get
     uri: https://api.openweathermap.org/data/3.0/onecall?appid=<OPEN_WEATHER_MAP_API>&exclude=minutely,hourly&lat=47.66441224684099&lon=-122.30131399542083&units=imperial
@@ -56,11 +241,11 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Tue, 08 Apr 2025 20:22:06 GMT
+      - Tue, 08 Apr 2025 22:11:15 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '4799'
+      - '4796'
       Connection:
       - keep-alive
       X-Cache-Key:
@@ -73,10 +258,10 @@ http_interactions:
       - GET, POST
     body:
       encoding: UTF-8
-      string: '{"lat":47.6644,"lon":-122.3013,"timezone":"America/Los_Angeles","timezone_offset":-25200,"current":{"dt":1744143726,"sunrise":1744119175,"sunset":1744166912,"temp":51.37,"feels_like":50.34,"pressure":1012,"humidity":88,"dew_point":47.95,"uvi":0.72,"clouds":100,"visibility":10000,"wind_speed":11.99,"wind_deg":203,"wind_gust":24,"weather":[{"id":804,"main":"Clouds","description":"overcast
+      string: '{"lat":47.6644,"lon":-122.3013,"timezone":"America/Los_Angeles","timezone_offset":-25200,"current":{"dt":1744150271,"sunrise":1744119175,"sunset":1744166912,"temp":49.24,"feels_like":43.41,"pressure":1013,"humidity":86,"dew_point":45.25,"uvi":0.69,"clouds":75,"visibility":8047,"wind_speed":16.11,"wind_deg":190,"wind_gust":34.52,"weather":[{"id":803,"main":"Clouds","description":"broken
         clouds","icon":"04d"}]},"daily":[{"dt":1744142400,"sunrise":1744119175,"sunset":1744166912,"moonrise":1744151820,"moonset":1744114380,"moon_phase":0.37,"summary":"Expect
-        a day of partly cloudy with rain","temp":{"day":51.37,"min":45.32,"max":51.37,"night":45.63,"eve":49.89,"morn":45.7},"feels_like":{"day":50.34,"night":40.08,"eve":44.73,"morn":40.96},"pressure":1012,"humidity":88,"dew_point":47.95,"wind_speed":15.21,"wind_deg":199,"wind_gust":33.31,"weather":[{"id":502,"main":"Rain","description":"heavy
-        intensity rain","icon":"10d"}],"clouds":100,"pop":1,"rain":20.28,"uvi":1.3},{"dt":1744228800,"sunrise":1744205457,"sunset":1744253397,"moonrise":1744242300,"moonset":1744201740,"moon_phase":0.4,"summary":"There
+        a day of partly cloudy with rain","temp":{"day":50.09,"min":45.32,"max":50.13,"night":45.63,"eve":50.04,"morn":45.7},"feels_like":{"day":48.85,"night":40.08,"eve":48.69,"morn":40.96},"pressure":1013,"humidity":86,"dew_point":46.08,"wind_speed":15.21,"wind_deg":199,"wind_gust":33.31,"weather":[{"id":502,"main":"Rain","description":"heavy
+        intensity rain","icon":"10d"}],"clouds":85,"pop":1,"rain":18.3,"uvi":1.3},{"dt":1744228800,"sunrise":1744205457,"sunset":1744253397,"moonrise":1744242300,"moonset":1744201740,"moon_phase":0.4,"summary":"There
         will be partly cloudy today","temp":{"day":58.24,"min":39.9,"max":60.21,"night":49.33,"eve":55.02,"morn":39.9},"feels_like":{"day":55.83,"night":49.33,"eve":52.75,"morn":37.2},"pressure":1024,"humidity":44,"dew_point":36.14,"wind_speed":11.14,"wind_deg":195,"wind_gust":27.11,"weather":[{"id":803,"main":"Clouds","description":"broken
         clouds","icon":"04d"}],"clouds":81,"pop":0,"uvi":4.62},{"dt":1744315200,"sunrise":1744291740,"sunset":1744339882,"moonrise":1744332720,"moonset":1744288920,"moon_phase":0.43,"summary":"Expect
         a day of partly cloudy with rain","temp":{"day":55.09,"min":45.09,"max":60.26,"night":45.09,"eve":49.71,"morn":48.04},"feels_like":{"day":53.69,"night":40.46,"eve":45.05,"morn":46.53},"pressure":1016,"humidity":72,"dew_point":45.81,"wind_speed":16.35,"wind_deg":199,"wind_gust":31.99,"weather":[{"id":501,"main":"Rain","description":"moderate
@@ -91,5 +276,5 @@ http_interactions:
         rain","icon":"10d"}],"clouds":100,"pop":0.2,"rain":0.21,"uvi":4},{"dt":1744747200,"sunrise":1744723163,"sunset":1744772307,"moonrise":1744785060,"moonset":1744725720,"moon_phase":0.58,"summary":"You
         can expect rain in the morning, with partly cloudy in the afternoon","temp":{"day":54.34,"min":45.72,"max":54.34,"night":45.72,"eve":46.98,"morn":46.22},"feels_like":{"day":52.9,"night":42.85,"eve":43.05,"morn":42.21},"pressure":1017,"humidity":73,"dew_point":45.41,"wind_speed":12.03,"wind_deg":205,"wind_gust":24.47,"weather":[{"id":500,"main":"Rain","description":"light
         rain","icon":"10d"}],"clouds":100,"pop":1,"rain":7.53,"uvi":4}]}'
-  recorded_at: Tue, 08 Apr 2025 20:22:06 GMT
+  recorded_at: Tue, 08 Apr 2025 22:11:16 GMT
 recorded_with: VCR 6.3.1
