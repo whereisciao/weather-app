@@ -10,21 +10,15 @@ RSpec.describe WeatherRequest, type: :model do
       request = WeatherRequest.new(location: "Seattle, WA")
       request.perform
 
-      expect(request.current_temp).to be_present
-      expect(request.current_high_temp).to be_present
-      expect(request.current_low_temp).to be_present
+      expect(request.current_forecast).to be_kind_of(WeatherRequest::Forecast)
     end
 
     it "returns forecast for the next several days" do
       request = WeatherRequest.new(location: "Seattle, WA")
       request.perform
 
-      expect(request.daily_forecast.size).to eq(8)
-      expect(request.daily_forecast).to all(include(
-                                                      temp: hash_including("min", "max"),
-                                                      summary: be_kind_of(String),
-                                                      weather: be_kind_of(Array)
-                                                   ))
+      expect(request.daily_forecasts.size).to eq(8)
+      expect(request.daily_forecasts).to all(be_kind_of(WeatherRequest::Forecast))
     end
   end
 end

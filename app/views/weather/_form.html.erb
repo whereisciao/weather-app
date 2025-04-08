@@ -1,0 +1,5 @@
+<%= form_with url: "/location", method: :get do |form| %>
+  <%= form.label :query, "Search weather for:" %>
+  <%= form.search_field :query, placeholder: "Address, City, or Zipcode", size: 75 %>
+  <%= form.submit "Search" %>
+<% end %>
