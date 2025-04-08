@@ -1,21 +1,26 @@
-<h2>Today's Forecast</h2>
-<dl>
-  <dt>Current Temperature</dt>
-  <dd><%= @request.current_forecast.temp %></dd>
-  <dt>Current High Temperature</dt>
-  <dd><%= @request.current_forecast.high_temp %>
-  <dt>Current Low Temperature</dt>
-  <dd><%= @request.current_forecast.low_temp %>
-</dl>
-
-<h2>Daily Forecast</h2>
-<% @request.daily_forecasts.each do |forecast| %>
+<section class="forecast-today pb-5">
+  <h2>Today's Forecast</h2>
   <dl>
-    <dt>Summary</dt>
-    <dd><%= forecast.summary %></dd>
-    <dt>High Temperature</dt>
-    <dd><%= forecast.high_temp %>
-    <dt>Low Temperature</dt>
-    <dd><%= forecast.low_temp %>
+    <dt>Location</dt>
+    <dd><%= @request.location %></dd>
+    <dt>Current Temperature</dt>
+    <dd><%= @request.current_forecast.temp %></dd>
+    <dt>Current High Temperature</dt>
+    <dd><%= @request.current_forecast.high_temp %>
+    <dt>Current Low Temperature</dt>
+    <dd><%= @request.current_forecast.low_temp %>
   </dl>
-<% end %>
+</section>
+<section class="forecast-daily pb-5">
+  <h2>Daily Forecast</h2>
+  <% @request.daily_forecasts.each do |forecast| %>
+    <dl>
+      <dt>Summary</dt>
+      <dd><%= forecast.summary %></dd>
+      <dt>High Temperature</dt>
+      <dd><%= forecast.high_temp %>
+      <dt>Low Temperature</dt>
+      <dd><%= forecast.low_temp %>
+    </dl>
+  <% end %>
+</section>
