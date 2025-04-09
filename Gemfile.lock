@@ -1,7 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    StreetAddress (1.0.6)
     actioncable (8.0.2)
       actionpack (= 8.0.2)
       activesupport (= 8.0.2)
@@ -414,7 +413,6 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  StreetAddress
   bootsnap
   brakeman
   capybara

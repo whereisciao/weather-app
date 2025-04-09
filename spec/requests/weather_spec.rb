@@ -2,11 +2,13 @@ require 'rails_helper'
 
 RSpec.describe "Weathers", type: :request do
   describe "GET /show" do
-    context "when location is valid" do
-      subject(:show_request) { get "/location?query=2651 NE 49th St, Seattle, WA 98105" }
+    subject(:show_request) { get "/location?query=#{query}" }
 
-      before { VCR.insert_cassette("show_weather") }
-      after { VCR.eject_cassette }
+    before { VCR.insert_cassette("show_weather", record: :all) }
+    after { VCR.eject_cassette }
+
+    context "when location is valid" do
+      let(:query) { "2651 NE 49th St, Seattle, WA 98105" }
 
       it "returns weather for a valid location" do
         show_request
@@ -33,6 +35,7 @@ RSpec.describe "Weathers", type: :request do
         end
 
         it "misses the cache if the zipcode is not found" do
+          # Fetches an address with a different zipcode
           get "/location?query=1 Apple Park Way, Cupertino, CA 95014"
 
           show_request
@@ -41,14 +44,28 @@ RSpec.describe "Weathers", type: :request do
       end
     end
 
-    context "when location is invalid" do
-      it "returns to root_path and displays error_message" do
-        get "/location?query=Seattle, WA"
+    context "when location is just a city" do
+      let(:query) { "Seattle, WA" }
+
+      it "doesn't cache results" do
+        show_request
+        expect(response.body).to include("Cache Missed")
+
+        show_request
+        expect(response.body).to include("Cache Missed")
+      end
+    end
+
+    context "when geocoder fails" do
+      let(:query) { "1 Santa Lane, North Pole" }
+
+      it "gracely displays error message" do
+        show_request
 
         expect(response).to redirect_to(controller: :weather, action: :index)
 
         follow_redirect!
-        expect(response.body).to include("Postal code can&#39;t be blank.")
+        expect(response.body).to include("Sorry.")
       end
     end
   end

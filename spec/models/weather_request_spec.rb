@@ -33,15 +33,5 @@ RSpec.describe WeatherRequest, type: :model do
         expect(Rails.cache.exist?("weather_98105")).to eq(true)
       end
     end
-
-    it "detects incomplete US addresses" do
-      request = WeatherRequest.new(location: "2651 NE 49th St, Seattle, WA")
-      expect(request.valid?).to eq(false)
-      expect(request.errors.messages[:postal_code]).to match_array("can't be blank")
-
-      request = WeatherRequest.new(location: "Seattle, WA")
-      expect(request.valid?).to eq(false)
-      expect(request.errors.messages[:postal_code]).to match_array("can't be blank")
-    end
   end
 end
