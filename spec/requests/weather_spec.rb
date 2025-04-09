@@ -4,7 +4,7 @@ RSpec.describe "Weathers", type: :request do
   describe "GET /show" do
     subject(:show_request) { get "/location?query=#{location}" }
 
-    before { VCR.insert_cassette("show_weather", record: :all) }
+    before { VCR.insert_cassette("show_weather") }
     after { VCR.eject_cassette }
 
     context "when location is valid" do
