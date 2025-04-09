@@ -44,6 +44,24 @@ RSpec.describe "Weathers", type: :request do
       end
     end
 
+    context "when location is a Canadian Address" do
+      include_context "cache enabled"
+
+      let(:query) { "5880 Victoria Dr, Vancouver, BC V5P 3W9, Canada" }
+
+      it "returns forecast" do
+        show_request
+        expect(response.body).to include("Today's Forecast")
+        expect(response.body).to include("Daily Forecast")
+      end
+
+      it "caches the result" do
+        expect {
+          show_request
+        }.to(change { Rails.cache.exist?("weather_V5P") }.from(false).to(true))
+      end
+    end
+
     context "when location is just a city" do
       let(:query) { "Seattle, WA" }
 
