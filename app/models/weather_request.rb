@@ -6,7 +6,6 @@ class WeatherRequest
   CACHE_TTL = 30.minutes
 
   attr_reader :location,
-    :parsed_address,
     :lat,
     :lon,
     :weather_response,
