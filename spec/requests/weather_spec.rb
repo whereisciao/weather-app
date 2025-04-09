@@ -2,13 +2,13 @@ require 'rails_helper'
 
 RSpec.describe "Weathers", type: :request do
   describe "GET /show" do
-    subject(:show_request) { get "/location?query=#{query}" }
+    subject(:show_request) { get "/location?query=#{location}" }
 
     before { VCR.insert_cassette("show_weather", record: :all) }
     after { VCR.eject_cassette }
 
     context "when location is valid" do
-      let(:query) { "2651 NE 49th St, Seattle, WA 98105" }
+      let(:location) { "2651 NE 49th St, Seattle, WA 98105" }
 
       it "returns weather for a valid location" do
         show_request
@@ -47,7 +47,7 @@ RSpec.describe "Weathers", type: :request do
     context "when location is a Canadian Address" do
       include_context "cache enabled"
 
-      let(:query) { "5880 Victoria Dr, Vancouver, BC V5P 3W9, Canada" }
+      let(:location) { "5880 Victoria Dr, Vancouver, BC V5P 3W9, Canada" }
 
       it "returns forecast" do
         show_request
@@ -63,7 +63,7 @@ RSpec.describe "Weathers", type: :request do
     end
 
     context "when location is just a city" do
-      let(:query) { "Seattle, WA" }
+      let(:location) { "Seattle, WA" }
 
       it "doesn't cache results" do
         show_request
@@ -75,7 +75,7 @@ RSpec.describe "Weathers", type: :request do
     end
 
     context "when geocoder fails to find a match" do
-      let(:query) { "1 Santa Lane, North Pole" }
+      let(:location) { "1 Santa Lane, North Pole" }
 
       it "gracely displays error message" do
         show_request
@@ -88,7 +88,7 @@ RSpec.describe "Weathers", type: :request do
     end
 
     context "when weather API can't find the location" do
-      let(:query) { "Seattle, WA" }
+      let(:location) { "Seattle, WA" }
 
       before do
         stub_request(:get, /openweathermap/).
