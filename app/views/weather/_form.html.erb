@@ -3,3 +3,7 @@
   <%= form.search_field :query, placeholder: "Address, City, or Zipcode", size: 75 %>
   <%= form.submit "Search" %>
 <% end %>
+
+<% if flash[:alert] %>
+  <div class="alert alert-info my-3" role="alert"><%= flash[:alert] %></div>
+<% end %>

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Weathers", type: :request do
   describe "GET /show" do
-    context "with a valid location" do
+    context "when location is valid" do
       subject(:show_request) { get "/location?query=2651 NE 49th St, Seattle, WA 98105" }
 
       before { VCR.insert_cassette("show_weather") }
@@ -33,11 +33,22 @@ RSpec.describe "Weathers", type: :request do
         end
 
         it "misses the cache if the zipcode is not found" do
-          get "/location?query=One Apple Park Way, Cupertino, CA 95014"
+          get "/location?query=1 Apple Park Way, Cupertino, CA 95014"
 
           show_request
           expect(response.body).to include("Cache Missed")
         end
+      end
+    end
+
+    context "when location is invalid" do
+      it "returns to root_path and displays error_message" do
+        get "/location?query=Seattle, WA"
+
+        expect(response).to redirect_to(controller: :weather, action: :index)
+
+        follow_redirect!
+        expect(response.body).to include("Postal code can&#39;t be blank.")
       end
     end
   end

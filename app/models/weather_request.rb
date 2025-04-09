@@ -26,10 +26,7 @@ class WeatherRequest
   def perform
     return false unless valid?
 
-    geocode_result = geocode_results.first
-
-    @lat, @lon = geocode_result.coordinates
-    @weather_response = fetch_weather_forecast
+    @weather_response = fetch_weather_forecast(geocode_results.first)
 
     set_weather_attributes(weather_response)
 
@@ -46,8 +43,10 @@ class WeatherRequest
 
   private
 
-  def fetch_weather_forecast
-    cache_key = "weather_#{postal_code}"
+  def fetch_weather_forecast(geocode_result)
+    @lat, @lon = geocode_result.coordinates
+
+    cache_key = "weather_#{geocode_result.postal_code}"
 
     @cache_hit = Rails.cache.exist?(cache_key)
 
