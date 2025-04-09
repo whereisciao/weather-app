@@ -99,13 +99,46 @@ RSpec.describe "Weathers", type: :request do
           )
       end
 
-      it "displays a 404 error" do
+      it "displays a generic error" do
         show_request
 
         expect(response).to redirect_to(controller: :weather, action: :index)
 
         follow_redirect!
         expect(response.body).to include("We are unable to find the weather")
+      end
+    end
+
+    context "when weather API returns 401" do
+      let(:location) { "Seattle, WA" }
+
+      before do
+        stub_request(:get, /openweathermap/).
+          to_return(
+            status: 401,
+            headers: { "Content-Type" => "application/json; charset=utf-8" },
+            body: {
+              "cod": 401,
+              "message": "Please note that using One Call 3.0 requires a separate subscription to the One Call by Call plan. Learn more here https://openweathermap.org/price. If you have a valid subscription to the One Call by Call plan, but still receive this error, then please see https://openweathermap.org/faq#error401 for more info."
+            }.to_json
+          )
+      end
+
+      it "displays a generic error" do
+        show_request
+
+        expect(response).to redirect_to(controller: :weather, action: :index)
+
+        follow_redirect!
+        expect(response.body).to include("We are unable to find the weather")
+      end
+
+      it "captures error to Sentry" do
+        allow(Sentry).to receive(:capture_exception)
+
+        show_request
+
+        expect(Sentry).to have_received(:capture_exception)
       end
     end
   end

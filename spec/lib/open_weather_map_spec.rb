@@ -34,7 +34,7 @@ RSpec.describe OpenWeatherMap do
 
       it "raises the error message" do
         VCR.use_cassette("unauthorize_request") do
-          expect { request }.to raise_error(RuntimeError, /One Call 3.0 requires a separate subscription/)
+          expect { request }.to raise_error(OpenWeatherMap::Unauthorized)
         end
       end
     end

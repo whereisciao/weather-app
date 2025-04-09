@@ -74,6 +74,8 @@ class WeatherRequest
     end
 
   rescue Exception => error
+    Sentry.capture_exception(error)
+
     raise LocationNotFound.new(error.message)
   end
 
