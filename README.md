@@ -11,6 +11,10 @@ Latitude and longitude coordinates are required to retrieve weather data. The `g
 
 Sentry.io was added for application monitoring.
 
+> Cache results for 30 minutes by zip code.
+
+To save on weather API requests, additional caching was added to save on municipalities and cities.
+
 # Getting Started
 
 1. An Open Weather Map API Key is required to request weather data. A key should be provided by your contact, or you could register your own  by visiting https://openweathermap.org/.

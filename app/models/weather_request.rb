@@ -9,6 +9,10 @@ class WeatherRequest
   # Duration of cache lifespan
   CACHE_TTL = 30.minutes
 
+  # City / municipalities value range used to set fallback caching
+  # https://nominatim.org/release-docs/latest/customize/Ranking/#search-rank
+  PLACE_RANK_CITY_RANGE = (13..16)
+
   attr_reader :location,
     :lat,
     :lon,
@@ -37,7 +41,7 @@ class WeatherRequest
 
   # Save the first geocode result for a given location. This list is sorted by best match.
   def geocode_result
-    @geocode_results ||= Geocoder.search(location).first
+    @geocode_result ||= Geocoder.search(location).first
   end
 
   # Indicates if the cache is hit. Value is set in fetch_or_request_weather_forecast.
@@ -45,16 +49,20 @@ class WeatherRequest
     @cache_hit || false
   end
 
-  # Builds the cache_key used by Rails.cache
+  # Builds the cache_key used by Rails.cache. Results are cached by zipcode, then falls back on municipalities/cities.
   def cache_key
-    @cache_key ||= "weather_#{geocode_result.postal_code}" if geocode_result.postal_code.present?
+    @cache_key ||= if geocode_result.postal_code.present?
+      "weather_#{geocode_result.postal_code}"
+    elsif PLACE_RANK_CITY_RANGE.include?(geocode_result.data["place_rank"])
+      "#{geocode_result.place_id}_#{geocode_result.data["name"].parameterize}"
+    end
   end
 
   private
 
   # Fetches the weather results either from the cache or from the weather source.
   def fetch_or_request_weather_forecast
-    if geocode_result.postal_code.present?
+    if cache_key.present?
       @cache_hit = Rails.cache.exist?(cache_key)
 
       Rails.cache.fetch(cache_key, expires_in: CACHE_TTL) do
