@@ -1,4 +1,10 @@
 class WeatherRequest
+  # Generic Error for Weather Source issues
+  class LocationNotFound < StandardError; end
+
+  Forecast = Data.define(:timestamp, :summary, :high_temp, :low_temp, :weather, :temp)
+  CACHE_TTL = 30.minutes
+
   attr_reader :location,
     :lat,
     :lon,
@@ -6,52 +12,58 @@ class WeatherRequest
     :current_forecast,
     :daily_forecasts
 
-  Forecast = Data.define(:timestamp, :summary, :high_temp, :low_temp, :weather, :temp)
-  CACHE_TTL = 30.minutes
-
   def initialize(location:)
     @location = location
   end
 
   def valid?
-    geocode_results.count >= 1
+    geocode_result.present?
   end
 
   def perform
     return false unless valid?
 
-    geocode_result = geocode_results.first
-
     @lat, @lon = geocode_result.coordinates
-    @weather_response = fetch_weather_forecast(lat: lat, lon: lon, postal_code: geocode_result.postal_code)
 
+    @weather_response = fetch_or_request_weather_forecast
     set_weather_attributes(weather_response)
-
-    true
   end
 
-  def geocode_results
-    @geocode_results ||= Geocoder.search(location)
+  def geocode_result
+    @geocode_results ||= Geocoder.search(location).first
   end
 
   def cache_hit?
-    @cache_hit
+    @cache_hit || false
+  end
+
+  def cache_key
+    @cache_key ||= "weather_#{geocode_result.postal_code}" if geocode_result.postal_code.present?
   end
 
   private
 
-  def fetch_weather_forecast(lat:, lon:, postal_code:)
-    cache_key = "weather_#{postal_code}"
+  def fetch_or_request_weather_forecast
+    if geocode_result.postal_code.present?
+      @cache_hit = Rails.cache.exist?(cache_key)
 
-    @cache_hit = Rails.cache.exist?(cache_key)
-
-    Rails.cache.fetch(cache_key, expires_in: CACHE_TTL) do
-      response = weather_source.one_call(lat: lat, lon: lon)
-
-      if response.success? && !(response.body.nil? || response.body.empty?)
-        response.parsed_response
+      Rails.cache.fetch(cache_key, expires_in: CACHE_TTL) do
+        request_weather_forecast
       end
+    else
+      request_weather_forecast
     end
+  end
+
+  def request_weather_forecast
+    response = weather_source.one_call(lat: lat, lon: lon)
+
+    if response.success? && !(response.body.nil? || response.body.empty?)
+      response.parsed_response
+    end
+
+  rescue Exception => error
+    raise LocationNotFound.new(error.message)
   end
 
   def weather_source
@@ -59,6 +71,8 @@ class WeatherRequest
   end
 
   def set_weather_attributes(response)
+    return false if response.blank?
+
     @current_forecast = Forecast.new(
       timestamp: Time.zone.today,
       temp: response.dig("current", "temp"),
@@ -80,5 +94,7 @@ class WeatherRequest
         weather: daily["weather"]
       )
     end
+
+    true
   end
 end

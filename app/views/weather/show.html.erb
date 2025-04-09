@@ -10,7 +10,7 @@
     <dt>Current Low Temperature</dt>
     <dd><%= @request.current_forecast.low_temp %>
     <dt>Cache Status</dt>
-    <dd><%= @request.cache_hit? ? "Cache Hit" : "Cache Missed" %></dd>
+    <dd><%= cache_status(@report) %></dd>
   </dl>
 </section>
 <section class="forecast-daily pb-5">

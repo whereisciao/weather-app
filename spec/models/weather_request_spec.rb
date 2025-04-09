@@ -25,12 +25,10 @@ RSpec.describe WeatherRequest, type: :model do
       end
 
       it "caches the results by postal code" do
-        expect(Rails.cache.exist?("weather_98105")).to eq(false)
-
-        request = WeatherRequest.new(location: "2651 NE 49th St, Seattle, WA 98105")
-        request.perform
-
-        expect(Rails.cache.exist?("weather_98105")).to eq(true)
+        expect {
+          request = WeatherRequest.new(location: "2651 NE 49th St, Seattle, WA 98105")
+          request.perform
+        }.to(change { Rails.cache.exist?("weather_98105") }.from(false).to(true))
       end
     end
   end
