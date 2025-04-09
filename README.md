@@ -2,6 +2,9 @@
 
 This Weather App was designed to fulfill a coding assigment within a reasonable set time. Given a location, fetch the weather forecast. Cache results for 30 minutes by zip code.
 
+<img width="1203" alt="image" src="https://github.com/user-attachments/assets/887c36e4-d613-413c-995d-ed659f148149" />
+
+
 # Technical approach
 Given the requirements, it was not explicity necessary to create a data model to data to a database. This application was designed with a plain old Ruby object.
 
