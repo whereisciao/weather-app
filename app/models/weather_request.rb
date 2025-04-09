@@ -4,7 +4,7 @@ class WeatherRequest
   class LocationNotFound < StandardError; end
 
   # Data Object to store forecast data.
-  Forecast = Data.define(:timestamp, :summary, :high_temp, :low_temp, :weather, :temp)
+  Forecast = Data.define(:timestamp, :summary, :high_temp, :low_temp, :weather, :temp, :wind_speed)
 
   # Duration of cache lifespan
   CACHE_TTL = 30.minutes
@@ -102,7 +102,8 @@ class WeatherRequest
       high_temp: response.dig("daily", 0, "temp", "max"),
       low_temp: response.dig("daily", 0, "temp", "min"),
       summary: nil,
-      weather: response.dig("current", "weather")
+      weather: response.dig("current", "weather"),
+      wind_speed: response.dig("current", "wind_speed")
     )
 
     @daily_forecasts = response["daily"].map do |daily|
@@ -114,7 +115,8 @@ class WeatherRequest
         high_temp: temp_hash["max"],
         low_temp: temp_hash["min"],
         summary: daily["summary"],
-        weather: daily["weather"]
+        weather: daily["weather"],
+        wind_speed: daily["wind_speed"]
       )
     end
 

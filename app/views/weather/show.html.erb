@@ -1,14 +1,19 @@
 <section class="forecast-today pb-5">
   <h2>Today's Forecast</h2>
   <dl>
+    <dt>Weather</dt>
+    <dd><%= weather_icon(@request.current_forecast, size: 50) %></dd>
+    <dd><%= @request.current_forecast.weather.first["main"] %></dd>
     <dt>Location</dt>
     <dd><%= @request.location %></dd>
     <dt>Current Temperature</dt>
-    <dd><%= @request.current_forecast.temp %></dd>
+    <dd><%= format_temp @request.current_forecast.temp %></dd>
     <dt>Current High Temperature</dt>
-    <dd><%= @request.current_forecast.high_temp %>
+    <dd><%= format_temp @request.current_forecast.high_temp %>
     <dt>Current Low Temperature</dt>
-    <dd><%= @request.current_forecast.low_temp %>
+    <dd><%= format_temp @request.current_forecast.low_temp %>
+    <dt>Wind speed (miles/hour)</dt>
+    <dd><%= @request.current_forecast.wind_speed %>
     <dt>Cache Status</dt>
     <dd><%= cache_status(@report) %></dd>
   </dl>
@@ -21,14 +26,19 @@
         <th scope="col">Date</th>
         <th scope="col">Summary</th>
         <th scope="col">Temperature</th>
+        <th scope="col">Wind speed (miles/hour)</th>
       </tr>
     </thead>
     <tbody>
       <% @request.daily_forecasts.each do |forecast| %>
         <tr>
           <td><%= forecast.timestamp.strftime("%a, %b %e") %></td>
-          <td><%= forecast.summary %></td>
-          <td><%= forecast.high_temp %> / <%= forecast.low_temp %></td>
+          <td>
+            <%= weather_icon(forecast) %>
+            <%= forecast.summary %>
+          </td>
+          <td><%= format_temp forecast.high_temp %> / <%= format_temp forecast.low_temp %></td>
+          <td><%= forecast.wind_speed %></td>
         </tr>
       <% end %>
     </tbody>
