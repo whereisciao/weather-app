@@ -20,6 +20,8 @@ gem "thruster", require: false
 gem "httparty"
 gem "dotenv"
 gem "geocoder"
+gem "sentry-ruby"
+gem "sentry-rails"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"

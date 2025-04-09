@@ -1,4 +1,8 @@
+# API class to interface with OpenWeather's One Call API.
 class OpenWeatherMap
+  # Error class to capture 401 Unauthorized
+  class Unauthorized < StandardError; end
+
   include HTTParty
   base_uri "https://api.openweathermap.org"
 
@@ -11,6 +15,8 @@ class OpenWeatherMap
     @api_key = api_key
   end
 
+  # API call to OpenWeather One Call API. Designed to ensure easy migration from Dark Sky API.
+  # https://openweathermap.org/api/one-call-3
   def one_call(lat:, lon:, units: DEFAULT_UNITS, exclude: DEFAULT_EXCLUDED)
     options = {
       query: {
@@ -26,7 +32,10 @@ class OpenWeatherMap
 
     if response.success?
       response
+    elsif response.unauthorized?
+      raise Unauthorized
     else
+      # Basic Error handling. Should expand to cover documented error codes.
       raise response["message"]
     end
   end
