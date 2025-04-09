@@ -1,4 +1,7 @@
 class WeatherRequest
+  # Generic Error for Weather Source issues
+  class LocationNotFound < StandardError; end
+
   Forecast = Data.define(:timestamp, :summary, :high_temp, :low_temp, :weather, :temp)
   CACHE_TTL = 30.minutes
 
@@ -59,6 +62,9 @@ class WeatherRequest
     if response.success? && !(response.body.nil? || response.body.empty?)
       response.parsed_response
     end
+
+  rescue Exception => error
+    raise LocationNotFound.new(error.message)
   end
 
   def weather_source

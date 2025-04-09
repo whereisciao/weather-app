@@ -56,7 +56,7 @@ RSpec.describe "Weathers", type: :request do
       end
     end
 
-    context "when geocoder fails" do
+    context "when geocoder fails to find a match" do
       let(:query) { "1 Santa Lane, North Pole" }
 
       it "gracely displays error message" do
@@ -66,6 +66,28 @@ RSpec.describe "Weathers", type: :request do
 
         follow_redirect!
         expect(response.body).to include("Sorry.")
+      end
+    end
+
+    context "when weather API can't find the location" do
+      let(:query) { "Seattle, WA" }
+
+      before do
+        stub_request(:get, /openweathermap/).
+          to_return(
+            status: 404,
+            headers: { "Content-Type" => "application/json; charset=utf-8" },
+            body: { "code" => 404, "message" => "Not Found" }.to_json
+          )
+      end
+
+      it "displays a 404 error" do
+        show_request
+
+        expect(response).to redirect_to(controller: :weather, action: :index)
+
+        follow_redirect!
+        expect(response.body).to include("We are unable to find the weather")
       end
     end
   end
