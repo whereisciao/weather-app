@@ -1,0 +1,212 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://places.googleapis.com/v1/places:autocomplete?key=<GOOGLE_MAPS_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"includedRegionCodes":["us"],"input":"123"}'
+    headers:
+      User-Agent:
+      - unknown/0.0.0 google-apis-places_v1/0.33.0 Mac OS X/15.3.2 (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Thu, 10 Apr 2025 17:47:40 GMT
+      X-Goog-Api-Client:
+      - gl-ruby/3.4.2 gdcl/1.33.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Vary:
+      - "*"
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      Date:
+      - Thu, 10 Apr 2025 17:47:40 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Server-Timing:
+      - gfet4t7; dur=22
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "suggestions": [
+            {
+              "placePrediction": {
+                "place": "places/ChIJYaRu1ulckFQR9dAezwHYjvk",
+                "placeId": "ChIJYaRu1ulckFQR9dAezwHYjvk",
+                "text": {
+                  "text": "1233 Andover Park East, Tukwila, WA, USA",
+                  "matches": [
+                    {
+                      "endOffset": 3
+                    }
+                  ]
+                },
+                "structuredFormat": {
+                  "mainText": {
+                    "text": "1233 Andover Park East",
+                    "matches": [
+                      {
+                        "endOffset": 3
+                      }
+                    ]
+                  },
+                  "secondaryText": {
+                    "text": "Tukwila, WA, USA"
+                  }
+                },
+                "types": [
+                  "geocode",
+                  "premise"
+                ]
+              }
+            },
+            {
+              "placePrediction": {
+                "place": "places/ChIJB9-onvRskFQRcarWAaltd6c",
+                "placeId": "ChIJB9-onvRskFQRcarWAaltd6c",
+                "text": {
+                  "text": "1231 116th Avenue Northeast, Bellevue, WA, USA",
+                  "matches": [
+                    {
+                      "endOffset": 3
+                    }
+                  ]
+                },
+                "structuredFormat": {
+                  "mainText": {
+                    "text": "1231 116th Avenue Northeast",
+                    "matches": [
+                      {
+                        "endOffset": 3
+                      }
+                    ]
+                  },
+                  "secondaryText": {
+                    "text": "Bellevue, WA, USA"
+                  }
+                },
+                "types": [
+                  "geocode",
+                  "premise"
+                ]
+              }
+            },
+            {
+              "placePrediction": {
+                "place": "places/ChIJv1gOCcJckFQROzJ_msmyzWk",
+                "placeId": "ChIJv1gOCcJckFQROzJ_msmyzWk",
+                "text": {
+                  "text": "1232 Andover Park West, Tukwila, WA, USA",
+                  "matches": [
+                    {
+                      "endOffset": 3
+                    }
+                  ]
+                },
+                "structuredFormat": {
+                  "mainText": {
+                    "text": "1232 Andover Park West",
+                    "matches": [
+                      {
+                        "endOffset": 3
+                      }
+                    ]
+                  },
+                  "secondaryText": {
+                    "text": "Tukwila, WA, USA"
+                  }
+                },
+                "types": [
+                  "geocode",
+                  "premise"
+                ]
+              }
+            },
+            {
+              "placePrediction": {
+                "place": "places/ChIJWwMw4bhqkFQRKP1lCphHwd0",
+                "placeId": "ChIJWwMw4bhqkFQRKP1lCphHwd0",
+                "text": {
+                  "text": "123 Broadway, Seattle, WA, USA",
+                  "matches": [
+                    {
+                      "endOffset": 3
+                    }
+                  ]
+                },
+                "structuredFormat": {
+                  "mainText": {
+                    "text": "123 Broadway",
+                    "matches": [
+                      {
+                        "endOffset": 3
+                      }
+                    ]
+                  },
+                  "secondaryText": {
+                    "text": "Seattle, WA, USA"
+                  }
+                },
+                "types": [
+                  "geocode",
+                  "subpremise"
+                ]
+              }
+            },
+            {
+              "placePrediction": {
+                "place": "places/ChIJLzsMV3tdkFQRPYgQ5GIZsRE",
+                "placeId": "ChIJLzsMV3tdkFQRPYgQ5GIZsRE",
+                "text": {
+                  "text": "12311 SE 166th St, Renton, WA, USA",
+                  "matches": [
+                    {
+                      "endOffset": 3
+                    }
+                  ]
+                },
+                "structuredFormat": {
+                  "mainText": {
+                    "text": "12311 SE 166th St",
+                    "matches": [
+                      {
+                        "endOffset": 3
+                      }
+                    ]
+                  },
+                  "secondaryText": {
+                    "text": "Renton, WA, USA"
+                  }
+                },
+                "types": [
+                  "geocode",
+                  "premise"
+                ]
+              }
+            }
+          ]
+        }
+  recorded_at: Thu, 10 Apr 2025 17:47:40 GMT
+recorded_with: VCR 6.3.1
