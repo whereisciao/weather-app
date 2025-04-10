@@ -1,3 +1,26 @@
+<script type="text/javascript">
+  $(function() {
+    $('#query').autocomplete({
+      source: function(request, response) {
+        $.ajax({
+          url: "/autocomplete",
+          dataType: "json",
+          data: { input: request.term },
+          success: function(data) {
+            response($.map(data.suggestions, function(suggestion) {
+              return {
+                label: suggestion,
+                value: suggestion
+              };
+            }));
+          }
+        });
+      },
+      minLength: 2
+    });
+  });
+</script>
+
 <%= form_with url: "/location", method: :get do |form| %>
   <%= form.label :query, "Search weather for:" %>
   <%= form.search_field :query, placeholder: "Address, City, or Zipcode", size: 75 %>

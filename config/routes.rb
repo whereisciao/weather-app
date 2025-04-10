@@ -11,5 +11,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   get "location" => "weather#show"
+  get "autocomplete" => "places_autocomplete#get"
   root "weather#index"
 end
