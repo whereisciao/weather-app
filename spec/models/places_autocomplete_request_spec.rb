@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe PlacesAutocompleteRequest do
   describe "#perform" do
     it "fetches place suggestions" do
-      VCR.use_cassette("place_suggestions", record: :all) do
+      VCR.use_cassette("place_suggestions") do
         request = described_class.new(input: "123")
 
         expect(request.perform).to eq(true)
