@@ -6,17 +6,15 @@ This Weather App was designed to fulfill a coding assigment within a reasonable 
 
 
 # Technical approach
-Given the requirements, it was not explicity necessary to create a data model to data to a database. This application was designed with a plain old Ruby object.
+* Given the requirements, it was not explicity necessary to create a data model to data to a database. This application was designed with a plain old Ruby object.
 
-`Rails.cache` was used to cache data. In development, a memory cache is used. In production, the application is configured to use Solid Cache, which is a databased-back Active Support cache.
+* `Rails.cache` was used to cache data. In development, a memory cache is used. In production, the application is configured to use Solid Cache, which is a databased-back Active Support cache.
 
-Latitude and longitude coordinates are required to retrieve weather data. The `geocoder` gem is a robust geocoding library for converting street addresses into coordinates.
+* Latitude and longitude coordinates are required to retrieve weather data. The `geocoder` gem is a robust geocoding library for converting street addresses into coordinates. In production, a Redis cache should be setup. Redis was left off to allow another developer to start this app easier.
 
-Sentry.io was added for application monitoring.
+* Sentry.io was added for application monitoring.
 
-> Cache results for 30 minutes by zip code.
-
-To save on weather API requests, additional caching was added to save on municipalities and cities.
+* To save on weather API requests, additional caching was added to save on municipalities and cities.
 
 # Getting Started
 
