@@ -18,7 +18,7 @@ class PlacesAutocompleteRequest
 
   def suggestions
     response.suggestions.map do |suggestion|
-      suggestion.place_prediction.text.text
+      suggestion.place_prediction.text.text.sub(/\, USA\z/, "")
     end
   end
 
