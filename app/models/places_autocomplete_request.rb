@@ -28,10 +28,15 @@ class PlacesAutocompleteRequest
     )
     @response = service.autocomplete_place(request)
     true
+
+  rescue Google::Apis::ClientError => error
+    Sentry.capture_exception(error)
   end
 
   # Extract suggestions from response. Transform strings into desired format.
   def suggestions
+    return [] if response.nil?
+
     response.suggestions.map do |suggestion|
       suggestion.place_prediction.text.text.sub(/\, USA\z/, "")
     end
