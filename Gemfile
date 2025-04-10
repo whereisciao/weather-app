@@ -20,6 +20,7 @@ gem "thruster", require: false
 gem "httparty"
 gem "dotenv"
 gem "geocoder"
+gem "google-apis-places_v1"
 gem "sentry-ruby"
 gem "sentry-rails"
 
