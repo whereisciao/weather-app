@@ -28,11 +28,11 @@ RSpec.describe "PlacesAutocompletes", type: :request do
           )
       end
 
-      it "returns an empty" do
+      it "returns no suggestions" do
         get_request
 
         expect(response).to be_successful
-        expect(response.parsed_body).to be_empty
+        expect(response.parsed_body).to eq({ "suggestions" => [] })
       end
     end
   end

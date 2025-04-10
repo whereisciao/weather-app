@@ -12,7 +12,10 @@ class WeatherController < ApplicationController
   private
 
   def location_not_found
-    message = "Sorry. We are unable to find the weather for '#{params[:query]}'. Please try another address."
-    redirect_to root_path, alert: message
+    if params[:query].present?
+      flash[:alert] = "Sorry. We are unable to find the weather for '#{params[:query]}'. Please try another address."
+    end
+
+    redirect_to root_path
   end
 end
