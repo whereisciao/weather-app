@@ -5,7 +5,7 @@
     <dd><%= weather_icon(@request.current_forecast, size: 50) %></dd>
     <dd><%= @request.current_forecast.weather.first["main"] %></dd>
     <dt>Location</dt>
-    <dd><%= @request.location %></dd>
+    <dd><%= @request.formatted_address %></dd>
     <dt>Current Temperature</dt>
     <dd><%= format_temp @request.current_forecast.temp %></dd>
     <dt>Current High Temperature</dt>

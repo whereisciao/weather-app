@@ -9,13 +9,13 @@ class WeatherRequest
   # Duration of cache lifespan
   CACHE_TTL = 30.minutes
 
-  # City / municipalities value range used to set fallback caching
-  # https://nominatim.org/release-docs/latest/customize/Ranking/#search-rank
-  PLACE_RANK_CITY_RANGE = (13..16)
-
   # @return [String]
   #   The location to retrieve weather forecast.
   attr_reader :location
+
+  # @return [String]
+  #   The location's formatted address
+  attr_reader :formatted_address
 
   # @return [Float]
   #   Latitude of the first geocoded result
@@ -43,7 +43,7 @@ class WeatherRequest
 
   # Locations with a geocode result is valid enough to attempt to fetch the weather forecast
   def valid?
-    geocode_result.present?
+    geocode_result.present? && (geocode_result.types.include?("locality") || geocode_result.types.include?("street_address"))
   end
 
   # Given a location, get the geocode data, fetch weather forecast, then ingest the data.
@@ -51,6 +51,7 @@ class WeatherRequest
     return false unless valid?
 
     @lat, @lon = geocode_result.coordinates
+    @formatted_address = geocode_result.formatted_address
 
     @weather_response = fetch_or_request_weather_forecast
     set_weather_attributes(weather_response)
@@ -66,12 +67,12 @@ class WeatherRequest
     @cache_hit || false
   end
 
-  # Builds the cache_key used by Rails.cache. Results are cached by zipcode, then falls back on municipalities/cities.
+  # Builds the cache_key used by Rails.cache. Results are cached by zipcode, then falls back on place_id if precision is approx.
   def cache_key
     @cache_key ||= if geocode_result.postal_code.present?
-      "weather_#{geocode_result.postal_code}"
-    elsif PLACE_RANK_CITY_RANGE.include?(geocode_result.data["place_rank"])
-      "#{geocode_result.place_id}_#{geocode_result.data["name"].parameterize}"
+      "weather_#{geocode_result.postal_code.parameterize}"
+    elsif geocode_result.precision == "APPROXIMATE"
+      "place_id__#{geocode_result.place_id}"
     end
   end
 

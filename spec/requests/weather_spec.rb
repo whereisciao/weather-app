@@ -70,7 +70,7 @@ RSpec.describe "Weathers", type: :request do
       it "caches the result" do
         expect {
           show_request
-        }.to(change { Rails.cache.exist?("weather_V5P") }.from(false).to(true))
+        }.to(change { Rails.cache.exist?("weather_v5p-3w9") }.from(false).to(true))
       end
     end
 
