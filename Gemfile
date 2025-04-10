@@ -23,6 +23,7 @@ gem "geocoder"
 gem "google-apis-places_v1"
 gem "sentry-ruby"
 gem "sentry-rails"
+gem "redis"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
