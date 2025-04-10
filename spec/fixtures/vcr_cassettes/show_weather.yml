@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=2901%20NE%20Blakeley%20St,%20Seattle,%20WA%2098105
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=2901%20NE%20Blakeley%20St,%20Seattle,%20WA%2098105&key=<GOOGLE_MAPS_API_KEY>&language=en&sensor=false
     body:
       encoding: US-ASCII
       string: ''
@@ -13,31 +13,99 @@ http_interactions:
       - "*/*"
       User-Agent:
       - Ruby
+      Sentry-Trace:
+      - 7294a18f57024f219eace68d361fa60b-6359412323e44811-1
+      Baggage:
+      - sentry-trace_id=7294a18f57024f219eace68d361fa60b,sentry-sample_rate=1.0,sentry-sampled=true,sentry-environment=test,sentry-release=03b36f93c3fc23bc2dedddc89372c733edefb96d,sentry-public_key=c82d5787df86b4b23549b5d2ff517b56
   response:
     status:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx
-      Date:
-      - Wed, 09 Apr 2025 17:46:28 GMT
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 10 Apr 2025 20:01:38 GMT
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Goog-Maps-Metro-Area:
+      - Seattle, WA
+      Content-Security-Policy-Report-Only:
+      - script-src 'none'; form-action 'none'; frame-src 'none'; report-uri https://csp.withgoogle.com/csp/scaffolding/msaifdggmnwc:228:0
+      Cross-Origin-Opener-Policy-Report-Only:
+      - same-origin; report-to=msaifdggmnwc:228:0
+      Report-To:
+      - '{"group":"msaifdggmnwc:228:0","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/scaffolding/msaifdggmnwc:228:0"}],}'
+      Server:
+      - mafe
       Content-Length:
-      - '798'
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - timeout=20
+      - '3507'
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server-Timing:
+      - gfet4t7; dur=86
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        W3sicGxhY2VfaWQiOjMwMTI2MjM3OCwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwOi8vb3NtLm9yZy9jb3B5cmlnaHQiLCJvc21fdHlwZSI6Im5vZGUiLCJvc21faWQiOjI0NjIzMjU1OTUsImxhdCI6IjQ3LjY2NTc4NDUiLCJsb24iOiItMTIyLjI5NzAzNzEiLCJjbGFzcyI6InBsYWNlIiwidHlwZSI6ImhvdXNlIiwicGxhY2VfcmFuayI6MzAsImltcG9ydGFuY2UiOjcuNzI5ODM5MDE3MzE0NDRlLTA1LCJhZGRyZXNzdHlwZSI6InBsYWNlIiwibmFtZSI6IiIsImRpc3BsYXlfbmFtZSI6IjI5MDEsIE5vcnRoZWFzdCBCbGFrZWxleSBTdHJlZXQsIFVuaXZlcnNpdHkgUGFyaywgVW5pdmVyc2l0eSBEaXN0cmljdCwgU2VhdHRsZSwgS2luZyBDb3VudHksIFdhc2hpbmd0b24sIDk4MTA1LCBVbml0ZWQgU3RhdGVzIiwiYWRkcmVzcyI6eyJob3VzZV9udW1iZXIiOiIyOTAxIiwicm9hZCI6Ik5vcnRoZWFzdCBCbGFrZWxleSBTdHJlZXQiLCJuZWlnaGJvdXJob29kIjoiVW5pdmVyc2l0eSBQYXJrIiwic3VidXJiIjoiVW5pdmVyc2l0eSBEaXN0cmljdCIsImNpdHkiOiJTZWF0dGxlIiwiY291bnR5IjoiS2luZyBDb3VudHkiLCJzdGF0ZSI6Ildhc2hpbmd0b24iLCJJU08zMTY2LTItbHZsNCI6IlVTLVdBIiwicG9zdGNvZGUiOiI5ODEwNSIsImNvdW50cnkiOiJVbml0ZWQgU3RhdGVzIiwiY291bnRyeV9jb2RlIjoidXMifSwiYm91bmRpbmdib3giOlsiNDcuNjY1NzM0NSIsIjQ3LjY2NTgzNDUiLCItMTIyLjI5NzA4NzEiLCItMTIyLjI5Njk4NzEiXX1d
-  recorded_at: Wed, 09 Apr 2025 17:46:28 GMT
+      encoding: UTF-8
+      string: "{\n   \"results\" : \n   [\n      {\n         \"address_components\"
+        : \n         [\n            {\n               \"long_name\" : \"2901\",\n
+        \              \"short_name\" : \"2901\",\n               \"types\" : \n               [\n
+        \                 \"street_number\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"Northeast Blakeley Street\",\n               \"short_name\"
+        : \"NE Blakeley St\",\n               \"types\" : \n               [\n                  \"route\"\n
+        \              ]\n            },\n            {\n               \"long_name\"
+        : \"Ravenna\",\n               \"short_name\" : \"Ravenna\",\n               \"types\"
+        : \n               [\n                  \"neighborhood\",\n                  \"political\"\n
+        \              ]\n            },\n            {\n               \"long_name\"
+        : \"Seattle\",\n               \"short_name\" : \"Seattle\",\n               \"types\"
+        : \n               [\n                  \"locality\",\n                  \"political\"\n
+        \              ]\n            },\n            {\n               \"long_name\"
+        : \"King County\",\n               \"short_name\" : \"King County\",\n               \"types\"
+        : \n               [\n                  \"administrative_area_level_2\",\n
+        \                 \"political\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"Washington\",\n               \"short_name\"
+        : \"WA\",\n               \"types\" : \n               [\n                  \"administrative_area_level_1\",\n
+        \                 \"political\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"United States\",\n               \"short_name\"
+        : \"US\",\n               \"types\" : \n               [\n                  \"country\",\n
+        \                 \"political\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"98105\",\n               \"short_name\" :
+        \"98105\",\n               \"types\" : \n               [\n                  \"postal_code\"\n
+        \              ]\n            },\n            {\n               \"long_name\"
+        : \"3168\",\n               \"short_name\" : \"3168\",\n               \"types\"
+        : \n               [\n                  \"postal_code_suffix\"\n               ]\n
+        \           }\n         ],\n         \"formatted_address\" : \"2901 NE Blakeley
+        St, Seattle, WA 98105, USA\",\n         \"geometry\" : \n         {\n            \"bounds\"
+        : \n            {\n               \"northeast\" : \n               {\n                  \"lat\"
+        : 47.6662584,\n                  \"lng\" : -122.2973252\n               },\n
+        \              \"southwest\" : \n               {\n                  \"lat\"
+        : 47.6658412,\n                  \"lng\" : -122.2980224\n               }\n
+        \           },\n            \"location\" : \n            {\n               \"lat\"
+        : 47.6660754,\n               \"lng\" : -122.2976917\n            },\n            \"location_type\"
+        : \"ROOFTOP\",\n            \"viewport\" : \n            {\n               \"northeast\"
+        : \n               {\n                  \"lat\" : 47.6674073302915,\n                  \"lng\"
+        : -122.2963248197085\n               },\n               \"southwest\" : \n
+        \              {\n                  \"lat\" : 47.6647093697085,\n                  \"lng\"
+        : -122.2990227802915\n               }\n            }\n         },\n         \"navigation_points\"
+        : \n         [\n            {\n               \"location\" : \n               {\n
+        \                 \"latitude\" : 47.6662201,\n                  \"longitude\"
+        : -122.2975397\n               }\n            }\n         ],\n         \"place_id\"
+        : \"ChIJI6eoAYcUkFQR0N9iQ38_9Xk\",\n         \"types\" : \n         [\n            \"premise\",\n
+        \           \"street_address\"\n         ]\n      }\n   ],\n   \"status\"
+        : \"OK\"\n}"
+  recorded_at: Thu, 10 Apr 2025 20:01:37 GMT
 - request:
     method: get
-    uri: https://api.openweathermap.org/data/3.0/onecall?appid=<OPEN_WEATHER_MAP_API>&exclude=minutely,hourly&lat=47.6657845&lon=-122.2970371&units=imperial
+    uri: https://api.openweathermap.org/data/3.0/onecall?appid=<OPEN_WEATHER_MAP_API>&exclude=minutely,hourly&lat=47.6660754&lon=-122.2976917&units=imperial
     body:
       encoding: US-ASCII
       string: ''
@@ -56,11 +124,11 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Wed, 09 Apr 2025 17:46:28 GMT
+      - Thu, 10 Apr 2025 20:01:38 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '4659'
+      - '4662'
       Connection:
       - keep-alive
       X-Cache-Key:
@@ -73,28 +141,28 @@ http_interactions:
       - GET, POST
     body:
       encoding: UTF-8
-      string: '{"lat":47.6658,"lon":-122.297,"timezone":"America/Los_Angeles","timezone_offset":-25200,"current":{"dt":1744220788,"sunrise":1744205456,"sunset":1744253396,"temp":52.86,"feels_like":51.33,"pressure":1025,"humidity":74,"dew_point":44.82,"uvi":3.11,"clouds":75,"visibility":10000,"wind_speed":6.91,"wind_deg":130,"weather":[{"id":803,"main":"Clouds","description":"broken
-        clouds","icon":"04d"}]},"daily":[{"dt":1744228800,"sunrise":1744205456,"sunset":1744253396,"moonrise":1744242300,"moonset":1744201740,"moon_phase":0.4,"summary":"There
-        will be partly cloudy today","temp":{"day":55.44,"min":42.17,"max":62.85,"night":49.48,"eve":55.78,"morn":44.94},"feels_like":{"day":53.78,"night":49.48,"eve":53.49,"morn":42.31},"pressure":1025,"humidity":66,"dew_point":44.28,"wind_speed":9.98,"wind_deg":189,"wind_gust":27.02,"weather":[{"id":803,"main":"Clouds","description":"broken
-        clouds","icon":"04d"}],"clouds":69,"pop":0,"uvi":4.62},{"dt":1744315200,"sunrise":1744291739,"sunset":1744339881,"moonrise":1744332720,"moonset":1744288920,"moon_phase":0.43,"summary":"Expect
-        a day of partly cloudy with rain","temp":{"day":64.62,"min":45.73,"max":64.62,"night":45.79,"eve":49.84,"morn":46.22},"feels_like":{"day":62.8,"night":39.83,"eve":45.54,"morn":46.22},"pressure":1014,"humidity":43,"dew_point":41.58,"wind_speed":17.58,"wind_deg":211,"wind_gust":39.41,"weather":[{"id":501,"main":"Rain","description":"moderate
-        rain","icon":"10d"}],"clouds":97,"pop":1,"rain":4.92,"uvi":3.88},{"dt":1744401600,"sunrise":1744378022,"sunset":1744426366,"moonrise":1744423080,"moonset":1744376100,"moon_phase":0.46,"summary":"Expect
-        a day of partly cloudy with rain","temp":{"day":51.35,"min":40.35,"max":53.35,"night":40.35,"eve":45.5,"morn":41.59},"feels_like":{"day":48.81,"night":35.71,"eve":42.53,"morn":37.65},"pressure":1025,"humidity":56,"dew_point":35.26,"wind_speed":12.19,"wind_deg":187,"wind_gust":27.83,"weather":[{"id":500,"main":"Rain","description":"light
-        rain","icon":"10d"}],"clouds":77,"pop":1,"rain":2.01,"uvi":3.82},{"dt":1744488000,"sunrise":1744464306,"sunset":1744512851,"moonrise":1744513440,"moonset":1744463280,"moon_phase":0.5,"summary":"Expect
-        a day of partly cloudy with rain","temp":{"day":53.11,"min":38.66,"max":53.11,"night":40.21,"eve":44.15,"morn":39.67},"feels_like":{"day":50.47,"night":37.58,"eve":40.98,"morn":37.15},"pressure":1025,"humidity":50,"dew_point":34.43,"wind_speed":8.75,"wind_deg":49,"wind_gust":13.29,"weather":[{"id":500,"main":"Rain","description":"light
-        rain","icon":"10d"}],"clouds":56,"pop":1,"rain":2.18,"uvi":3.52},{"dt":1744574400,"sunrise":1744550590,"sunset":1744599336,"moonrise":1744603920,"moonset":1744550580,"moon_phase":0.52,"summary":"There
-        will be partly cloudy today","temp":{"day":56.01,"min":40.8,"max":56.01,"night":43.07,"eve":46.08,"morn":41.22},"feels_like":{"day":53.19,"night":40.44,"eve":43.27,"morn":39.42},"pressure":1026,"humidity":40,"dew_point":31.89,"wind_speed":7.81,"wind_deg":341,"wind_gust":11.97,"weather":[{"id":803,"main":"Clouds","description":"broken
-        clouds","icon":"04d"}],"clouds":57,"pop":0,"uvi":4},{"dt":1744660800,"sunrise":1744636876,"sunset":1744685821,"moonrise":1744694460,"moonset":1744638060,"moon_phase":0.55,"summary":"There
-        will be partly cloudy today","temp":{"day":57.27,"min":40.01,"max":57.27,"night":46.42,"eve":48.92,"morn":43.59},"feels_like":{"day":55.06,"night":44.02,"eve":45.82,"morn":41.18},"pressure":1022,"humidity":50,"dew_point":38.46,"wind_speed":9.15,"wind_deg":349,"wind_gust":20.18,"weather":[{"id":804,"main":"Clouds","description":"overcast
-        clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":4},{"dt":1744747200,"sunrise":1744723162,"sunset":1744772306,"moonrise":1744785060,"moonset":1744725720,"moon_phase":0.58,"summary":"There
-        will be partly cloudy today","temp":{"day":59.95,"min":41.61,"max":59.95,"night":45.37,"eve":50.74,"morn":45.68},"feels_like":{"day":57.9,"night":43.68,"eve":48.79,"morn":45.68},"pressure":1022,"humidity":48,"dew_point":40.3,"wind_speed":7.34,"wind_deg":343,"wind_gust":12.1,"weather":[{"id":802,"main":"Clouds","description":"scattered
-        clouds","icon":"03d"}],"clouds":25,"pop":0,"uvi":4},{"dt":1744833600,"sunrise":1744809449,"sunset":1744858791,"moonrise":0,"moonset":1744813860,"moon_phase":0.61,"summary":"Expect
-        a day of partly cloudy with clear spells","temp":{"day":60.85,"min":41.77,"max":60.85,"night":46.65,"eve":50.52,"morn":45.9},"feels_like":{"day":58.66,"night":44.83,"eve":48.24,"morn":45.9},"pressure":1024,"humidity":43,"dew_point":38.01,"wind_speed":7.09,"wind_deg":341,"wind_gust":8.43,"weather":[{"id":803,"main":"Clouds","description":"broken
-        clouds","icon":"04d"}],"clouds":79,"pop":0,"uvi":4}]}'
-  recorded_at: Wed, 09 Apr 2025 17:46:28 GMT
+      string: '{"lat":47.6661,"lon":-122.2977,"timezone":"America/Los_Angeles","timezone_offset":-25200,"current":{"dt":1744315298,"sunrise":1744291739,"sunset":1744339881,"temp":63.66,"feels_like":62.51,"pressure":1015,"humidity":59,"dew_point":49.08,"uvi":4.34,"clouds":100,"visibility":10000,"wind_speed":10,"wind_deg":143,"wind_gust":20,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}]},"daily":[{"dt":1744315200,"sunrise":1744291739,"sunset":1744339881,"moonrise":1744332720,"moonset":1744288920,"moon_phase":0.43,"summary":"Expect
+        a day of partly cloudy with rain","temp":{"day":63.66,"min":45.72,"max":63.66,"night":51.62,"eve":55.44,"morn":46.99},"feels_like":{"day":62.51,"night":50.76,"eve":54.72,"morn":45.61},"pressure":1015,"humidity":59,"dew_point":49.08,"wind_speed":14.18,"wind_deg":200,"wind_gust":35.75,"weather":[{"id":501,"main":"Rain","description":"moderate
+        rain","icon":"10d"}],"clouds":100,"pop":1,"rain":2.26,"uvi":4.34},{"dt":1744401600,"sunrise":1744378022,"sunset":1744426366,"moonrise":1744423080,"moonset":1744376100,"moon_phase":0.46,"summary":"There
+        will be partly cloudy today","temp":{"day":51.12,"min":43.11,"max":51.85,"night":44.04,"eve":47.39,"morn":43.11},"feels_like":{"day":48.47,"night":40.73,"eve":44.15,"morn":40.32},"pressure":1025,"humidity":54,"dew_point":34.97,"wind_speed":9.75,"wind_deg":186,"wind_gust":24.92,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":87,"pop":0,"uvi":2.45},{"dt":1744488000,"sunrise":1744464306,"sunset":1744512851,"moonrise":1744513440,"moonset":1744463280,"moon_phase":0.5,"summary":"Expect
+        a day of partly cloudy with rain","temp":{"day":50.76,"min":39.63,"max":52.12,"night":40.66,"eve":47.89,"morn":40.19},"feels_like":{"day":48.07,"night":38.39,"eve":44.64,"morn":37.51},"pressure":1026,"humidity":54,"dew_point":34.77,"wind_speed":8.12,"wind_deg":27,"wind_gust":18.99,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"clouds":69,"pop":1,"rain":1.79,"uvi":3.1},{"dt":1744574400,"sunrise":1744550591,"sunset":1744599336,"moonrise":1744603920,"moonset":1744550580,"moon_phase":0.52,"summary":"There
+        will be partly cloudy today","temp":{"day":55.17,"min":39.43,"max":55.99,"night":43.02,"eve":46.58,"morn":39.43},"feels_like":{"day":52.54,"night":39.72,"eve":43.72,"morn":37.17},"pressure":1027,"humidity":46,"dew_point":34.27,"wind_speed":8.3,"wind_deg":350,"wind_gust":14.27,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":4.6},{"dt":1744660800,"sunrise":1744636876,"sunset":1744685821,"moonrise":1744694460,"moonset":1744638060,"moon_phase":0.55,"summary":"There
+        will be partly cloudy today","temp":{"day":59.36,"min":42.53,"max":59.36,"night":47.64,"eve":49.93,"morn":45.3},"feels_like":{"day":57.25,"night":46.42,"eve":48.13,"morn":42.57},"pressure":1020,"humidity":48,"dew_point":39.25,"wind_speed":7.87,"wind_deg":346,"wind_gust":13.76,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":4.38},{"dt":1744747200,"sunrise":1744723162,"sunset":1744772306,"moonrise":1744785060,"moonset":1744725720,"moon_phase":0.58,"summary":"There
+        will be partly cloudy today","temp":{"day":63.19,"min":46.18,"max":64.02,"night":49.93,"eve":54.99,"morn":49.66},"feels_like":{"day":61.47,"night":49.46,"eve":53.53,"morn":49.66},"pressure":1018,"humidity":48,"dew_point":43.21,"wind_speed":5.01,"wind_deg":10,"wind_gust":5.88,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":95,"pop":0,"uvi":5},{"dt":1744833600,"sunrise":1744809449,"sunset":1744858791,"moonrise":0,"moonset":1744813860,"moon_phase":0.61,"summary":"There
+        will be partly cloudy today","temp":{"day":64.58,"min":45.7,"max":64.58,"night":48.58,"eve":53.19,"morn":48.25},"feels_like":{"day":62.15,"night":48.58,"eve":51.4,"morn":46.51},"pressure":1019,"humidity":30,"dew_point":32.41,"wind_speed":4.72,"wind_deg":204,"wind_gust":9.48,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":5},{"dt":1744920000,"sunrise":1744895737,"sunset":1744945276,"moonrise":1744875420,"moonset":1744902480,"moon_phase":0.65,"summary":"There
+        will be partly cloudy today","temp":{"day":63.18,"min":44.51,"max":63.18,"night":50.83,"eve":50.41,"morn":48.52},"feels_like":{"day":60.84,"night":49.19,"eve":48.78,"morn":47.93},"pressure":1018,"humidity":35,"dew_point":35.24,"wind_speed":6.76,"wind_deg":332,"wind_gust":8.63,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":5}]}'
+  recorded_at: Thu, 10 Apr 2025 20:01:38 GMT
 - request:
     method: get
-    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=1%20Apple%20Park%20Way,%20Cupertino,%20CA%2095014
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=1%20Apple%20Park%20Way,%20Cupertino,%20CA%2095014&key=<GOOGLE_MAPS_API_KEY>&language=en&sensor=false
     body:
       encoding: US-ASCII
       string: ''
@@ -105,31 +173,93 @@ http_interactions:
       - "*/*"
       User-Agent:
       - Ruby
+      Sentry-Trace:
+      - 05e72c4d863d4a53ab4a8ca9c4093480-20786ce2253d4749-1
+      Baggage:
+      - sentry-trace_id=05e72c4d863d4a53ab4a8ca9c4093480,sentry-sample_rate=1.0,sentry-sampled=true,sentry-environment=test,sentry-release=03b36f93c3fc23bc2dedddc89372c733edefb96d,sentry-public_key=c82d5787df86b4b23549b5d2ff517b56
   response:
     status:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx
-      Date:
-      - Wed, 09 Apr 2025 17:46:30 GMT
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 10 Apr 2025 20:01:38 GMT
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Goog-Maps-Metro-Area:
+      - San Jose, CA
+      Content-Security-Policy-Report-Only:
+      - script-src 'none'; form-action 'none'; frame-src 'none'; report-uri https://csp.withgoogle.com/csp/scaffolding/msaifdggmnwc:228:0
+      Cross-Origin-Opener-Policy-Report-Only:
+      - same-origin; report-to=msaifdggmnwc:228:0
+      Report-To:
+      - '{"group":"msaifdggmnwc:228:0","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/scaffolding/msaifdggmnwc:228:0"}],}'
+      Server:
+      - mafe
       Content-Length:
-      - '5752'
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - timeout=20
+      - '3059'
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server-Timing:
+      - gfet4t7; dur=62
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        W3sicGxhY2VfaWQiOjI5OTUwMTUwNSwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwOi8vb3NtLm9yZy9jb3B5cmlnaHQiLCJvc21fdHlwZSI6Im5vZGUiLCJvc21faWQiOjg2NjY0OTA3MzcsImxhdCI6IjM3LjMzNjIwNjUiLCJsb24iOiItMTIyLjAwNjk5NjIiLCJjbGFzcyI6ImFtZW5pdHkiLCJ0eXBlIjoiZmFzdF9mb29kIiwicGxhY2VfcmFuayI6MzAsImltcG9ydGFuY2UiOjUuOTMxMjU4MTA2MzUwODMxNWUtMDUsImFkZHJlc3N0eXBlIjoiYW1lbml0eSIsIm5hbWUiOiJDYWZmw6ggTWFjcyIsImRpc3BsYXlfbmFtZSI6IkNhZmbDqCBNYWNzLCAxLCBBcHBsZSBQYXJrIFdheSwgQ3VwZXJ0aW5vLCBTYW50YSBDbGFyYSBDb3VudHksIENhbGlmb3JuaWEsIDk0MDg3LCBVbml0ZWQgU3RhdGVzIiwiYWRkcmVzcyI6eyJhbWVuaXR5IjoiQ2FmZsOoIE1hY3MiLCJob3VzZV9udW1iZXIiOiIxIiwicm9hZCI6IkFwcGxlIFBhcmsgV2F5IiwiY2l0eSI6IkN1cGVydGlubyIsImNvdW50eSI6IlNhbnRhIENsYXJhIENvdW50eSIsInN0YXRlIjoiQ2FsaWZvcm5pYSIsIklTTzMxNjYtMi1sdmw0IjoiVVMtQ0EiLCJwb3N0Y29kZSI6Ijk0MDg3IiwiY291bnRyeSI6IlVuaXRlZCBTdGF0ZXMiLCJjb3VudHJ5X2NvZGUiOiJ1cyJ9LCJib3VuZGluZ2JveCI6WyIzNy4zMzYxNTY1IiwiMzcuMzM2MjU2NSIsIi0xMjIuMDA3MDQ2MiIsIi0xMjIuMDA2OTQ2MiJdfSx7InBsYWNlX2lkIjoyOTg0NjkxODcsImxpY2VuY2UiOiJEYXRhIMKpIE9wZW5TdHJlZXRNYXAgY29udHJpYnV0b3JzLCBPRGJMIDEuMC4gaHR0cDovL29zbS5vcmcvY29weXJpZ2h0Iiwib3NtX3R5cGUiOiJub2RlIiwib3NtX2lkIjoxMTMzNDk2MjY1NCwibGF0IjoiMzcuMzMwMjcwOSIsImxvbiI6Ii0xMjIuMDA3OTc1MyIsImNsYXNzIjoiYW1lbml0eSIsInR5cGUiOiJiZW5jaCIsInBsYWNlX3JhbmsiOjMwLCJpbXBvcnRhbmNlIjo2LjU1NzQ4ODM2NDk5MTI1M2UtMDUsImFkZHJlc3N0eXBlIjoiYW1lbml0eSIsIm5hbWUiOiIiLCJkaXNwbGF5X25hbWUiOiIxLCBBcHBsZSBQYXJrIFdheSwgQ3VwZXJ0aW5vLCBTYW50YSBDbGFyYSBDb3VudHksIENhbGlmb3JuaWEsIDk0MDg3LCBVbml0ZWQgU3RhdGVzIiwiYWRkcmVzcyI6eyJob3VzZV9udW1iZXIiOiIxIiwicm9hZCI6IkFwcGxlIFBhcmsgV2F5IiwiY2l0eSI6IkN1cGVydGlubyIsImNvdW50eSI6IlNhbnRhIENsYXJhIENvdW50eSIsInN0YXRlIjoiQ2FsaWZvcm5pYSIsIklTTzMxNjYtMi1sdmw0IjoiVVMtQ0EiLCJwb3N0Y29kZSI6Ijk0MDg3IiwiY291bnRyeSI6IlVuaXRlZCBTdGF0ZXMiLCJjb3VudHJ5X2NvZGUiOiJ1cyJ9LCJib3VuZGluZ2JveCI6WyIzNy4zMzAyMjA5IiwiMzcuMzMwMzIwOSIsIi0xMjIuMDA4MDI1MyIsIi0xMjIuMDA3OTI1MyJdfSx7InBsYWNlX2lkIjozMDA4MzQ1NzEsImxpY2VuY2UiOiJEYXRhIMKpIE9wZW5TdHJlZXRNYXAgY29udHJpYnV0b3JzLCBPRGJMIDEuMC4gaHR0cDovL29zbS5vcmcvY29weXJpZ2h0Iiwib3NtX3R5cGUiOiJub2RlIiwib3NtX2lkIjo1MDYyNjQ1MjM5LCJsYXQiOiIzNy4zMjk0NTI0IiwibG9uIjoiLTEyMi4wMDk0NDgiLCJjbGFzcyI6ImhpZ2h3YXkiLCJ0eXBlIjoicHJpb3JpdHkiLCJwbGFjZV9yYW5rIjozMCwiaW1wb3J0YW5jZSI6Ni41NTc0ODgzNjQ5OTEyNTNlLTA1LCJhZGRyZXNzdHlwZSI6ImhpZ2h3YXkiLCJuYW1lIjoiIiwiZGlzcGxheV9uYW1lIjoiMSwgQXBwbGUgUGFyayBXYXksIEN1cGVydGlubywgU2FudGEgQ2xhcmEgQ291bnR5LCBDYWxpZm9ybmlhLCA5NDA4NywgVW5pdGVkIFN0YXRlcyIsImFkZHJlc3MiOnsiaG91c2VfbnVtYmVyIjoiMSIsInJvYWQiOiJBcHBsZSBQYXJrIFdheSIsImNpdHkiOiJDdXBlcnRpbm8iLCJjb3VudHkiOiJTYW50YSBDbGFyYSBDb3VudHkiLCJzdGF0ZSI6IkNhbGlmb3JuaWEiLCJJU08zMTY2LTItbHZsNCI6IlVTLUNBIiwicG9zdGNvZGUiOiI5NDA4NyIsImNvdW50cnkiOiJVbml0ZWQgU3RhdGVzIiwiY291bnRyeV9jb2RlIjoidXMifSwiYm91bmRpbmdib3giOlsiMzcuMzI5NDAyNCIsIjM3LjMyOTUwMjQiLCItMTIyLjAwOTQ5ODAiLCItMTIyLjAwOTM5ODAiXX0seyJwbGFjZV9pZCI6MzAwODM0NTg4LCJsaWNlbmNlIjoiRGF0YSDCqSBPcGVuU3RyZWV0TWFwIGNvbnRyaWJ1dG9ycywgT0RiTCAxLjAuIGh0dHA6Ly9vc20ub3JnL2NvcHlyaWdodCIsIm9zbV90eXBlIjoibm9kZSIsIm9zbV9pZCI6NzI3ODk3NzkyOSwibGF0IjoiMzcuMzMxMjUxNyIsImxvbiI6Ii0xMjIuMDA2MDU5NCIsImNsYXNzIjoiaGlnaHdheSIsInR5cGUiOiJidXNfc3RvcCIsInBsYWNlX3JhbmsiOjMwLCJpbXBvcnRhbmNlIjo2LjU1NzQ4ODM2NDk5MTI1M2UtMDUsImFkZHJlc3N0eXBlIjoiaGlnaHdheSIsIm5hbWUiOiIiLCJkaXNwbGF5X25hbWUiOiIxLCBBcHBsZSBQYXJrIFdheSwgQ3VwZXJ0aW5vLCBTYW50YSBDbGFyYSBDb3VudHksIENhbGlmb3JuaWEsIDk0MDg3LCBVbml0ZWQgU3RhdGVzIiwiYWRkcmVzcyI6eyJob3VzZV9udW1iZXIiOiIxIiwicm9hZCI6IkFwcGxlIFBhcmsgV2F5IiwiY2l0eSI6IkN1cGVydGlubyIsImNvdW50eSI6IlNhbnRhIENsYXJhIENvdW50eSIsInN0YXRlIjoiQ2FsaWZvcm5pYSIsIklTTzMxNjYtMi1sdmw0IjoiVVMtQ0EiLCJwb3N0Y29kZSI6Ijk0MDg3IiwiY291bnRyeSI6IlVuaXRlZCBTdGF0ZXMiLCJjb3VudHJ5X2NvZGUiOiJ1cyJ9LCJib3VuZGluZ2JveCI6WyIzNy4zMzEyMDE3IiwiMzcuMzMxMzAxNyIsIi0xMjIuMDA2MTA5NCIsIi0xMjIuMDA2MDA5NCJdfSx7InBsYWNlX2lkIjoyOTkwOTcxNDEsImxpY2VuY2UiOiJEYXRhIMKpIE9wZW5TdHJlZXRNYXAgY29udHJpYnV0b3JzLCBPRGJMIDEuMC4gaHR0cDovL29zbS5vcmcvY29weXJpZ2h0Iiwib3NtX3R5cGUiOiJ3YXkiLCJvc21faWQiOjM4Nzg5NjE5LCJsYXQiOiIzNy4zMzE2NzUiLCJsb24iOiItMTIyLjAwODI3NjQzNTc0MDk0IiwiY2xhc3MiOiJvZmZpY2UiLCJ0eXBlIjoiaXQiLCJwbGFjZV9yYW5rIjozMCwiaW1wb3J0YW5jZSI6NS45MzEyNTgxMDYzNTA4MzE1ZS0wNSwiYWRkcmVzc3R5cGUiOiJvZmZpY2UiLCJuYW1lIjoiQXBwbGUgUGFyayIsImRpc3BsYXlfbmFtZSI6IkFwcGxlIFBhcmssIDEsIEFwcGxlIFBhcmsgV2F5LCBDdXBlcnRpbm8sIFNhbnRhIENsYXJhIENvdW50eSwgQ2FsaWZvcm5pYSwgOTQwODcsIFVuaXRlZCBTdGF0ZXMiLCJhZGRyZXNzIjp7Im9mZmljZSI6IkFwcGxlIFBhcmsiLCJob3VzZV9udW1iZXIiOiIxIiwicm9hZCI6IkFwcGxlIFBhcmsgV2F5IiwiY2l0eSI6IkN1cGVydGlubyIsImNvdW50eSI6IlNhbnRhIENsYXJhIENvdW50eSIsInN0YXRlIjoiQ2FsaWZvcm5pYSIsIklTTzMxNjYtMi1sdmw0IjoiVVMtQ0EiLCJwb3N0Y29kZSI6Ijk0MDg3IiwiY291bnRyeSI6IlVuaXRlZCBTdGF0ZXMiLCJjb3VudHJ5X2NvZGUiOiJ1cyJ9LCJib3VuZGluZ2JveCI6WyIzNy4zMjU5NDA5IiwiMzcuMzM3NjQ1NyIsIi0xMjIuMDE0MDgyOCIsIi0xMjIuMDA0NjczNCJdfSx7InBsYWNlX2lkIjoyOTY4NTY1NTcsImxpY2VuY2UiOiJEYXRhIMKpIE9wZW5TdHJlZXRNYXAgY29udHJpYnV0b3JzLCBPRGJMIDEuMC4gaHR0cDovL29zbS5vcmcvY29weXJpZ2h0Iiwib3NtX3R5cGUiOiJyZWxhdGlvbiIsIm9zbV9pZCI6NTI4MTgzOCwibGF0IjoiMzcuMzM0ODM1MDQ5OTk5OTk1IiwibG9uIjoiLTEyMi4wMTEzOTE2NTk1NjgwNSIsImNsYXNzIjoib2ZmaWNlIiwidHlwZSI6ImNvbXBhbnkiLCJwbGFjZV9yYW5rIjozMCwiaW1wb3J0YW5jZSI6NS45MzEyNTgxMDYzNTA4MzE1ZS0wNSwiYWRkcmVzc3R5cGUiOiJvZmZpY2UiLCJuYW1lIjoiQXBwbGUgUGFyayIsImRpc3BsYXlfbmFtZSI6IkFwcGxlIFBhcmssIDEsIEFwcGxlIFBhcmsgV2F5LCBDdXBlcnRpbm8sIFNhbnRhIENsYXJhIENvdW50eSwgQ2FsaWZvcm5pYSwgOTQwODcsIFVuaXRlZCBTdGF0ZXMiLCJhZGRyZXNzIjp7Im9mZmljZSI6IkFwcGxlIFBhcmsiLCJob3VzZV9udW1iZXIiOiIxIiwicm9hZCI6IkFwcGxlIFBhcmsgV2F5IiwiY2l0eSI6IkN1cGVydGlubyIsImNvdW50eSI6IlNhbnRhIENsYXJhIENvdW50eSIsInN0YXRlIjoiQ2FsaWZvcm5pYSIsIklTTzMxNjYtMi1sdmw0IjoiVVMtQ0EiLCJwb3N0Y29kZSI6Ijk0MDg3IiwiY291bnRyeSI6IlVuaXRlZCBTdGF0ZXMiLCJjb3VudHJ5X2NvZGUiOiJ1cyJ9LCJib3VuZGluZ2JveCI6WyIzNy4zMzI2NzIwIiwiMzcuMzM3MDE1MSIsIi0xMjIuMDExNzQ2MCIsIi0xMjIuMDA2Mjg2MSJdfSx7InBsYWNlX2lkIjoyOTc2NjQ0MjIsImxpY2VuY2UiOiJEYXRhIMKpIE9wZW5TdHJlZXRNYXAgY29udHJpYnV0b3JzLCBPRGJMIDEuMC4gaHR0cDovL29zbS5vcmcvY29weXJpZ2h0Iiwib3NtX3R5cGUiOiJub2RlIiwib3NtX2lkIjoxMjA4ODUzMzQxMywibGF0IjoiMzcuMzMzMTU1NCIsImxvbiI6Ii0xMjIuMDA4MTQxNyIsImNsYXNzIjoib2ZmaWNlIiwidHlwZSI6Iml0IiwicGxhY2VfcmFuayI6MzAsImltcG9ydGFuY2UiOjUuOTMxMjU4MTA2MzUwODMxNWUtMDUsImFkZHJlc3N0eXBlIjoib2ZmaWNlIiwibmFtZSI6IlNlY3Rpb24gNCIsImRpc3BsYXlfbmFtZSI6IlNlY3Rpb24gNCwgMSwgQXBwbGUgUGFyayBXYXksIEN1cGVydGlubywgU2FudGEgQ2xhcmEgQ291bnR5LCBDYWxpZm9ybmlhLCA5NDA4NywgVW5pdGVkIFN0YXRlcyIsImFkZHJlc3MiOnsib2ZmaWNlIjoiU2VjdGlvbiA0IiwiaG91c2VfbnVtYmVyIjoiMSIsInJvYWQiOiJBcHBsZSBQYXJrIFdheSIsImNpdHkiOiJDdXBlcnRpbm8iLCJjb3VudHkiOiJTYW50YSBDbGFyYSBDb3VudHkiLCJzdGF0ZSI6IkNhbGlmb3JuaWEiLCJJU08zMTY2LTItbHZsNCI6IlVTLUNBIiwicG9zdGNvZGUiOiI5NDA4NyIsImNvdW50cnkiOiJVbml0ZWQgU3RhdGVzIiwiY291bnRyeV9jb2RlIjoidXMifSwiYm91bmRpbmdib3giOlsiMzcuMzMzMTA1NCIsIjM3LjMzMzIwNTQiLCItMTIyLjAwODE5MTciLCItMTIyLjAwODA5MTciXX0seyJwbGFjZV9pZCI6Mjk4NTUyNzY4LCJsaWNlbmNlIjoiRGF0YSDCqSBPcGVuU3RyZWV0TWFwIGNvbnRyaWJ1dG9ycywgT0RiTCAxLjAuIGh0dHA6Ly9vc20ub3JnL2NvcHlyaWdodCIsIm9zbV90eXBlIjoibm9kZSIsIm9zbV9pZCI6MTIwODg1MzM0MTEsImxhdCI6IjM3LjMzNTM2OTgiLCJsb24iOiItMTIyLjAwNjc4MjEiLCJjbGFzcyI6Im9mZmljZSIsInR5cGUiOiJpdCIsInBsYWNlX3JhbmsiOjMwLCJpbXBvcnRhbmNlIjo1LjkzMTI1ODEwNjM1MDgzMTVlLTA1LCJhZGRyZXNzdHlwZSI6Im9mZmljZSIsIm5hbWUiOiJTZWN0aW9uIDIiLCJkaXNwbGF5X25hbWUiOiJTZWN0aW9uIDIsIDEsIEFwcGxlIFBhcmsgV2F5LCBDdXBlcnRpbm8sIFNhbnRhIENsYXJhIENvdW50eSwgQ2FsaWZvcm5pYSwgOTQwODcsIFVuaXRlZCBTdGF0ZXMiLCJhZGRyZXNzIjp7Im9mZmljZSI6IlNlY3Rpb24gMiIsImhvdXNlX251bWJlciI6IjEiLCJyb2FkIjoiQXBwbGUgUGFyayBXYXkiLCJjaXR5IjoiQ3VwZXJ0aW5vIiwiY291bnR5IjoiU2FudGEgQ2xhcmEgQ291bnR5Iiwic3RhdGUiOiJDYWxpZm9ybmlhIiwiSVNPMzE2Ni0yLWx2bDQiOiJVUy1DQSIsInBvc3Rjb2RlIjoiOTQwODciLCJjb3VudHJ5IjoiVW5pdGVkIFN0YXRlcyIsImNvdW50cnlfY29kZSI6InVzIn0sImJvdW5kaW5nYm94IjpbIjM3LjMzNTMxOTgiLCIzNy4zMzU0MTk4IiwiLTEyMi4wMDY4MzIxIiwiLTEyMi4wMDY3MzIxIl19XQ==
-  recorded_at: Wed, 09 Apr 2025 17:46:30 GMT
+      encoding: UTF-8
+      string: "{\n   \"results\" : \n   [\n      {\n         \"address_components\"
+        : \n         [\n            {\n               \"long_name\" : \"1\",\n               \"short_name\"
+        : \"1\",\n               \"types\" : \n               [\n                  \"street_number\"\n
+        \              ]\n            },\n            {\n               \"long_name\"
+        : \"Apple Park Way\",\n               \"short_name\" : \"Apple Park Way\",\n
+        \              \"types\" : \n               [\n                  \"route\"\n
+        \              ]\n            },\n            {\n               \"long_name\"
+        : \"Cupertino\",\n               \"short_name\" : \"Cupertino\",\n               \"types\"
+        : \n               [\n                  \"locality\",\n                  \"political\"\n
+        \              ]\n            },\n            {\n               \"long_name\"
+        : \"Santa Clara County\",\n               \"short_name\" : \"Santa Clara County\",\n
+        \              \"types\" : \n               [\n                  \"administrative_area_level_2\",\n
+        \                 \"political\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"California\",\n               \"short_name\"
+        : \"CA\",\n               \"types\" : \n               [\n                  \"administrative_area_level_1\",\n
+        \                 \"political\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"United States\",\n               \"short_name\"
+        : \"US\",\n               \"types\" : \n               [\n                  \"country\",\n
+        \                 \"political\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"95014\",\n               \"short_name\" :
+        \"95014\",\n               \"types\" : \n               [\n                  \"postal_code\"\n
+        \              ]\n            },\n            {\n               \"long_name\"
+        : \"0642\",\n               \"short_name\" : \"0642\",\n               \"types\"
+        : \n               [\n                  \"postal_code_suffix\"\n               ]\n
+        \           }\n         ],\n         \"formatted_address\" : \"1 Apple Park
+        Way, Cupertino, CA 95014, USA\",\n         \"geometry\" : \n         {\n            \"location\"
+        : \n            {\n               \"lat\" : 37.3287379,\n               \"lng\"
+        : -122.0078912\n            },\n            \"location_type\" : \"ROOFTOP\",\n
+        \           \"viewport\" : \n            {\n               \"northeast\" :
+        \n               {\n                  \"lat\" : 37.3301088802915,\n                  \"lng\"
+        : -122.0065549697085\n               },\n               \"southwest\" : \n
+        \              {\n                  \"lat\" : 37.32741091970851,\n                  \"lng\"
+        : -122.0092529302915\n               }\n            }\n         },\n         \"navigation_points\"
+        : \n         [\n            {\n               \"location\" : \n               {\n
+        \                 \"latitude\" : 37.3287313,\n                  \"longitude\"
+        : -122.0078874\n               }\n            }\n         ],\n         \"place_id\"
+        : \"ChIJ3Q0aEfS1j4ARn3_mF2LesZs\",\n         \"plus_code\" : \n         {\n
+        \           \"compound_code\" : \"8XHR+FR Cupertino, CA\",\n            \"global_code\"
+        : \"849V8XHR+FR\"\n         },\n         \"types\" : \n         [\n            \"street_address\"\n
+        \        ]\n      }\n   ],\n   \"status\" : \"OK\"\n}"
+  recorded_at: Thu, 10 Apr 2025 20:01:38 GMT
 - request:
     method: get
-    uri: https://api.openweathermap.org/data/3.0/onecall?appid=<OPEN_WEATHER_MAP_API>&exclude=minutely,hourly&lat=37.3362065&lon=-122.0069962&units=imperial
+    uri: https://api.openweathermap.org/data/3.0/onecall?appid=<OPEN_WEATHER_MAP_API>&exclude=minutely,hourly&lat=37.3287379&lon=-122.0078912&units=imperial
     body:
       encoding: US-ASCII
       string: ''
@@ -148,15 +278,15 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Wed, 09 Apr 2025 17:46:31 GMT
+      - Thu, 10 Apr 2025 20:01:38 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '4656'
+      - '4733'
       Connection:
       - keep-alive
       X-Cache-Key:
-      - "/data/3.0/onecall?exclude=minutely%2Chourly&lat=37.34&lon=-122.01&units=imperial"
+      - "/data/3.0/onecall?exclude=minutely%2Chourly&lat=37.33&lon=-122.01&units=imperial"
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Credentials:
@@ -165,28 +295,30 @@ http_interactions:
       - GET, POST
     body:
       encoding: UTF-8
-      string: '{"lat":37.3362,"lon":-122.007,"timezone":"America/Los_Angeles","timezone_offset":-25200,"current":{"dt":1744220791,"sunrise":1744206068,"sunset":1744252645,"temp":67.87,"feels_like":67.05,"pressure":1021,"humidity":57,"dew_point":52.11,"uvi":5.35,"clouds":0,"visibility":10000,"wind_speed":3,"wind_deg":325,"wind_gust":3,"weather":[{"id":800,"main":"Clear","description":"clear
-        sky","icon":"01d"}]},"daily":[{"dt":1744228800,"sunrise":1744206068,"sunset":1744252645,"moonrise":1744242720,"moonset":1744200960,"moon_phase":0.4,"summary":"You
-        can expect clear sky in the morning, with partly cloudy in the afternoon","temp":{"day":67.77,"min":47.37,"max":67.87,"night":59.86,"eve":60.91,"morn":52.92},"feels_like":{"day":66.63,"night":58.28,"eve":58.86,"morn":51.8},"pressure":1021,"humidity":51,"dew_point":49.01,"wind_speed":7.99,"wind_deg":332,"wind_gust":10.31,"weather":[{"id":800,"main":"Clear","description":"clear
-        sky","icon":"01d"}],"clouds":2,"pop":0,"uvi":7.89},{"dt":1744315200,"sunrise":1744292382,"sunset":1744339098,"moonrise":1744332600,"moonset":1744288680,"moon_phase":0.43,"summary":"Expect
-        a day of partly cloudy with clear spells","temp":{"day":72.7,"min":54.27,"max":76.1,"night":58.44,"eve":64.2,"morn":54.27},"feels_like":{"day":71.17,"night":57.51,"eve":62.82,"morn":52.45},"pressure":1023,"humidity":32,"dew_point":40.6,"wind_speed":12.62,"wind_deg":323,"wind_gust":15.73,"weather":[{"id":804,"main":"Clouds","description":"overcast
-        clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":7.55},{"dt":1744401600,"sunrise":1744378697,"sunset":1744425552,"moonrise":1744422480,"moonset":1744376280,"moon_phase":0.46,"summary":"There
-        will be partly cloudy today","temp":{"day":72.23,"min":50.61,"max":72.72,"night":50.61,"eve":60.4,"morn":55.29},"feels_like":{"day":71.02,"night":49.08,"eve":58.78,"morn":54.66},"pressure":1019,"humidity":40,"dew_point":45.57,"wind_speed":9.84,"wind_deg":304,"wind_gust":12.24,"weather":[{"id":804,"main":"Clouds","description":"overcast
-        clouds","icon":"04d"}],"clouds":99,"pop":0,"uvi":7.25},{"dt":1744488000,"sunrise":1744465012,"sunset":1744512006,"moonrise":1744512360,"moonset":1744463940,"moon_phase":0.5,"summary":"There
-        will be partly cloudy until morning, then clearing","temp":{"day":71.89,"min":45.09,"max":71.89,"night":54.61,"eve":58.05,"morn":45.09},"feels_like":{"day":70.32,"night":52.97,"eve":56.55,"morn":43.5},"pressure":1015,"humidity":33,"dew_point":40.44,"wind_speed":9.4,"wind_deg":328,"wind_gust":8.46,"weather":[{"id":800,"main":"Clear","description":"clear
-        sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":7.09},{"dt":1744574400,"sunrise":1744551328,"sunset":1744598459,"moonrise":1744602300,"moonset":1744551720,"moon_phase":0.52,"summary":"Expect
-        a day of partly cloudy with clear spells","temp":{"day":77.22,"min":51.57,"max":78.13,"night":58.48,"eve":62.74,"morn":56.01},"feels_like":{"day":75.43,"night":56.57,"eve":60.98,"morn":54.41},"pressure":1013,"humidity":17,"dew_point":29.35,"wind_speed":8.52,"wind_deg":340,"wind_gust":8.63,"weather":[{"id":800,"main":"Clear","description":"clear
-        sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":8},{"dt":1744660800,"sunrise":1744637644,"sunset":1744684913,"moonrise":1744692360,"moonset":1744639680,"moon_phase":0.55,"summary":"There
-        will be clear sky today","temp":{"day":83.12,"min":54.46,"max":83.12,"night":61.48,"eve":67.01,"morn":59.2},"feels_like":{"day":80.56,"night":60.01,"eve":65.66,"morn":57.22},"pressure":1014,"humidity":18,"dew_point":36.34,"wind_speed":10.18,"wind_deg":321,"wind_gust":7.23,"weather":[{"id":800,"main":"Clear","description":"clear
-        sky","icon":"01d"}],"clouds":2,"pop":0,"uvi":8},{"dt":1744747200,"sunrise":1744723961,"sunset":1744771367,"moonrise":1744782420,"moonset":1744727880,"moon_phase":0.58,"summary":"There
-        will be clear sky today","temp":{"day":81.84,"min":56.82,"max":81.84,"night":59.14,"eve":62.92,"morn":61.18},"feels_like":{"day":79.86,"night":57.52,"eve":61.41,"morn":59.31},"pressure":1014,"humidity":22,"dew_point":39.47,"wind_speed":9.13,"wind_deg":338,"wind_gust":6.64,"weather":[{"id":800,"main":"Clear","description":"clear
-        sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":8},{"dt":1744833600,"sunrise":1744810279,"sunset":1744857822,"moonrise":1744872480,"moonset":1744816380,"moon_phase":0.61,"summary":"There
-        will be clear sky today","temp":{"day":84.4,"min":53.92,"max":84.4,"night":63.88,"eve":68.99,"morn":58.41},"feels_like":{"day":81.57,"night":62.28,"eve":67.66,"morn":56.71},"pressure":1013,"humidity":20,"dew_point":39.33,"wind_speed":9.66,"wind_deg":325,"wind_gust":7.96,"weather":[{"id":800,"main":"Clear","description":"clear
-        sky","icon":"01d"}],"clouds":3,"pop":0,"uvi":8}]}'
-  recorded_at: Wed, 09 Apr 2025 17:46:31 GMT
+      string: '{"lat":37.3287,"lon":-122.0079,"timezone":"America/Los_Angeles","timezone_offset":-25200,"current":{"dt":1744315298,"sunrise":1744292383,"sunset":1744339098,"temp":69.89,"feels_like":69.26,"pressure":1023,"humidity":57,"dew_point":53.98,"uvi":7.2,"clouds":100,"visibility":10000,"wind_speed":3,"wind_deg":0,"wind_gust":4,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}]},"daily":[{"dt":1744315200,"sunrise":1744292383,"sunset":1744339098,"moonrise":1744332600,"moonset":1744288680,"moon_phase":0.43,"summary":"Expect
+        a day of partly cloudy with clear spells","temp":{"day":69.89,"min":50.52,"max":71.82,"night":53.69,"eve":59.99,"morn":52.18},"feels_like":{"day":69.26,"night":52.43,"eve":58.05,"morn":51.28},"pressure":1023,"humidity":57,"dew_point":53.98,"wind_speed":11.9,"wind_deg":330,"wind_gust":14.43,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":7.23},{"dt":1744401600,"sunrise":1744378697,"sunset":1744425552,"moonrise":1744422480,"moonset":1744376280,"moon_phase":0.46,"summary":"There
+        will be partly cloudy today","temp":{"day":74.44,"min":50.11,"max":74.44,"night":50.11,"eve":59.68,"morn":56.08},"feels_like":{"day":73.38,"night":48.67,"eve":58.17,"morn":55.44},"pressure":1018,"humidity":38,"dew_point":46.17,"wind_speed":10.36,"wind_deg":316,"wind_gust":10.98,"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"clouds":68,"pop":0,"uvi":7.25},{"dt":1744488000,"sunrise":1744465012,"sunset":1744512005,"moonrise":1744512360,"moonset":1744463940,"moon_phase":0.5,"summary":"Expect
+        a day of partly cloudy with clear spells","temp":{"day":70.38,"min":45.79,"max":72.41,"night":50.54,"eve":60.69,"morn":45.79},"feels_like":{"day":68.38,"night":48.81,"eve":58.91,"morn":45.79},"pressure":1016,"humidity":27,"dew_point":33.39,"wind_speed":9.1,"wind_deg":329,"wind_gust":8.1,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":4,"pop":0,"uvi":7.23},{"dt":1744574400,"sunrise":1744551328,"sunset":1744598459,"moonrise":1744602300,"moonset":1744551720,"moon_phase":0.52,"summary":"There
+        will be clear sky today","temp":{"day":76.69,"min":49.3,"max":80.1,"night":59.47,"eve":64.06,"morn":50.02},"feels_like":{"day":75.24,"night":57.85,"eve":62.33,"morn":48.24},"pressure":1014,"humidity":25,"dew_point":38.52,"wind_speed":6.33,"wind_deg":344,"wind_gust":6.91,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":7.4},{"dt":1744660800,"sunrise":1744637645,"sunset":1744684913,"moonrise":1744692360,"moonset":1744639680,"moon_phase":0.55,"summary":"There
+        will be clear sky today","temp":{"day":84.83,"min":55.85,"max":84.83,"night":61.12,"eve":66.69,"morn":61.09},"feels_like":{"day":81.95,"night":59.85,"eve":65.55,"morn":59.34},"pressure":1012,"humidity":21,"dew_point":41.04,"wind_speed":8.52,"wind_deg":315,"wind_gust":6.33,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":7.52},{"dt":1744747200,"sunrise":1744723962,"sunset":1744771367,"moonrise":1744782420,"moonset":1744727880,"moon_phase":0.58,"summary":"The
+        day will start with partly cloudy through the late morning hours, transitioning
+        to clearing","temp":{"day":81.25,"min":55.58,"max":81.25,"night":57.47,"eve":62.96,"morn":59.7},"feels_like":{"day":79.75,"night":56.16,"eve":61.63,"morn":58.15},"pressure":1014,"humidity":27,"dew_point":43.9,"wind_speed":7.56,"wind_deg":325,"wind_gust":6.11,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":7,"pop":0,"uvi":8},{"dt":1744833600,"sunrise":1744810280,"sunset":1744857821,"moonrise":1744872480,"moonset":1744816380,"moon_phase":0.61,"summary":"Expect
+        a day of partly cloudy with clear spells","temp":{"day":79.79,"min":53.58,"max":79.79,"night":59,"eve":63.93,"morn":57.54},"feels_like":{"day":79.79,"night":57.38,"eve":62.38,"morn":56.1},"pressure":1015,"humidity":23,"dew_point":39.45,"wind_speed":8.41,"wind_deg":335,"wind_gust":7.76,"weather":[{"id":801,"main":"Clouds","description":"few
+        clouds","icon":"02d"}],"clouds":14,"pop":0,"uvi":8},{"dt":1744920000,"sunrise":1744896599,"sunset":1744944275,"moonrise":0,"moonset":1744905360,"moon_phase":0.65,"summary":"The
+        day will start with partly cloudy through the late morning hours, transitioning
+        to clearing","temp":{"day":84.92,"min":54.59,"max":84.92,"night":55.36,"eve":61.86,"morn":60.28},"feels_like":{"day":81.97,"night":53.98,"eve":60.57,"morn":58.21},"pressure":1012,"humidity":20,"dew_point":40.39,"wind_speed":7.56,"wind_deg":329,"wind_gust":7.49,"weather":[{"id":800,"main":"Clear","description":"clear
+        sky","icon":"01d"}],"clouds":0,"pop":0,"uvi":8}]}'
+  recorded_at: Thu, 10 Apr 2025 20:01:38 GMT
 - request:
     method: get
-    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=2651%20NE%2049th%20St,%20Seattle,%20WA%2098105
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=2651%20NE%2049th%20St,%20Seattle,%20WA%2098105&key=<GOOGLE_MAPS_API_KEY>&language=en&sensor=false
     body:
       encoding: US-ASCII
       string: ''
@@ -197,31 +329,112 @@ http_interactions:
       - "*/*"
       User-Agent:
       - Ruby
+      Sentry-Trace:
+      - e0856b8c23e149828fff1af907fe359f-520cdfb1edf84298-1
+      Baggage:
+      - sentry-trace_id=e0856b8c23e149828fff1af907fe359f,sentry-sample_rate=1.0,sentry-sampled=true,sentry-environment=test,sentry-release=03b36f93c3fc23bc2dedddc89372c733edefb96d,sentry-public_key=c82d5787df86b4b23549b5d2ff517b56
   response:
     status:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx
-      Date:
-      - Wed, 09 Apr 2025 17:46:31 GMT
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 10 Apr 2025 20:01:38 GMT
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Goog-Maps-Metro-Area:
+      - Seattle, WA
+      Content-Security-Policy-Report-Only:
+      - script-src 'none'; form-action 'none'; frame-src 'none'; report-uri https://csp.withgoogle.com/csp/scaffolding/msaifdggmnwc:228:0
+      Cross-Origin-Opener-Policy-Report-Only:
+      - same-origin; report-to=msaifdggmnwc:228:0
+      Report-To:
+      - '{"group":"msaifdggmnwc:228:0","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/scaffolding/msaifdggmnwc:228:0"}],}'
+      Server:
+      - mafe
       Content-Length:
-      - '3134'
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - timeout=20
+      - '4609'
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server-Timing:
+      - gfet4t7; dur=18
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        W3sicGxhY2VfaWQiOjMwMzEzNDEzNywibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwOi8vb3NtLm9yZy9jb3B5cmlnaHQiLCJvc21fdHlwZSI6IndheSIsIm9zbV9pZCI6NjQxMzk2MiwibGF0IjoiNDcuNjY0NDEyMjQ2ODQwOTkiLCJsb24iOiItMTIyLjMwMTMxMzk5NTQyMDgzIiwiY2xhc3MiOiJoaWdod2F5IiwidHlwZSI6InJlc2lkZW50aWFsIiwicGxhY2VfcmFuayI6MjYsImltcG9ydGFuY2UiOjAuMDUzNDEwNjMxNzIzNTA2NDksImFkZHJlc3N0eXBlIjoicm9hZCIsIm5hbWUiOiJOb3J0aGVhc3QgNDl0aCBTdHJlZXQiLCJkaXNwbGF5X25hbWUiOiJOb3J0aGVhc3QgNDl0aCBTdHJlZXQsIFVuaXZlcnNpdHkgUGFyaywgVW5pdmVyc2l0eSBEaXN0cmljdCwgU2VhdHRsZSwgS2luZyBDb3VudHksIFdhc2hpbmd0b24sIDk4MTA1LCBVbml0ZWQgU3RhdGVzIiwiYWRkcmVzcyI6eyJyb2FkIjoiTm9ydGhlYXN0IDQ5dGggU3RyZWV0IiwibmVpZ2hib3VyaG9vZCI6IlVuaXZlcnNpdHkgUGFyayIsInN1YnVyYiI6IlVuaXZlcnNpdHkgRGlzdHJpY3QiLCJjaXR5IjoiU2VhdHRsZSIsImNvdW50eSI6IktpbmcgQ291bnR5Iiwic3RhdGUiOiJXYXNoaW5ndG9uIiwiSVNPMzE2Ni0yLWx2bDQiOiJVUy1XQSIsInBvc3Rjb2RlIjoiOTgxMDUiLCJjb3VudHJ5IjoiVW5pdGVkIFN0YXRlcyIsImNvdW50cnlfY29kZSI6InVzIn0sImJvdW5kaW5nYm94IjpbIjQ3LjY2NDM5NjAiLCI0Ny42NjQ0MTUzIiwiLTEyMi4zMDE3MTkzIiwiLTEyMi4zMDA5MDYwIl19LHsicGxhY2VfaWQiOjMwMDQxMTQ4NywibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwOi8vb3NtLm9yZy9jb3B5cmlnaHQiLCJvc21fdHlwZSI6IndheSIsIm9zbV9pZCI6NDg1MjMzMjY1LCJsYXQiOiI0Ny42NjQyODkzMDU3NTM3NCIsImxvbiI6Ii0xMjIuMjk2Mjk4NjQ0NzY1NSIsImNsYXNzIjoiaGlnaHdheSIsInR5cGUiOiJzZXJ2aWNlIiwicGxhY2VfcmFuayI6MjcsImltcG9ydGFuY2UiOjAuMDQwMDc3Mjk4MzkwMTczMTgsImFkZHJlc3N0eXBlIjoicm9hZCIsIm5hbWUiOiJOb3J0aGVhc3QgNDl0aCBTdHJlZXQiLCJkaXNwbGF5X25hbWUiOiJOb3J0aGVhc3QgNDl0aCBTdHJlZXQsIFVuaXZlcnNpdHkgRGlzdHJpY3QsIFNlYXR0bGUsIEtpbmcgQ291bnR5LCBXYXNoaW5ndG9uLCA5ODEwNSwgVW5pdGVkIFN0YXRlcyIsImFkZHJlc3MiOnsicm9hZCI6Ik5vcnRoZWFzdCA0OXRoIFN0cmVldCIsInN1YnVyYiI6IlVuaXZlcnNpdHkgRGlzdHJpY3QiLCJjaXR5IjoiU2VhdHRsZSIsImNvdW50eSI6IktpbmcgQ291bnR5Iiwic3RhdGUiOiJXYXNoaW5ndG9uIiwiSVNPMzE2Ni0yLWx2bDQiOiJVUy1XQSIsInBvc3Rjb2RlIjoiOTgxMDUiLCJjb3VudHJ5IjoiVW5pdGVkIFN0YXRlcyIsImNvdW50cnlfY29kZSI6InVzIn0sImJvdW5kaW5nYm94IjpbIjQ3LjY2NDEyMzIiLCI0Ny42NjQyODk4IiwiLTEyMi4yOTcwMDExIiwiLTEyMi4yOTU2MjU4Il19LHsicGxhY2VfaWQiOjMwMDAwNTYwOSwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwOi8vb3NtLm9yZy9jb3B5cmlnaHQiLCJvc21fdHlwZSI6IndheSIsIm9zbV9pZCI6ODAxMzk0NCwibGF0IjoiNDcuNjY0MzI3MjcxNzUyMDkiLCJsb24iOiItMTIyLjI5OTk5MjY1OTA2MzQ2IiwiY2xhc3MiOiJoaWdod2F5IiwidHlwZSI6InNlcnZpY2UiLCJwbGFjZV9yYW5rIjoyNywiaW1wb3J0YW5jZSI6MC4wNDAwNzcyOTgzOTAxNzMxOCwiYWRkcmVzc3R5cGUiOiJyb2FkIiwibmFtZSI6Ik5vcnRoZWFzdCA0OXRoIFN0cmVldCIsImRpc3BsYXlfbmFtZSI6Ik5vcnRoZWFzdCA0OXRoIFN0cmVldCwgVW5pdmVyc2l0eSBWaWxsYWdlLCBVbml2ZXJzaXR5IERpc3RyaWN0LCBTZWF0dGxlLCBLaW5nIENvdW50eSwgV2FzaGluZ3RvbiwgOTgxMDUsIFVuaXRlZCBTdGF0ZXMiLCJhZGRyZXNzIjp7InJvYWQiOiJOb3J0aGVhc3QgNDl0aCBTdHJlZXQiLCJyZXRhaWwiOiJVbml2ZXJzaXR5IFZpbGxhZ2UiLCJzdWJ1cmIiOiJVbml2ZXJzaXR5IERpc3RyaWN0IiwiY2l0eSI6IlNlYXR0bGUiLCJjb3VudHkiOiJLaW5nIENvdW50eSIsInN0YXRlIjoiV2FzaGluZ3RvbiIsIklTTzMxNjYtMi1sdmw0IjoiVVMtV0EiLCJwb3N0Y29kZSI6Ijk4MTA1IiwiY291bnRyeSI6IlVuaXRlZCBTdGF0ZXMiLCJjb3VudHJ5X2NvZGUiOiJ1cyJ9LCJib3VuZGluZ2JveCI6WyI0Ny42NjQyODkxIiwiNDcuNjY0NDA0NyIsIi0xMjIuMzAwNTEzOSIsIi0xMjIuMjk5NDY4MyJdfSx7InBsYWNlX2lkIjoyOTk4NDQ3MTksImxpY2VuY2UiOiJEYXRhIMKpIE9wZW5TdHJlZXRNYXAgY29udHJpYnV0b3JzLCBPRGJMIDEuMC4gaHR0cDovL29zbS5vcmcvY29weXJpZ2h0Iiwib3NtX3R5cGUiOiJ3YXkiLCJvc21faWQiOjEwMDg0OTI1NDEsImxhdCI6IjQ3LjY2NDQxMTI1Mzk5MTAwNSIsImxvbiI6Ii0xMjIuMzAwNzA5OTEwNjk4NDMiLCJjbGFzcyI6ImhpZ2h3YXkiLCJ0eXBlIjoic2VydmljZSIsInBsYWNlX3JhbmsiOjI3LCJpbXBvcnRhbmNlIjowLjA0MDA3NzI5ODM5MDE3MzE4LCJhZGRyZXNzdHlwZSI6InJvYWQiLCJuYW1lIjoiTm9ydGhlYXN0IDQ5dGggU3RyZWV0IiwiZGlzcGxheV9uYW1lIjoiTm9ydGhlYXN0IDQ5dGggU3RyZWV0LCBVbml2ZXJzaXR5IFBhcmssIFVuaXZlcnNpdHkgRGlzdHJpY3QsIFNlYXR0bGUsIEtpbmcgQ291bnR5LCBXYXNoaW5ndG9uLCA5ODEwNSwgVW5pdGVkIFN0YXRlcyIsImFkZHJlc3MiOnsicm9hZCI6Ik5vcnRoZWFzdCA0OXRoIFN0cmVldCIsIm5laWdoYm91cmhvb2QiOiJVbml2ZXJzaXR5IFBhcmsiLCJzdWJ1cmIiOiJVbml2ZXJzaXR5IERpc3RyaWN0IiwiY2l0eSI6IlNlYXR0bGUiLCJjb3VudHkiOiJLaW5nIENvdW50eSIsInN0YXRlIjoiV2FzaGluZ3RvbiIsIklTTzMxNjYtMi1sdmw0IjoiVVMtV0EiLCJwb3N0Y29kZSI6Ijk4MTA1IiwiY291bnRyeSI6IlVuaXRlZCBTdGF0ZXMiLCJjb3VudHJ5X2NvZGUiOiJ1cyJ9LCJib3VuZGluZ2JveCI6WyI0Ny42NjQ0MDQ3IiwiNDcuNjY0NDE1MyIsIi0xMjIuMzAwOTA2MCIsIi0xMjIuMzAwNTEzOSJdfV0=
-  recorded_at: Wed, 09 Apr 2025 17:46:31 GMT
+      encoding: UTF-8
+      string: "{\n   \"results\" : \n   [\n      {\n         \"address_components\"
+        : \n         [\n            {\n               \"long_name\" : \"2651\",\n
+        \              \"short_name\" : \"2651\",\n               \"types\" : \n               [\n
+        \                 \"street_number\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"Northeast 49th Street\",\n               \"short_name\"
+        : \"NE 49th St\",\n               \"types\" : \n               [\n                  \"route\"\n
+        \              ]\n            },\n            {\n               \"long_name\"
+        : \"Ravenna\",\n               \"short_name\" : \"Ravenna\",\n               \"types\"
+        : \n               [\n                  \"neighborhood\",\n                  \"political\"\n
+        \              ]\n            },\n            {\n               \"long_name\"
+        : \"Seattle\",\n               \"short_name\" : \"Seattle\",\n               \"types\"
+        : \n               [\n                  \"locality\",\n                  \"political\"\n
+        \              ]\n            },\n            {\n               \"long_name\"
+        : \"King County\",\n               \"short_name\" : \"King County\",\n               \"types\"
+        : \n               [\n                  \"administrative_area_level_2\",\n
+        \                 \"political\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"Washington\",\n               \"short_name\"
+        : \"WA\",\n               \"types\" : \n               [\n                  \"administrative_area_level_1\",\n
+        \                 \"political\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"United States\",\n               \"short_name\"
+        : \"US\",\n               \"types\" : \n               [\n                  \"country\",\n
+        \                 \"political\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"98105\",\n               \"short_name\" :
+        \"98105\",\n               \"types\" : \n               [\n                  \"postal_code\"\n
+        \              ]\n            },\n            {\n               \"long_name\"
+        : \"5010\",\n               \"short_name\" : \"5010\",\n               \"types\"
+        : \n               [\n                  \"postal_code_suffix\"\n               ]\n
+        \           }\n         ],\n         \"formatted_address\" : \"2651 NE 49th
+        St, Seattle, WA 98105, USA\",\n         \"geometry\" : \n         {\n            \"bounds\"
+        : \n            {\n               \"northeast\" : \n               {\n                  \"lat\"
+        : 47.6641821,\n                  \"lng\" : -122.298311\n               },\n
+        \              \"southwest\" : \n               {\n                  \"lat\"
+        : 47.6637888,\n                  \"lng\" : -122.2987423\n               }\n
+        \           },\n            \"location\" : \n            {\n               \"lat\"
+        : 47.66398479999999,\n               \"lng\" : -122.2985269\n            },\n
+        \           \"location_type\" : \"ROOFTOP\",\n            \"viewport\" : \n
+        \           {\n               \"northeast\" : \n               {\n                  \"lat\"
+        : 47.66530893029149,\n                  \"lng\" : -122.2971780197085\n               },\n
+        \              \"southwest\" : \n               {\n                  \"lat\"
+        : 47.6626109697085,\n                  \"lng\" : -122.2998759802915\n               }\n
+        \           }\n         },\n         \"navigation_points\" : \n         [\n
+        \           {\n               \"location\" : \n               {\n                  \"latitude\"
+        : 47.6637008,\n                  \"longitude\" : -122.2986293\n               }\n
+        \           },\n            {\n               \"location\" : \n               {\n
+        \                 \"latitude\" : 47.6637393,\n                  \"longitude\"
+        : -122.2988272\n               }\n            },\n            {\n               \"location\"
+        : \n               {\n                  \"latitude\" : 47.6637545,\n                  \"longitude\"
+        : -122.2984041\n               }\n            },\n            {\n               \"location\"
+        : \n               {\n                  \"latitude\" : 47.6641922,\n                  \"longitude\"
+        : -122.2988184\n               }\n            },\n            {\n               \"location\"
+        : \n               {\n                  \"latitude\" : 47.6642537,\n                  \"longitude\"
+        : -122.2982246\n               },\n               \"restricted_travel_modes\"
+        : \n               [\n                  \"WALK\"\n               ]\n            },\n
+        \           {\n               \"location\" : \n               {\n                  \"latitude\"
+        : 47.6641178,\n                  \"longitude\" : -122.29822\n               },\n
+        \              \"restricted_travel_modes\" : \n               [\n                  \"DRIVE\"\n
+        \              ]\n            }\n         ],\n         \"place_id\" : \"ChIJFQTBFoYUkFQRmE6moPcTmMA\",\n
+        \        \"types\" : \n         [\n            \"premise\",\n            \"street_address\"\n
+        \        ]\n      }\n   ],\n   \"status\" : \"OK\"\n}"
+  recorded_at: Thu, 10 Apr 2025 20:01:38 GMT
 - request:
     method: get
-    uri: https://api.openweathermap.org/data/3.0/onecall?appid=<OPEN_WEATHER_MAP_API>&exclude=minutely,hourly&lat=47.66441224684099&lon=-122.30131399542083&units=imperial
+    uri: https://api.openweathermap.org/data/3.0/onecall?appid=<OPEN_WEATHER_MAP_API>&exclude=minutely,hourly&lat=47.66398479999999&lon=-122.2985269&units=imperial
     body:
       encoding: US-ASCII
       string: ''
@@ -240,11 +453,11 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Wed, 09 Apr 2025 17:46:31 GMT
+      - Thu, 10 Apr 2025 20:01:38 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '4657'
+      - '4661'
       Connection:
       - keep-alive
       X-Cache-Key:
@@ -257,28 +470,28 @@ http_interactions:
       - GET, POST
     body:
       encoding: UTF-8
-      string: '{"lat":47.6644,"lon":-122.3013,"timezone":"America/Los_Angeles","timezone_offset":-25200,"current":{"dt":1744220785,"sunrise":1744205457,"sunset":1744253397,"temp":53.15,"feels_like":51.64,"pressure":1025,"humidity":74,"dew_point":45.09,"uvi":3.11,"clouds":75,"visibility":10000,"wind_speed":6.91,"wind_deg":130,"weather":[{"id":803,"main":"Clouds","description":"broken
-        clouds","icon":"04d"}]},"daily":[{"dt":1744228800,"sunrise":1744205457,"sunset":1744253397,"moonrise":1744242300,"moonset":1744201740,"moon_phase":0.4,"summary":"There
-        will be partly cloudy today","temp":{"day":55.62,"min":42.17,"max":62.85,"night":49.48,"eve":55.78,"morn":45},"feels_like":{"day":53.98,"night":49.48,"eve":53.49,"morn":42.39},"pressure":1025,"humidity":66,"dew_point":44.46,"wind_speed":9.98,"wind_deg":189,"wind_gust":27.02,"weather":[{"id":803,"main":"Clouds","description":"broken
-        clouds","icon":"04d"}],"clouds":69,"pop":0,"uvi":4.62},{"dt":1744315200,"sunrise":1744291740,"sunset":1744339882,"moonrise":1744332720,"moonset":1744288920,"moon_phase":0.43,"summary":"Expect
-        a day of partly cloudy with rain","temp":{"day":64.62,"min":45.73,"max":64.62,"night":45.79,"eve":49.84,"morn":46.22},"feels_like":{"day":62.8,"night":39.83,"eve":45.54,"morn":46.22},"pressure":1014,"humidity":43,"dew_point":41.58,"wind_speed":17.58,"wind_deg":211,"wind_gust":39.41,"weather":[{"id":501,"main":"Rain","description":"moderate
-        rain","icon":"10d"}],"clouds":97,"pop":1,"rain":4.92,"uvi":3.88},{"dt":1744401600,"sunrise":1744378023,"sunset":1744426367,"moonrise":1744423080,"moonset":1744376100,"moon_phase":0.46,"summary":"Expect
-        a day of partly cloudy with rain","temp":{"day":51.35,"min":40.35,"max":53.35,"night":40.35,"eve":45.5,"morn":41.59},"feels_like":{"day":48.81,"night":35.71,"eve":42.53,"morn":37.65},"pressure":1025,"humidity":56,"dew_point":35.26,"wind_speed":12.19,"wind_deg":187,"wind_gust":27.83,"weather":[{"id":500,"main":"Rain","description":"light
-        rain","icon":"10d"}],"clouds":77,"pop":1,"rain":2.01,"uvi":3.82},{"dt":1744488000,"sunrise":1744464307,"sunset":1744512852,"moonrise":1744513440,"moonset":1744463280,"moon_phase":0.5,"summary":"Expect
-        a day of partly cloudy with rain","temp":{"day":53.11,"min":38.66,"max":53.11,"night":40.21,"eve":44.15,"morn":39.67},"feels_like":{"day":50.47,"night":37.58,"eve":40.98,"morn":37.15},"pressure":1025,"humidity":50,"dew_point":34.43,"wind_speed":8.75,"wind_deg":49,"wind_gust":13.29,"weather":[{"id":500,"main":"Rain","description":"light
-        rain","icon":"10d"}],"clouds":56,"pop":1,"rain":2.18,"uvi":3.52},{"dt":1744574400,"sunrise":1744550592,"sunset":1744599337,"moonrise":1744603980,"moonset":1744550580,"moon_phase":0.52,"summary":"There
-        will be partly cloudy today","temp":{"day":56.01,"min":40.8,"max":56.01,"night":43.07,"eve":46.08,"morn":41.22},"feels_like":{"day":53.19,"night":40.44,"eve":43.27,"morn":39.42},"pressure":1026,"humidity":40,"dew_point":31.89,"wind_speed":7.81,"wind_deg":341,"wind_gust":11.97,"weather":[{"id":803,"main":"Clouds","description":"broken
-        clouds","icon":"04d"}],"clouds":57,"pop":0,"uvi":4},{"dt":1744660800,"sunrise":1744636877,"sunset":1744685822,"moonrise":1744694460,"moonset":1744638060,"moon_phase":0.55,"summary":"There
-        will be partly cloudy today","temp":{"day":57.27,"min":40.01,"max":57.27,"night":46.42,"eve":48.92,"morn":43.59},"feels_like":{"day":55.06,"night":44.02,"eve":45.82,"morn":41.18},"pressure":1022,"humidity":50,"dew_point":38.46,"wind_speed":9.15,"wind_deg":349,"wind_gust":20.18,"weather":[{"id":804,"main":"Clouds","description":"overcast
-        clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":4},{"dt":1744747200,"sunrise":1744723163,"sunset":1744772307,"moonrise":1744785060,"moonset":1744725720,"moon_phase":0.58,"summary":"There
-        will be partly cloudy today","temp":{"day":59.95,"min":41.61,"max":59.95,"night":45.37,"eve":50.74,"morn":45.68},"feels_like":{"day":57.9,"night":43.68,"eve":48.79,"morn":45.68},"pressure":1022,"humidity":48,"dew_point":40.3,"wind_speed":7.34,"wind_deg":343,"wind_gust":12.1,"weather":[{"id":802,"main":"Clouds","description":"scattered
-        clouds","icon":"03d"}],"clouds":25,"pop":0,"uvi":4},{"dt":1744833600,"sunrise":1744809450,"sunset":1744858792,"moonrise":0,"moonset":1744813860,"moon_phase":0.61,"summary":"Expect
-        a day of partly cloudy with clear spells","temp":{"day":60.85,"min":41.77,"max":60.85,"night":46.65,"eve":50.52,"morn":45.9},"feels_like":{"day":58.66,"night":44.83,"eve":48.24,"morn":45.9},"pressure":1024,"humidity":43,"dew_point":38.01,"wind_speed":7.09,"wind_deg":341,"wind_gust":8.43,"weather":[{"id":803,"main":"Clouds","description":"broken
-        clouds","icon":"04d"}],"clouds":79,"pop":0,"uvi":4}]}'
-  recorded_at: Wed, 09 Apr 2025 17:46:31 GMT
+      string: '{"lat":47.664,"lon":-122.2985,"timezone":"America/Los_Angeles","timezone_offset":-25200,"current":{"dt":1744315296,"sunrise":1744291739,"sunset":1744339881,"temp":63.93,"feels_like":62.85,"pressure":1015,"humidity":60,"dew_point":49.78,"uvi":4.34,"clouds":100,"visibility":10000,"wind_speed":10,"wind_deg":143,"wind_gust":20,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}]},"daily":[{"dt":1744315200,"sunrise":1744291739,"sunset":1744339881,"moonrise":1744332720,"moonset":1744288920,"moon_phase":0.43,"summary":"Expect
+        a day of partly cloudy with rain","temp":{"day":63.93,"min":45.72,"max":63.93,"night":51.62,"eve":55.44,"morn":46.99},"feels_like":{"day":62.85,"night":50.76,"eve":54.72,"morn":45.61},"pressure":1015,"humidity":60,"dew_point":49.78,"wind_speed":14.18,"wind_deg":200,"wind_gust":35.75,"weather":[{"id":501,"main":"Rain","description":"moderate
+        rain","icon":"10d"}],"clouds":100,"pop":1,"rain":2.26,"uvi":4.34},{"dt":1744401600,"sunrise":1744378022,"sunset":1744426366,"moonrise":1744423080,"moonset":1744376100,"moon_phase":0.46,"summary":"There
+        will be partly cloudy today","temp":{"day":51.12,"min":43.11,"max":51.85,"night":44.04,"eve":47.39,"morn":43.11},"feels_like":{"day":48.47,"night":40.73,"eve":44.15,"morn":40.32},"pressure":1025,"humidity":54,"dew_point":34.97,"wind_speed":9.75,"wind_deg":186,"wind_gust":24.92,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":87,"pop":0,"uvi":2.45},{"dt":1744488000,"sunrise":1744464306,"sunset":1744512851,"moonrise":1744513440,"moonset":1744463280,"moon_phase":0.5,"summary":"Expect
+        a day of partly cloudy with rain","temp":{"day":50.76,"min":39.63,"max":52.12,"night":40.66,"eve":47.89,"morn":40.19},"feels_like":{"day":48.07,"night":38.39,"eve":44.64,"morn":37.51},"pressure":1026,"humidity":54,"dew_point":34.77,"wind_speed":8.12,"wind_deg":27,"wind_gust":18.99,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"clouds":69,"pop":1,"rain":1.79,"uvi":3.1},{"dt":1744574400,"sunrise":1744550591,"sunset":1744599336,"moonrise":1744603920,"moonset":1744550580,"moon_phase":0.52,"summary":"There
+        will be partly cloudy today","temp":{"day":55.17,"min":39.43,"max":55.99,"night":43.02,"eve":46.58,"morn":39.43},"feels_like":{"day":52.54,"night":39.72,"eve":43.72,"morn":37.17},"pressure":1027,"humidity":46,"dew_point":34.27,"wind_speed":8.3,"wind_deg":350,"wind_gust":14.27,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":4.6},{"dt":1744660800,"sunrise":1744636876,"sunset":1744685821,"moonrise":1744694460,"moonset":1744638060,"moon_phase":0.55,"summary":"There
+        will be partly cloudy today","temp":{"day":59.36,"min":42.53,"max":59.36,"night":47.64,"eve":49.93,"morn":45.3},"feels_like":{"day":57.25,"night":46.42,"eve":48.13,"morn":42.57},"pressure":1020,"humidity":48,"dew_point":39.25,"wind_speed":7.87,"wind_deg":346,"wind_gust":13.76,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":4.38},{"dt":1744747200,"sunrise":1744723162,"sunset":1744772306,"moonrise":1744785060,"moonset":1744725720,"moon_phase":0.58,"summary":"There
+        will be partly cloudy today","temp":{"day":63.19,"min":46.18,"max":64.02,"night":49.93,"eve":54.99,"morn":49.66},"feels_like":{"day":61.47,"night":49.46,"eve":53.53,"morn":49.66},"pressure":1018,"humidity":48,"dew_point":43.21,"wind_speed":5.01,"wind_deg":10,"wind_gust":5.88,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":95,"pop":0,"uvi":5},{"dt":1744833600,"sunrise":1744809449,"sunset":1744858791,"moonrise":0,"moonset":1744813860,"moon_phase":0.61,"summary":"There
+        will be partly cloudy today","temp":{"day":64.58,"min":45.7,"max":64.58,"night":48.58,"eve":53.19,"morn":48.25},"feels_like":{"day":62.15,"night":48.58,"eve":51.4,"morn":46.51},"pressure":1019,"humidity":30,"dew_point":32.41,"wind_speed":4.72,"wind_deg":204,"wind_gust":9.48,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":5},{"dt":1744920000,"sunrise":1744895737,"sunset":1744945276,"moonrise":1744875420,"moonset":1744902480,"moon_phase":0.65,"summary":"There
+        will be partly cloudy today","temp":{"day":63.18,"min":44.51,"max":63.18,"night":50.83,"eve":50.41,"morn":48.52},"feels_like":{"day":60.84,"night":49.19,"eve":48.78,"morn":47.93},"pressure":1018,"humidity":35,"dew_point":35.24,"wind_speed":6.76,"wind_deg":332,"wind_gust":8.63,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":5}]}'
+  recorded_at: Thu, 10 Apr 2025 20:01:38 GMT
 - request:
     method: get
-    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=5880%20Victoria%20Dr,%20Vancouver,%20BC%20V5P%203W9,%20Canada
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=5880%20Victoria%20Dr,%20Vancouver,%20BC%20V5P%203W9,%20Canada&key=<GOOGLE_MAPS_API_KEY>&language=en&sensor=false
     body:
       encoding: US-ASCII
       string: ''
@@ -289,31 +502,97 @@ http_interactions:
       - "*/*"
       User-Agent:
       - Ruby
+      Sentry-Trace:
+      - 75a2ad99e0de43f3a7f1a5a093760eac-baf0950431bd4703-1
+      Baggage:
+      - sentry-trace_id=75a2ad99e0de43f3a7f1a5a093760eac,sentry-sample_rate=1.0,sentry-sampled=true,sentry-environment=test,sentry-release=03b36f93c3fc23bc2dedddc89372c733edefb96d,sentry-public_key=c82d5787df86b4b23549b5d2ff517b56
   response:
     status:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx
-      Date:
-      - Wed, 09 Apr 2025 17:46:33 GMT
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 10 Apr 2025 20:01:39 GMT
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Goog-Maps-Metro-Area:
+      - Vancouver
+      Content-Security-Policy-Report-Only:
+      - script-src 'none'; form-action 'none'; frame-src 'none'; report-uri https://csp.withgoogle.com/csp/scaffolding/msaifdggmnwc:228:0
+      Cross-Origin-Opener-Policy-Report-Only:
+      - same-origin; report-to=msaifdggmnwc:228:0
+      Report-To:
+      - '{"group":"msaifdggmnwc:228:0","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/scaffolding/msaifdggmnwc:228:0"}],}'
+      Server:
+      - mafe
       Content-Length:
-      - '914'
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - timeout=20
+      - '3338'
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server-Timing:
+      - gfet4t7; dur=19
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        W3sicGxhY2VfaWQiOjM0OTcxMDA0MiwibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwOi8vb3NtLm9yZy9jb3B5cmlnaHQiLCJvc21fdHlwZSI6IndheSIsIm9zbV9pZCI6MzU2NDcwNTcwLCJsYXQiOiI0OS4yMzA1OTE5NTAwMDAwMDQiLCJsb24iOiItMTIzLjA2NTE2OTgiLCJjbGFzcyI6ImFtZW5pdHkiLCJ0eXBlIjoiY2xpbmljIiwicGxhY2VfcmFuayI6MzAsImltcG9ydGFuY2UiOjcuODY5NzY0MjQ4MTA3MTQ1ZS0wNSwiYWRkcmVzc3R5cGUiOiJhbWVuaXR5IiwibmFtZSI6IlNvdXRoZWFzdCBVcmdlbnQgYW5kIFByaW1hcnkgQ2FyZSBDZW50cmUiLCJkaXNwbGF5X25hbWUiOiJTb3V0aGVhc3QgVXJnZW50IGFuZCBQcmltYXJ5IENhcmUgQ2VudHJlLCA1ODgwLCBWaWN0b3JpYSBEcml2ZSwgVmljdG9yaWEtRnJhc2VydmlldywgVmFuY291dmVyLCBNZXRybyBWYW5jb3V2ZXIgUmVnaW9uYWwgRGlzdHJpY3QsIEJyaXRpc2ggQ29sdW1iaWEsIFY1UCwgQ2FuYWRhIiwiYWRkcmVzcyI6eyJhbWVuaXR5IjoiU291dGhlYXN0IFVyZ2VudCBhbmQgUHJpbWFyeSBDYXJlIENlbnRyZSIsImhvdXNlX251bWJlciI6IjU4ODAiLCJyb2FkIjoiVmljdG9yaWEgRHJpdmUiLCJzdWJ1cmIiOiJWaWN0b3JpYS1GcmFzZXJ2aWV3IiwiY2l0eSI6IlZhbmNvdXZlciIsImNvdW50eSI6Ik1ldHJvIFZhbmNvdXZlciBSZWdpb25hbCBEaXN0cmljdCIsInN0YXRlIjoiQnJpdGlzaCBDb2x1bWJpYSIsIklTTzMxNjYtMi1sdmw0IjoiQ0EtQkMiLCJwb3N0Y29kZSI6IlY1UCIsImNvdW50cnkiOiJDYW5hZGEiLCJjb3VudHJ5X2NvZGUiOiJjYSJ9LCJib3VuZGluZ2JveCI6WyI0OS4yMzA1MjA4IiwiNDkuMjMwNjYzMSIsIi0xMjMuMDY1NDIyNyIsIi0xMjMuMDY0OTE2OSJdfV0=
-  recorded_at: Wed, 09 Apr 2025 17:46:33 GMT
+      encoding: UTF-8
+      string: "{\n   \"results\" : \n   [\n      {\n         \"address_components\"
+        : \n         [\n            {\n               \"long_name\" : \"5880\",\n
+        \              \"short_name\" : \"5880\",\n               \"types\" : \n               [\n
+        \                 \"street_number\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"Victoria Drive\",\n               \"short_name\"
+        : \"Victoria Dr\",\n               \"types\" : \n               [\n                  \"route\"\n
+        \              ]\n            },\n            {\n               \"long_name\"
+        : \"South Vancouver\",\n               \"short_name\" : \"South Vancouver\",\n
+        \              \"types\" : \n               [\n                  \"neighborhood\",\n
+        \                 \"political\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"Vancouver\",\n               \"short_name\"
+        : \"Vancouver\",\n               \"types\" : \n               [\n                  \"locality\",\n
+        \                 \"political\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"Metro Vancouver\",\n               \"short_name\"
+        : \"Metro Vancouver\",\n               \"types\" : \n               [\n                  \"administrative_area_level_2\",\n
+        \                 \"political\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"British Columbia\",\n               \"short_name\"
+        : \"BC\",\n               \"types\" : \n               [\n                  \"administrative_area_level_1\",\n
+        \                 \"political\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"Canada\",\n               \"short_name\"
+        : \"CA\",\n               \"types\" : \n               [\n                  \"country\",\n
+        \                 \"political\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"V5P 3W9\",\n               \"short_name\"
+        : \"V5P 3W9\",\n               \"types\" : \n               [\n                  \"postal_code\"\n
+        \              ]\n            }\n         ],\n         \"formatted_address\"
+        : \"5880 Victoria Dr, Vancouver, BC V5P 3W9, Canada\",\n         \"geometry\"
+        : \n         {\n            \"bounds\" : \n            {\n               \"northeast\"
+        : \n               {\n                  \"lat\" : 49.230661,\n                  \"lng\"
+        : -123.0649087\n               },\n               \"southwest\" : \n               {\n
+        \                 \"lat\" : 49.23051659999999,\n                  \"lng\"
+        : -123.0654262\n               }\n            },\n            \"location\"
+        : \n            {\n               \"lat\" : 49.2305888,\n               \"lng\"
+        : -123.0651675\n            },\n            \"location_type\" : \"ROOFTOP\",\n
+        \           \"viewport\" : \n            {\n               \"northeast\" :
+        \n               {\n                  \"lat\" : 49.2319377802915,\n                  \"lng\"
+        : -123.0637995197085\n               },\n               \"southwest\" : \n
+        \              {\n                  \"lat\" : 49.2292398197085,\n                  \"lng\"
+        : -123.0664974802915\n               }\n            }\n         },\n         \"navigation_points\"
+        : \n         [\n            {\n               \"location\" : \n               {\n
+        \                 \"latitude\" : 49.23058100000001,\n                  \"longitude\"
+        : -123.0649672\n               }\n            }\n         ],\n         \"place_id\"
+        : \"ChIJa5kWmiF0hlQRqLs-kRUTbk8\",\n         \"types\" : \n         [\n            \"premise\",\n
+        \           \"street_address\"\n         ]\n      }\n   ],\n   \"status\"
+        : \"OK\"\n}"
+  recorded_at: Thu, 10 Apr 2025 20:01:39 GMT
 - request:
     method: get
-    uri: https://api.openweathermap.org/data/3.0/onecall?appid=<OPEN_WEATHER_MAP_API>&exclude=minutely,hourly&lat=49.230591950000004&lon=-123.0651698&units=imperial
+    uri: https://api.openweathermap.org/data/3.0/onecall?appid=<OPEN_WEATHER_MAP_API>&exclude=minutely,hourly&lat=49.2305888&lon=-123.0651675&units=imperial
     body:
       encoding: US-ASCII
       string: ''
@@ -332,11 +611,11 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Wed, 09 Apr 2025 17:46:33 GMT
+      - Thu, 10 Apr 2025 20:01:39 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '4687'
+      - '4742'
       Connection:
       - keep-alive
       X-Cache-Key:
@@ -349,28 +628,29 @@ http_interactions:
       - GET, POST
     body:
       encoding: UTF-8
-      string: '{"lat":49.2306,"lon":-123.0652,"timezone":"America/Vancouver","timezone_offset":-25200,"current":{"dt":1744220793,"sunrise":1744205512,"sunset":1744253708,"temp":49.89,"feels_like":48.33,"pressure":1025,"humidity":77,"dew_point":42.98,"uvi":2.59,"clouds":75,"visibility":10000,"wind_speed":4.61,"wind_deg":130,"weather":[{"id":803,"main":"Clouds","description":"broken
-        clouds","icon":"04d"}]},"daily":[{"dt":1744228800,"sunrise":1744205512,"sunset":1744253708,"moonrise":1744242360,"moonset":1744202040,"moon_phase":0.4,"summary":"Expect
-        a day of partly cloudy with rain","temp":{"day":51.01,"min":43.5,"max":57.96,"night":49.59,"eve":54.23,"morn":45.12},"feels_like":{"day":49.33,"night":47.95,"eve":52.32,"morn":42.82},"pressure":1025,"humidity":75,"dew_point":43.38,"wind_speed":11.88,"wind_deg":182,"wind_gust":22.91,"weather":[{"id":500,"main":"Rain","description":"light
-        rain","icon":"10d"}],"clouds":83,"pop":0.94,"rain":2.29,"uvi":3.65},{"dt":1744315200,"sunrise":1744291789,"sunset":1744340199,"moonrise":1744332900,"moonset":1744289160,"moon_phase":0.43,"summary":"Expect
-        a day of partly cloudy with rain","temp":{"day":55.13,"min":44.82,"max":55.13,"night":44.82,"eve":49.86,"morn":46.98},"feels_like":{"day":53.11,"night":43.63,"eve":44.96,"morn":46.98},"pressure":1012,"humidity":59,"dew_point":41.13,"wind_speed":15.52,"wind_deg":194,"wind_gust":28.21,"weather":[{"id":501,"main":"Rain","description":"moderate
-        rain","icon":"10d"}],"clouds":100,"pop":1,"rain":4.6,"uvi":0.5},{"dt":1744401600,"sunrise":1744378066,"sunset":1744426690,"moonrise":1744423380,"moonset":1744376280,"moon_phase":0.46,"summary":"Expect
-        a day of partly cloudy with rain","temp":{"day":49.48,"min":40.59,"max":50.41,"night":42.73,"eve":47.14,"morn":40.6},"feels_like":{"day":46.56,"night":37.47,"eve":47.14,"morn":36.46},"pressure":1025,"humidity":59,"dew_point":36.05,"wind_speed":8.93,"wind_deg":293,"wind_gust":11.39,"weather":[{"id":500,"main":"Rain","description":"light
-        rain","icon":"10d"}],"clouds":62,"pop":0.9,"rain":1.47,"uvi":3.28},{"dt":1744488000,"sunrise":1744464344,"sunset":1744513181,"moonrise":1744513860,"moonset":1744463340,"moon_phase":0.5,"summary":"Expect
-        a day of partly cloudy with rain","temp":{"day":48.97,"min":41.5,"max":49.78,"night":42.1,"eve":44.13,"morn":41.58},"feels_like":{"day":44.74,"night":42.1,"eve":41.25,"morn":35.17},"pressure":1024,"humidity":50,"dew_point":31.57,"wind_speed":13.47,"wind_deg":272,"wind_gust":17.27,"weather":[{"id":500,"main":"Rain","description":"light
-        rain","icon":"10d"}],"clouds":5,"pop":0.83,"rain":0.42,"uvi":3.54},{"dt":1744574400,"sunrise":1744550623,"sunset":1744599672,"moonrise":1744604460,"moonset":1744550520,"moon_phase":0.52,"summary":"There
-        will be partly cloudy today","temp":{"day":50.54,"min":37.63,"max":50.54,"night":44.82,"eve":46.71,"morn":40.71},"feels_like":{"day":47.88,"night":43.39,"eve":44.44,"morn":38.03},"pressure":1028,"humidity":55,"dew_point":34.54,"wind_speed":7.07,"wind_deg":243,"wind_gust":6.24,"weather":[{"id":803,"main":"Clouds","description":"broken
-        clouds","icon":"04d"}],"clouds":84,"pop":0,"uvi":4},{"dt":1744660800,"sunrise":1744636903,"sunset":1744686163,"moonrise":1744695060,"moonset":1744637880,"moon_phase":0.55,"summary":"There
-        will be partly cloudy today","temp":{"day":51.51,"min":41.9,"max":51.51,"night":46.98,"eve":48.34,"morn":44.96},"feels_like":{"day":49.23,"night":44.76,"eve":45.01,"morn":44.96},"pressure":1023,"humidity":61,"dew_point":38.53,"wind_speed":7.61,"wind_deg":277,"wind_gust":11.92,"weather":[{"id":804,"main":"Clouds","description":"overcast
-        clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":4},{"dt":1744747200,"sunrise":1744723183,"sunset":1744772654,"moonrise":1744785780,"moonset":1744725540,"moon_phase":0.58,"summary":"There
-        will be partly cloudy today","temp":{"day":55.13,"min":45.16,"max":55.13,"night":45.61,"eve":48.6,"morn":45.66},"feels_like":{"day":53.11,"night":45.61,"eve":47.98,"morn":45.66},"pressure":1022,"humidity":59,"dew_point":40.89,"wind_speed":7.4,"wind_deg":267,"wind_gust":6.98,"weather":[{"id":803,"main":"Clouds","description":"broken
-        clouds","icon":"04d"}],"clouds":62,"pop":0,"uvi":4},{"dt":1744833600,"sunrise":1744809464,"sunset":1744859145,"moonrise":0,"moonset":1744813500,"moon_phase":0.61,"summary":"There
-        will be clear sky until morning, then partly cloudy","temp":{"day":54.64,"min":42.64,"max":54.99,"night":47.57,"eve":49.23,"morn":45.46},"feels_like":{"day":52.45,"night":47.57,"eve":49.23,"morn":45.46},"pressure":1024,"humidity":56,"dew_point":38.89,"wind_speed":5.55,"wind_deg":257,"wind_gust":5.19,"weather":[{"id":804,"main":"Clouds","description":"overcast
-        clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":4}]}'
-  recorded_at: Wed, 09 Apr 2025 17:46:33 GMT
+      string: '{"lat":49.2306,"lon":-123.0652,"timezone":"America/Vancouver","timezone_offset":-25200,"current":{"dt":1744315299,"sunrise":1744291789,"sunset":1744340199,"temp":56.32,"feels_like":54.81,"pressure":1013,"humidity":67,"dew_point":45.52,"uvi":1.02,"clouds":100,"visibility":10000,"wind_speed":10.36,"wind_deg":100,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}]},"daily":[{"dt":1744315200,"sunrise":1744291789,"sunset":1744340199,"moonrise":1744332900,"moonset":1744289160,"moon_phase":0.43,"summary":"Expect
+        a day of partly cloudy with rain","temp":{"day":56.32,"min":46.35,"max":56.91,"night":47.55,"eve":53.56,"morn":47.17},"feels_like":{"day":54.81,"night":47.55,"eve":52.52,"morn":47.17},"pressure":1013,"humidity":67,"dew_point":45.52,"wind_speed":9.33,"wind_deg":206,"wind_gust":20.67,"weather":[{"id":501,"main":"Rain","description":"moderate
+        rain","icon":"10d"}],"clouds":100,"pop":1,"rain":2.89,"uvi":1.02},{"dt":1744401600,"sunrise":1744378066,"sunset":1744426690,"moonrise":1744423380,"moonset":1744376280,"moon_phase":0.46,"summary":"Expect
+        a day of partly cloudy with rain","temp":{"day":48.16,"min":41.04,"max":50.38,"night":43.75,"eve":47.71,"morn":41.04},"feels_like":{"day":45.7,"night":38.39,"eve":47.07,"morn":36.43},"pressure":1025,"humidity":71,"dew_point":39.38,"wind_speed":9.75,"wind_deg":286,"wind_gust":12.68,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"clouds":82,"pop":0.87,"rain":1.09,"uvi":3.49},{"dt":1744488000,"sunrise":1744464344,"sunset":1744513181,"moonrise":1744513860,"moonset":1744463340,"moon_phase":0.5,"summary":"There
+        will be rain until morning, then partly cloudy","temp":{"day":46.98,"min":41.92,"max":50.97,"night":42.64,"eve":47.79,"morn":41.92},"feels_like":{"day":41.97,"night":42.64,"eve":44.15,"morn":35.55},"pressure":1025,"humidity":60,"dew_point":33.91,"wind_speed":12.93,"wind_deg":275,"wind_gust":18.92,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"clouds":78,"pop":1,"rain":1.1,"uvi":3.28},{"dt":1744574400,"sunrise":1744550623,"sunset":1744599672,"moonrise":1744604460,"moonset":1744550520,"moon_phase":0.52,"summary":"There
+        will be partly cloudy today","temp":{"day":51.03,"min":38.39,"max":51.42,"night":47.03,"eve":47.39,"morn":39.18},"feels_like":{"day":48.33,"night":45.99,"eve":45.75,"morn":36.5},"pressure":1028,"humidity":53,"dew_point":34.52,"wind_speed":6.89,"wind_deg":252,"wind_gust":6.62,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":97,"pop":0,"uvi":4.48},{"dt":1744660800,"sunrise":1744636903,"sunset":1744686163,"moonrise":1744695060,"moonset":1744637880,"moon_phase":0.55,"summary":"There
+        will be partly cloudy today","temp":{"day":55.69,"min":44.76,"max":55.69,"night":50.14,"eve":51.01,"morn":47.19},"feels_like":{"day":53.58,"night":48.34,"eve":49.01,"morn":47.19},"pressure":1021,"humidity":56,"dew_point":39.67,"wind_speed":6.11,"wind_deg":269,"wind_gust":5.21,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":4.12},{"dt":1744747200,"sunrise":1744723183,"sunset":1744772654,"moonrise":1744785780,"moonset":1744725540,"moon_phase":0.58,"summary":"There
+        will be partly cloudy today","temp":{"day":59.23,"min":49.33,"max":59.23,"night":50.72,"eve":52.5,"morn":49.93},"feels_like":{"day":57.63,"night":49.12,"eve":50.65,"morn":49.93},"pressure":1018,"humidity":59,"dew_point":44.46,"wind_speed":6.04,"wind_deg":220,"wind_gust":6.46,"weather":[{"id":802,"main":"Clouds","description":"scattered
+        clouds","icon":"03d"}],"clouds":32,"pop":0,"uvi":5},{"dt":1744833600,"sunrise":1744809464,"sunset":1744859145,"moonrise":0,"moonset":1744813500,"moon_phase":0.61,"summary":"There
+        will be partly cloudy today","temp":{"day":57.07,"min":47.62,"max":57.54,"night":49.28,"eve":51.24,"morn":49.53},"feels_like":{"day":55.11,"night":46.94,"eve":49.08,"morn":46.17},"pressure":1020,"humidity":56,"dew_point":41.61,"wind_speed":8.41,"wind_deg":131,"wind_gust":13.58,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":5},{"dt":1744920000,"sunrise":1744895746,"sunset":1744945636,"moonrise":1744876200,"moonset":1744902060,"moon_phase":0.65,"summary":"The
+        day will start with partly cloudy through the late morning hours, transitioning
+        to rain","temp":{"day":49.17,"min":46.22,"max":50.47,"night":47.82,"eve":47.88,"morn":48.94},"feels_like":{"day":49.17,"night":47.82,"eve":47.88,"morn":46.13},"pressure":1020,"humidity":81,"dew_point":43.54,"wind_speed":6.53,"wind_deg":102,"wind_gust":12.39,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"clouds":100,"pop":1,"rain":6.87,"uvi":5}]}'
+  recorded_at: Thu, 10 Apr 2025 20:01:39 GMT
 - request:
     method: get
-    uri: https://api.openweathermap.org/data/3.0/onecall?appid=<OPEN_WEATHER_MAP_API>&exclude=minutely,hourly&lat=47.6038321&lon=-122.330062&units=imperial
+    uri: https://api.openweathermap.org/data/3.0/onecall?appid=<OPEN_WEATHER_MAP_API>&exclude=minutely,hourly&lat=47.6061389&lon=-122.3328481&units=imperial
     body:
       encoding: US-ASCII
       string: ''
@@ -389,15 +669,15 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Wed, 09 Apr 2025 17:46:34 GMT
+      - Thu, 10 Apr 2025 20:01:39 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '4679'
+      - '4653'
       Connection:
       - keep-alive
       X-Cache-Key:
-      - "/data/3.0/onecall?exclude=minutely%2Chourly&lat=47.6&lon=-122.33&units=imperial"
+      - "/data/3.0/onecall?exclude=minutely%2Chourly&lat=47.61&lon=-122.33&units=imperial"
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Credentials:
@@ -406,28 +686,28 @@ http_interactions:
       - GET, POST
     body:
       encoding: UTF-8
-      string: '{"lat":47.6038,"lon":-122.3301,"timezone":"America/Los_Angeles","timezone_offset":-25200,"current":{"dt":1744220794,"sunrise":1744205469,"sunset":1744253399,"temp":52.41,"feels_like":50.88,"pressure":1025,"humidity":75,"dew_point":44.73,"uvi":3.11,"clouds":75,"visibility":10000,"wind_speed":11.01,"wind_deg":259,"wind_gust":11.99,"weather":[{"id":803,"main":"Clouds","description":"broken
-        clouds","icon":"04d"}]},"daily":[{"dt":1744228800,"sunrise":1744205469,"sunset":1744253399,"moonrise":1744242300,"moonset":1744201740,"moon_phase":0.4,"summary":"There
-        will be partly cloudy today","temp":{"day":55.38,"min":42.73,"max":63.46,"night":50.31,"eve":56.5,"morn":45.32},"feels_like":{"day":53.76,"night":48.04,"eve":54.25,"morn":43.25},"pressure":1025,"humidity":67,"dew_point":44.62,"wind_speed":10,"wind_deg":192,"wind_gust":26.69,"weather":[{"id":803,"main":"Clouds","description":"broken
-        clouds","icon":"04d"}],"clouds":70,"pop":0,"uvi":4.62},{"dt":1744315200,"sunrise":1744291752,"sunset":1744339883,"moonrise":1744332720,"moonset":1744288980,"moon_phase":0.43,"summary":"Expect
-        a day of partly cloudy with rain","temp":{"day":64.49,"min":46.31,"max":64.92,"night":46.31,"eve":50.54,"morn":47.25},"feels_like":{"day":62.76,"night":40.68,"eve":49.33,"morn":47.25},"pressure":1014,"humidity":45,"dew_point":42.17,"wind_speed":17.65,"wind_deg":214,"wind_gust":38.68,"weather":[{"id":501,"main":"Rain","description":"moderate
-        rain","icon":"10d"}],"clouds":96,"pop":1,"rain":4.82,"uvi":3.88},{"dt":1744401600,"sunrise":1744378035,"sunset":1744426368,"moonrise":1744423080,"moonset":1744376160,"moon_phase":0.46,"summary":"Expect
-        a day of partly cloudy with rain","temp":{"day":53.35,"min":41.38,"max":54,"night":41.38,"eve":46.08,"morn":41.43},"feels_like":{"day":50.68,"night":36.5,"eve":43.21,"morn":37.92},"pressure":1025,"humidity":49,"dew_point":33.17,"wind_speed":11.88,"wind_deg":190,"wind_gust":26.49,"weather":[{"id":500,"main":"Rain","description":"light
-        rain","icon":"10d"}],"clouds":64,"pop":1,"rain":1.78,"uvi":3.82},{"dt":1744488000,"sunrise":1744464319,"sunset":1744512853,"moonrise":1744513440,"moonset":1744463340,"moon_phase":0.5,"summary":"Expect
-        a day of partly cloudy with rain","temp":{"day":54.3,"min":39.38,"max":54.3,"night":41.63,"eve":45.75,"morn":40.53},"feels_like":{"day":51.55,"night":39.18,"eve":42.75,"morn":38.77},"pressure":1025,"humidity":45,"dew_point":32.85,"wind_speed":10.38,"wind_deg":49,"wind_gust":13.89,"weather":[{"id":500,"main":"Rain","description":"light
-        rain","icon":"10d"}],"clouds":51,"pop":1,"rain":2.03,"uvi":3.52},{"dt":1744574400,"sunrise":1744550604,"sunset":1744599338,"moonrise":1744603920,"moonset":1744550580,"moon_phase":0.52,"summary":"There
-        will be partly cloudy today","temp":{"day":56.93,"min":42.42,"max":56.93,"night":44.92,"eve":47.8,"morn":42.67},"feels_like":{"day":54.16,"night":42.21,"eve":45.1,"morn":41.18},"pressure":1026,"humidity":39,"dew_point":31.35,"wind_speed":8.16,"wind_deg":345,"wind_gust":13.38,"weather":[{"id":802,"main":"Clouds","description":"scattered
-        clouds","icon":"03d"}],"clouds":50,"pop":0,"uvi":4},{"dt":1744660800,"sunrise":1744636890,"sunset":1744685823,"moonrise":1744694460,"moonset":1744638060,"moon_phase":0.55,"summary":"There
-        will be partly cloudy today","temp":{"day":58.28,"min":41.61,"max":58.28,"night":47.86,"eve":50.13,"morn":44.69},"feels_like":{"day":56.07,"night":45.25,"eve":47.98,"morn":42.01},"pressure":1022,"humidity":48,"dew_point":38.28,"wind_speed":9.46,"wind_deg":354,"wind_gust":20.18,"weather":[{"id":804,"main":"Clouds","description":"overcast
-        clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":4},{"dt":1744747200,"sunrise":1744723176,"sunset":1744772308,"moonrise":1744785060,"moonset":1744725780,"moon_phase":0.58,"summary":"There
-        will be partly cloudy today","temp":{"day":61.18,"min":42.67,"max":61.18,"night":47.35,"eve":52.65,"morn":46.47},"feels_like":{"day":59.2,"night":45.7,"eve":50.67,"morn":46.47},"pressure":1022,"humidity":47,"dew_point":40.28,"wind_speed":7.36,"wind_deg":353,"wind_gust":12.75,"weather":[{"id":802,"main":"Clouds","description":"scattered
-        clouds","icon":"03d"}],"clouds":25,"pop":0,"uvi":4},{"dt":1744833600,"sunrise":1744809463,"sunset":1744858793,"moonrise":0,"moonset":1744813860,"moon_phase":0.61,"summary":"Expect
-        a day of partly cloudy with clear spells","temp":{"day":62.11,"min":43.34,"max":62.11,"night":48.61,"eve":52.57,"morn":46.94},"feels_like":{"day":59.95,"night":46.83,"eve":50.22,"morn":46.94},"pressure":1024,"humidity":41,"dew_point":37.53,"wind_speed":7.23,"wind_deg":349,"wind_gust":11.88,"weather":[{"id":803,"main":"Clouds","description":"broken
-        clouds","icon":"04d"}],"clouds":81,"pop":0,"uvi":4}]}'
-  recorded_at: Wed, 09 Apr 2025 17:46:34 GMT
+      string: '{"lat":47.6061,"lon":-122.3328,"timezone":"America/Los_Angeles","timezone_offset":-25200,"current":{"dt":1744315297,"sunrise":1744291752,"sunset":1744339884,"temp":63.28,"feels_like":62.19,"pressure":1015,"humidity":61,"dew_point":49.62,"uvi":4.34,"clouds":100,"visibility":10000,"wind_speed":8.99,"wind_deg":204,"wind_gust":10,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}]},"daily":[{"dt":1744315200,"sunrise":1744291752,"sunset":1744339884,"moonrise":1744332720,"moonset":1744288980,"moon_phase":0.43,"summary":"Expect
+        a day of partly cloudy with rain","temp":{"day":63.28,"min":46.29,"max":63.41,"night":51.94,"eve":55.99,"morn":47.57},"feels_like":{"day":62.19,"night":51.12,"eve":55.33,"morn":46.53},"pressure":1015,"humidity":61,"dew_point":49.62,"wind_speed":15.14,"wind_deg":206,"wind_gust":35.63,"weather":[{"id":501,"main":"Rain","description":"moderate
+        rain","icon":"10d"}],"clouds":100,"pop":1,"rain":2.35,"uvi":4.34},{"dt":1744401600,"sunrise":1744378036,"sunset":1744426369,"moonrise":1744423080,"moonset":1744376160,"moon_phase":0.46,"summary":"There
+        will be partly cloudy today","temp":{"day":52.25,"min":42.24,"max":52.72,"night":45.23,"eve":48.7,"morn":42.24},"feels_like":{"day":49.66,"night":42.12,"eve":45.63,"morn":38.93},"pressure":1025,"humidity":53,"dew_point":35.04,"wind_speed":9.89,"wind_deg":190,"wind_gust":24.02,"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04d"}],"clouds":84,"pop":0,"uvi":2.45},{"dt":1744488000,"sunrise":1744464320,"sunset":1744512854,"moonrise":1744513440,"moonset":1744463340,"moon_phase":0.5,"summary":"Expect
+        a day of partly cloudy with rain","temp":{"day":52.09,"min":40.3,"max":53.98,"night":42.85,"eve":49.42,"morn":40.91},"feels_like":{"day":49.44,"night":40.91,"eve":46.8,"morn":38.44},"pressure":1026,"humidity":52,"dew_point":34.47,"wind_speed":9.01,"wind_deg":31,"wind_gust":16.37,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"clouds":57,"pop":1,"rain":1.84,"uvi":3.1},{"dt":1744574400,"sunrise":1744550605,"sunset":1744599339,"moonrise":1744603920,"moonset":1744550580,"moon_phase":0.52,"summary":"There
+        will be partly cloudy today","temp":{"day":55.99,"min":40.71,"max":57.02,"night":44.89,"eve":48.38,"morn":40.71},"feels_like":{"day":53.4,"night":41.52,"eve":45.64,"morn":38.48},"pressure":1027,"humidity":45,"dew_point":34.11,"wind_speed":8.5,"wind_deg":353,"wind_gust":17.52,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":4.6},{"dt":1744660800,"sunrise":1744636890,"sunset":1744685824,"moonrise":1744694460,"moonset":1744638060,"moon_phase":0.55,"summary":"There
+        will be partly cloudy today","temp":{"day":60.49,"min":44.11,"max":60.49,"night":49.33,"eve":51.75,"morn":46.27},"feels_like":{"day":58.41,"night":48.07,"eve":49.73,"morn":43.3},"pressure":1020,"humidity":46,"dew_point":38.91,"wind_speed":8.12,"wind_deg":353,"wind_gust":16.8,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":4.38},{"dt":1744747200,"sunrise":1744723177,"sunset":1744772308,"moonrise":1744785060,"moonset":1744725780,"moon_phase":0.58,"summary":"There
+        will be partly cloudy today","temp":{"day":65.32,"min":47.44,"max":65.53,"night":52.86,"eve":57.4,"morn":50.47},"feels_like":{"day":63.66,"night":51.42,"eve":55.85,"morn":48.51},"pressure":1018,"humidity":45,"dew_point":43.03,"wind_speed":5.19,"wind_deg":16,"wind_gust":6.78,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":95,"pop":0,"uvi":5},{"dt":1744833600,"sunrise":1744809464,"sunset":1744858793,"moonrise":0,"moonset":1744813860,"moon_phase":0.61,"summary":"There
+        will be partly cloudy today","temp":{"day":64.9,"min":46.54,"max":64.9,"night":50.47,"eve":55.53,"morn":48.9},"feels_like":{"day":62.46,"night":48.83,"eve":53.55,"morn":47.3},"pressure":1019,"humidity":29,"dew_point":31.39,"wind_speed":4.74,"wind_deg":205,"wind_gust":8.79,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":5},{"dt":1744920000,"sunrise":1744895752,"sunset":1744945278,"moonrise":1744875420,"moonset":1744902480,"moon_phase":0.65,"summary":"There
+        will be partly cloudy today","temp":{"day":63.93,"min":45.72,"max":63.93,"night":52.56,"eve":52.32,"morn":48.99},"feels_like":{"day":61.66,"night":50.9,"eve":50.63,"morn":48.34},"pressure":1018,"humidity":35,"dew_point":35.17,"wind_speed":5.88,"wind_deg":338,"wind_gust":9.31,"weather":[{"id":804,"main":"Clouds","description":"overcast
+        clouds","icon":"04d"}],"clouds":100,"pop":0,"uvi":5}]}'
+  recorded_at: Thu, 10 Apr 2025 20:01:39 GMT
 - request:
     method: get
-    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=1%20Santa%20Lane,%20North%20Pole
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=1%20Santa%20Lane,%20North%20Pole&key=<GOOGLE_MAPS_API_KEY>&language=en&sensor=false
     body:
       encoding: US-ASCII
       string: ''
@@ -438,60 +718,297 @@ http_interactions:
       - "*/*"
       User-Agent:
       - Ruby
+      Sentry-Trace:
+      - b32916849c3748cabb36688d7054409d-150c6033f22a477f-1
+      Baggage:
+      - sentry-trace_id=b32916849c3748cabb36688d7054409d,sentry-sample_rate=1.0,sentry-sampled=true,sentry-environment=test,sentry-release=03b36f93c3fc23bc2dedddc89372c733edefb96d,sentry-public_key=c82d5787df86b4b23549b5d2ff517b56
   response:
     status:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx
-      Date:
-      - Wed, 09 Apr 2025 17:46:37 GMT
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 10 Apr 2025 20:01:39 GMT
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy-Report-Only:
+      - script-src 'none'; form-action 'none'; frame-src 'none'; report-uri https://csp.withgoogle.com/csp/scaffolding/msaifdggmnwc:228:0
+      Cross-Origin-Opener-Policy-Report-Only:
+      - same-origin; report-to=msaifdggmnwc:228:0
+      Report-To:
+      - '{"group":"msaifdggmnwc:228:0","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/scaffolding/msaifdggmnwc:228:0"}],}'
+      Server:
+      - mafe
       Content-Length:
-      - '2'
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - timeout=20
+      - '51'
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server-Timing:
+      - gfet4t7; dur=56
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
     body:
       encoding: UTF-8
-      string: "[]"
-  recorded_at: Wed, 09 Apr 2025 17:46:37 GMT
+      string: |-
+        {
+           "results" : [],
+           "status" : "ZERO_RESULTS"
+        }
+  recorded_at: Thu, 10 Apr 2025 20:01:39 GMT
 - request:
-    method: get
-    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=Seattle,%20WA
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Wed, 09 Apr 2025 17:46:37 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '594'
-      Connection:
-      - keep-alive
-      Keep-Alive:
-      - timeout=20
+    method: post
+    uri: https://o4509125442207744.ingest.us.sentry.io/api/4509125443190784/envelope/
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        W3sicGxhY2VfaWQiOjMwMTE3NzI1MywibGljZW5jZSI6IkRhdGEgwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnMsIE9EYkwgMS4wLiBodHRwOi8vb3NtLm9yZy9jb3B5cmlnaHQiLCJvc21fdHlwZSI6InJlbGF0aW9uIiwib3NtX2lkIjoyMzczODUsImxhdCI6IjQ3LjYwMzgzMjEiLCJsb24iOiItMTIyLjMzMDA2MiIsImNsYXNzIjoiYm91bmRhcnkiLCJ0eXBlIjoiYWRtaW5pc3RyYXRpdmUiLCJwbGFjZV9yYW5rIjoxNiwiaW1wb3J0YW5jZSI6MC43MjU2NjQxNDk3Njk1MTgxLCJhZGRyZXNzdHlwZSI6ImNpdHkiLCJuYW1lIjoiU2VhdHRsZSIsImRpc3BsYXlfbmFtZSI6IlNlYXR0bGUsIEtpbmcgQ291bnR5LCBXYXNoaW5ndG9uLCBVbml0ZWQgU3RhdGVzIiwiYWRkcmVzcyI6eyJjaXR5IjoiU2VhdHRsZSIsImNvdW50eSI6IktpbmcgQ291bnR5Iiwic3RhdGUiOiJXYXNoaW5ndG9uIiwiSVNPMzE2Ni0yLWx2bDQiOiJVUy1XQSIsImNvdW50cnkiOiJVbml0ZWQgU3RhdGVzIiwiY291bnRyeV9jb2RlIjoidXMifSwiYm91bmRpbmdib3giOlsiNDcuNDgxMDAyMiIsIjQ3LjczNDE1MDMiLCItMTIyLjQ1OTY5NjAiLCItMTIyLjIyNDQzMzAiXX1d
-  recorded_at: Wed, 09 Apr 2025 17:46:37 GMT
+        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
+    headers:
+      Content-Type:
+      - application/x-sentry-envelope
+      Content-Encoding:
+      - gzip
+      User-Agent:
+      - sentry-ruby/5.23.0
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=sentry-ruby/5.23.0, sentry_timestamp=1744315300,
+        sentry_key=c82d5787df86b4b23549b5d2ff517b56
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 10 Apr 2025 20:01:40 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"6cc6d29f03d04d058c31a9fc099cac4f"}'
+  recorded_at: Thu, 10 Apr 2025 20:01:40 GMT
+- request:
+    method: post
+    uri: https://o4509125442207744.ingest.us.sentry.io/api/4509125443190784/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"1b77f12836334abf974615120a02a47b","dsn":"https://c82d5787df86b4b23549b5d2ff517b56@o4509125442207744.ingest.us.sentry.io/4509125443190784","sdk":{"name":"sentry.ruby","version":"5.23.0"},"sent_at":"2025-04-10T20:01:40Z","trace":{"trace_id":"a5be2e84197c46dfa942607ec82216e2","sample_rate":"1.0","sampled":"true","environment":"test","release":"03b36f93c3fc23bc2dedddc89372c733edefb96d","public_key":"c82d5787df86b4b23549b5d2ff517b56"}}
+        {"type":"transaction","content_type":"application/json"}
+        {"event_id":"1b77f12836334abf974615120a02a47b","level":"error","timestamp":1744315300.23038,"release":"03b36f93c3fc23bc2dedddc89372c733edefb96d","environment":"test","server_name":"mac.lan","modules":{"rake":"13.2.1","base64":"0.2.0","benchmark":"0.4.0","bigdecimal":"3.1.9","concurrent-ruby":"1.3.5","connection_pool":"2.5.0","drb":"2.2.1","i18n":"1.14.7","logger":"1.7.0","minitest":"5.25.5","securerandom":"0.4.1","tzinfo":"2.0.6","uri":"1.0.3","activesupport":"8.0.2","builder":"3.3.0","erubi":"1.13.1","racc":"1.8.1","nokogiri":"1.18.7","rails-dom-testing":"2.2.0","crass":"1.0.6","loofah":"2.24.0","rails-html-sanitizer":"1.6.2","actionview":"8.0.2","rack":"3.1.12","rack-session":"2.1.0","rack-test":"2.2.0","useragent":"0.16.11","actionpack":"8.0.2","nio4r":"2.7.4","websocket-extensions":"0.1.5","websocket-driver":"0.7.7","zeitwerk":"2.7.2","actioncable":"8.0.2","globalid":"1.2.1","activejob":"8.0.2","activemodel":"8.0.2","timeout":"0.4.3","activerecord":"8.0.2","marcel":"1.0.4","activestorage":"8.0.2","mini_mime":"1.1.5","date":"3.4.1","net-protocol":"0.2.2","net-imap":"0.5.6","net-pop":"0.1.2","net-smtp":"0.5.1","mail":"2.8.1","actionmailbox":"8.0.2","actionmailer":"8.0.2","actiontext":"8.0.2","public_suffix":"6.0.1","addressable":"2.8.7","ast":"2.4.3","bcrypt_pbkdf":"1.1.1","bindex":"0.8.1","msgpack":"1.8.0","bootsnap":"1.18.4","brakeman":"7.0.2","bundler":"2.6.7","matrix":"0.4.2","regexp_parser":"2.10.0","xpath":"3.2.0","capybara":"3.40.0","rexml":"3.4.1","crack":"1.0.0","prettyprint":"0.2.0","pp":"0.6.2","stringio":"3.1.6","psych":"5.2.3","rdoc":"6.13.1","io-console":"0.8.0","reline":"0.6.1","irb":"1.15.2","rackup":"2.2.1","thor":"1.3.2","railties":"8.0.2","cssbundling-rails":"1.4.3","csv":"3.3.3","debug":"1.10.0","declarative":"0.0.20","diff-lcs":"1.6.1","docile":"1.4.1","dotenv":"3.1.8","ed25519":"1.3.0","et-orbi":"1.2.11","net-http":"0.6.0","faraday-net_http":"3.4.0","json":"2.10.2","faraday":"2.13.0","raabro":"1.4.0","fugit":"1.11.1","geocoder":"1.8.5","google-cloud-env":"2.2.2","google-logging-utils":"0.1.0","jwt":"2.10.1","multi_json":"1.15.0","os":"1.1.4","signet":"0.19.0","googleauth":"1.14.0","mutex_m":"0.3.0","httpclient":"2.9.0","trailblazer-option":"0.1.2","uber":"0.1.0","representable":"3.2.0","retriable":"3.1.2","google-apis-core":"0.16.0","google-apis-places_v1":"0.33.0","hashdiff":"1.1.2","multi_xml":"0.7.1","httparty":"0.23.1","importmap-rails":"2.1.0","jbuilder":"2.13.0","net-ssh":"7.3.0","net-scp":"4.1.0","net-sftp":"4.0.0","ostruct":"0.6.1","sshkit":"1.24.0","kamal":"2.5.3","language_server-protocol":"3.17.0.4","lint_roller":"1.1.0","parallel":"1.26.3","parser":"3.3.7.4","prism":"1.4.0","propshaft":"1.1.0","puma":"6.6.0","rails":"8.0.2","rails-controller-testing":"1.0.5","rainbow":"3.1.1","rspec-support":"3.13.2","rspec-core":"3.13.3","rspec-expectations":"3.13.3","rspec-mocks":"3.13.2","rspec-rails":"7.1.1","rubocop-ast":"1.44.0","ruby-progressbar":"1.13.0","unicode-emoji":"4.0.4","unicode-display_width":"3.1.4","rubocop":"1.75.2","rubocop-performance":"1.25.0","rubocop-rails":"2.31.0","rubocop-rails-omakase":"1.1.0","rubyzip":"2.4.1","websocket":"1.2.11","selenium-webdriver":"4.31.0","sentry-ruby":"5.23.0","sentry-rails":"5.23.0","simplecov-html":"0.13.1","simplecov_json_formatter":"0.1.4","simplecov":"0.22.0","solid_cable":"3.0.7","solid_cache":"1.0.7","solid_queue":"1.1.4","sqlite3":"2.6.0","stimulus-rails":"1.3.4","thruster":"0.1.12","turbo-rails":"2.0.13","vcr":"6.3.1","web-console":"4.2.1","webmock":"3.25.1","cgi":"0.4.1","delegate":"0.4.0","did_you_mean":"2.0.0","digest":"3.2.0","english":"0.8.0","erb":"4.0.4","error_highlight":"0.7.0","etc":"1.4.5","fcntl":"1.2.0","fiddle":"1.1.6","fileutils":"1.7.3","find":"0.2.0","forwardable":"1.3.3","io-nonblock":"0.3.1","io-wait":"0.3.1","ipaddr":"1.2.7","open-uri":"0.5.0","open3":"0.2.1","openssl":"3.3.0","optparse":"0.6.0","pathname":"0.4.0","pstore":"0.1.4","readline":"0.0.4","resolv":"0.6.0","ruby2_keywords":"0.0.5","set":"1.1.1","shellwords":"0.2.2","singleton":"0.3.0","strscan":"3.1.2","syntax_suggest":"2.0.2","tempfile":"0.3.1","time":"0.4.1","tmpdir":"0.3.1","tsort":"0.2.0","un":"0.3.0","weakref":"0.1.3","yaml":"0.4.0","zlib":"3.2.1"},"message":"","user":{},"tags":{"request_id":"cc34d0fc-7a63-4b75-96ed-c72d38c9d125"},"contexts":{"os":{"name":"Darwin","version":"Darwin Kernel Version 24.3.0: Thu Jan  2 20:24:23 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8122","build":"24.3.0","kernel_version":"Darwin Kernel Version 24.3.0: Thu Jan  2 20:24:23 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8122","machine":"arm64"},"runtime":{"name":"ruby","version":"ruby 3.4.2 (2025-02-15 revision d2930f8e7a) +PRISM [arm64-darwin24]"},"trace":{"trace_id":"a5be2e84197c46dfa942607ec82216e2","span_id":"6df23c226c564e0d","parent_span_id":null,"description":null,"op":"http.server","status":null,"origin":"auto.http.rails","data":{"http.response.status_code":302}}},"extra":{},"fingerprint":[],"breadcrumbs":{"values":[{"category":"start_processing.action_controller","data":{"controller":"WeatherController","action":"show","params":{"query":"Seattle, WA","controller":"weather","action":"show"},"format":"html","method":"GET","path":"/location?query=Seattle,%20WA"},"level":null,"message":"","timestamp":1744315300,"type":null},{"category":"net.http","data":{"status":200,"method":"GET","url":"https://maps.googleapis.com/maps/api/geocode/json"},"level":"info","message":"","timestamp":1744315300,"type":"info"},{"category":"cache_exist?.active_support","data":{"key":"place_id__ChIJVTPokywQkFQRmtVEaUZlJRA","store":"ActiveSupport::Cache::NullStore"},"level":null,"message":"","timestamp":1744315300,"type":null},{"category":"cache_read.active_support","data":{"key":"place_id__ChIJVTPokywQkFQRmtVEaUZlJRA","store":"ActiveSupport::Cache::NullStore","hit":false},"level":null,"message":"","timestamp":1744315300,"type":null},{"category":"cache_generate.active_support","data":{"key":"place_id__ChIJVTPokywQkFQRmtVEaUZlJRA","store":"ActiveSupport::Cache::NullStore"},"level":null,"message":"","timestamp":1744315300,"type":null},{"category":"redirect_to.action_controller","data":{"status":302,"location":"http://www.example.com/"},"level":null,"message":"","timestamp":1744315300,"type":null},{"category":"process_action.action_controller","data":{"controller":"WeatherController","action":"show","params":{"query":"Seattle, WA","controller":"weather","action":"show"},"format":"html","method":"GET","path":"/location?query=Seattle,%20WA","status":302,"view_runtime":null,"db_runtime":0.0},"level":null,"message":"","timestamp":1744315300,"type":null}]},"transaction":"WeatherController#show","transaction_info":{"source":"view"},"platform":"ruby","sdk":{"name":"sentry.ruby","version":"5.23.0"},"type":"transaction","request":{"url":"http://www.example.com/location","method":"GET","headers":{"Host":"www.example.com","Accept":"text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5","X-Request-Id":"cc34d0fc-7a63-4b75-96ed-c72d38c9d125"},"env":{"SERVER_NAME":"www.example.com","SERVER_PORT":"80"}},"spans":[{"trace_id":"a5be2e84197c46dfa942607ec82216e2","span_id":"2ba88c64dfc5492f","parent_span_id":"6df23c226c564e0d","start_timestamp":1744315300.112025,"timestamp":1744315300.227644,"description":"WeatherController#show","op":"view.process_action.action_controller","status":"internal_error","tags":{},"data":{"http.response.status_code":500,"format":"text/html","method":"GET","path":"/location?query=Seattle,%20WA","params":{"query":"Seattle, WA","controller":"weather","action":"show"}},"origin":"auto.view.rails"},{"trace_id":"a5be2e84197c46dfa942607ec82216e2","span_id":"8b6e810b083646b2","parent_span_id":"2ba88c64dfc5492f","start_timestamp":1744315300.112472,"timestamp":1744315300.215196,"description":"GET https://maps.googleapis.com/maps/api/geocode/json","op":"http.client","status":null,"tags":{},"data":{"url":"https://maps.googleapis.com/maps/api/geocode/json","http.request.method":"GET","http.response.status_code":200},"origin":"auto.http.net_http"},{"trace_id":"a5be2e84197c46dfa942607ec82216e2","span_id":"3e419f02e35a4358","parent_span_id":"2ba88c64dfc5492f","start_timestamp":1744315300.215797,"timestamp":1744315300.215833,"description":"ActiveSupport::Cache::NullStore","op":"cache.get","status":null,"tags":{},"data":{"cache.key":["place_id__ChIJVTPokywQkFQRmtVEaUZlJRA"],"cache.hit":false},"origin":"auto.cache.rails"}],"start_timestamp":1744315300.111686,"measurements":{}}
+    headers:
+      Content-Type:
+      - application/x-sentry-envelope
+      Content-Encoding:
+      - ''
+      User-Agent:
+      - sentry-ruby/5.23.0
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=sentry-ruby/5.23.0, sentry_timestamp=1744315300,
+        sentry_key=c82d5787df86b4b23549b5d2ff517b56
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 10 Apr 2025 20:01:40 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"1b77f12836334abf974615120a02a47b"}'
+  recorded_at: Thu, 10 Apr 2025 20:01:40 GMT
+- request:
+    method: post
+    uri: https://o4509125442207744.ingest.us.sentry.io/api/4509125443190784/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"891e420ffff3423c8a2f65475a330e27","dsn":"https://c82d5787df86b4b23549b5d2ff517b56@o4509125442207744.ingest.us.sentry.io/4509125443190784","sdk":{"name":"sentry.ruby","version":"5.23.0"},"sent_at":"2025-04-10T20:01:40Z","trace":{"trace_id":"f27ea55da3e24dff80199aaf809dee3b","sample_rate":"1.0","sampled":"true","environment":"test","release":"03b36f93c3fc23bc2dedddc89372c733edefb96d","public_key":"c82d5787df86b4b23549b5d2ff517b56"}}
+        {"type":"transaction","content_type":"application/json"}
+        {"event_id":"891e420ffff3423c8a2f65475a330e27","level":"error","timestamp":1744315300.2346299,"release":"03b36f93c3fc23bc2dedddc89372c733edefb96d","environment":"test","server_name":"mac.lan","modules":{"rake":"13.2.1","base64":"0.2.0","benchmark":"0.4.0","bigdecimal":"3.1.9","concurrent-ruby":"1.3.5","connection_pool":"2.5.0","drb":"2.2.1","i18n":"1.14.7","logger":"1.7.0","minitest":"5.25.5","securerandom":"0.4.1","tzinfo":"2.0.6","uri":"1.0.3","activesupport":"8.0.2","builder":"3.3.0","erubi":"1.13.1","racc":"1.8.1","nokogiri":"1.18.7","rails-dom-testing":"2.2.0","crass":"1.0.6","loofah":"2.24.0","rails-html-sanitizer":"1.6.2","actionview":"8.0.2","rack":"3.1.12","rack-session":"2.1.0","rack-test":"2.2.0","useragent":"0.16.11","actionpack":"8.0.2","nio4r":"2.7.4","websocket-extensions":"0.1.5","websocket-driver":"0.7.7","zeitwerk":"2.7.2","actioncable":"8.0.2","globalid":"1.2.1","activejob":"8.0.2","activemodel":"8.0.2","timeout":"0.4.3","activerecord":"8.0.2","marcel":"1.0.4","activestorage":"8.0.2","mini_mime":"1.1.5","date":"3.4.1","net-protocol":"0.2.2","net-imap":"0.5.6","net-pop":"0.1.2","net-smtp":"0.5.1","mail":"2.8.1","actionmailbox":"8.0.2","actionmailer":"8.0.2","actiontext":"8.0.2","public_suffix":"6.0.1","addressable":"2.8.7","ast":"2.4.3","bcrypt_pbkdf":"1.1.1","bindex":"0.8.1","msgpack":"1.8.0","bootsnap":"1.18.4","brakeman":"7.0.2","bundler":"2.6.7","matrix":"0.4.2","regexp_parser":"2.10.0","xpath":"3.2.0","capybara":"3.40.0","rexml":"3.4.1","crack":"1.0.0","prettyprint":"0.2.0","pp":"0.6.2","stringio":"3.1.6","psych":"5.2.3","rdoc":"6.13.1","io-console":"0.8.0","reline":"0.6.1","irb":"1.15.2","rackup":"2.2.1","thor":"1.3.2","railties":"8.0.2","cssbundling-rails":"1.4.3","csv":"3.3.3","debug":"1.10.0","declarative":"0.0.20","diff-lcs":"1.6.1","docile":"1.4.1","dotenv":"3.1.8","ed25519":"1.3.0","et-orbi":"1.2.11","net-http":"0.6.0","faraday-net_http":"3.4.0","json":"2.10.2","faraday":"2.13.0","raabro":"1.4.0","fugit":"1.11.1","geocoder":"1.8.5","google-cloud-env":"2.2.2","google-logging-utils":"0.1.0","jwt":"2.10.1","multi_json":"1.15.0","os":"1.1.4","signet":"0.19.0","googleauth":"1.14.0","mutex_m":"0.3.0","httpclient":"2.9.0","trailblazer-option":"0.1.2","uber":"0.1.0","representable":"3.2.0","retriable":"3.1.2","google-apis-core":"0.16.0","google-apis-places_v1":"0.33.0","hashdiff":"1.1.2","multi_xml":"0.7.1","httparty":"0.23.1","importmap-rails":"2.1.0","jbuilder":"2.13.0","net-ssh":"7.3.0","net-scp":"4.1.0","net-sftp":"4.0.0","ostruct":"0.6.1","sshkit":"1.24.0","kamal":"2.5.3","language_server-protocol":"3.17.0.4","lint_roller":"1.1.0","parallel":"1.26.3","parser":"3.3.7.4","prism":"1.4.0","propshaft":"1.1.0","puma":"6.6.0","rails":"8.0.2","rails-controller-testing":"1.0.5","rainbow":"3.1.1","rspec-support":"3.13.2","rspec-core":"3.13.3","rspec-expectations":"3.13.3","rspec-mocks":"3.13.2","rspec-rails":"7.1.1","rubocop-ast":"1.44.0","ruby-progressbar":"1.13.0","unicode-emoji":"4.0.4","unicode-display_width":"3.1.4","rubocop":"1.75.2","rubocop-performance":"1.25.0","rubocop-rails":"2.31.0","rubocop-rails-omakase":"1.1.0","rubyzip":"2.4.1","websocket":"1.2.11","selenium-webdriver":"4.31.0","sentry-ruby":"5.23.0","sentry-rails":"5.23.0","simplecov-html":"0.13.1","simplecov_json_formatter":"0.1.4","simplecov":"0.22.0","solid_cable":"3.0.7","solid_cache":"1.0.7","solid_queue":"1.1.4","sqlite3":"2.6.0","stimulus-rails":"1.3.4","thruster":"0.1.12","turbo-rails":"2.0.13","vcr":"6.3.1","web-console":"4.2.1","webmock":"3.25.1","cgi":"0.4.1","delegate":"0.4.0","did_you_mean":"2.0.0","digest":"3.2.0","english":"0.8.0","erb":"4.0.4","error_highlight":"0.7.0","etc":"1.4.5","fcntl":"1.2.0","fiddle":"1.1.6","fileutils":"1.7.3","find":"0.2.0","forwardable":"1.3.3","io-nonblock":"0.3.1","io-wait":"0.3.1","ipaddr":"1.2.7","open-uri":"0.5.0","open3":"0.2.1","openssl":"3.3.0","optparse":"0.6.0","pathname":"0.4.0","pstore":"0.1.4","readline":"0.0.4","resolv":"0.6.0","ruby2_keywords":"0.0.5","set":"1.1.1","shellwords":"0.2.2","singleton":"0.3.0","strscan":"3.1.2","syntax_suggest":"2.0.2","tempfile":"0.3.1","time":"0.4.1","tmpdir":"0.3.1","tsort":"0.2.0","un":"0.3.0","weakref":"0.1.3","yaml":"0.4.0","zlib":"3.2.1"},"message":"","user":{},"tags":{"request_id":"073d69d9-3371-4a13-a021-acff6cf091cd"},"contexts":{"os":{"name":"Darwin","version":"Darwin Kernel Version 24.3.0: Thu Jan  2 20:24:23 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8122","build":"24.3.0","kernel_version":"Darwin Kernel Version 24.3.0: Thu Jan  2 20:24:23 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8122","machine":"arm64"},"runtime":{"name":"ruby","version":"ruby 3.4.2 (2025-02-15 revision d2930f8e7a) +PRISM [arm64-darwin24]"},"trace":{"trace_id":"f27ea55da3e24dff80199aaf809dee3b","span_id":"458c3428fbcb4406","parent_span_id":null,"description":null,"op":"http.server","status":"ok","origin":"auto.http.rails","data":{"http.response.status_code":200}}},"extra":{},"fingerprint":[],"breadcrumbs":{"values":[{"category":"start_processing.action_controller","data":{"controller":"WeatherController","action":"index","params":{"controller":"weather","action":"index"},"format":"html","method":"GET","path":"/"},"level":null,"message":"","timestamp":1744315300,"type":null},{"category":"render_template.action_view","data":{"identifier":"/Users/stevenchau/Programming/weather-app/app/views/weather/index.html.erb","layout":"layouts/application"},"level":null,"message":"","timestamp":1744315300,"type":null},{"category":"render_partial.action_view","data":{"identifier":"/Users/stevenchau/Programming/weather-app/app/views/weather/_form.html.erb"},"level":null,"message":"","timestamp":1744315300,"type":null},{"category":"render_layout.action_view","data":{"identifier":"/Users/stevenchau/Programming/weather-app/app/views/layouts/application.html.erb"},"level":null,"message":"","timestamp":1744315300,"type":null},{"category":"process_action.action_controller","data":{"controller":"WeatherController","action":"index","params":{"controller":"weather","action":"index"},"format":"html","method":"GET","path":"/","status":200,"view_runtime":1.3209999799728394,"db_runtime":0.0},"level":null,"message":"","timestamp":1744315300,"type":null}]},"transaction":"WeatherController#index","transaction_info":{"source":"view"},"platform":"ruby","sdk":{"name":"sentry.ruby","version":"5.23.0"},"type":"transaction","request":{"url":"http://www.example.com/","method":"GET","headers":{"Host":"www.example.com","Accept":"text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5","Referer":"http://www.example.com/location?query=Seattle,%20WA","X-Request-Id":"073d69d9-3371-4a13-a021-acff6cf091cd"},"env":{"SERVER_NAME":"www.example.com","SERVER_PORT":"80"}},"spans":[{"trace_id":"f27ea55da3e24dff80199aaf809dee3b","span_id":"29f72bc9bc644b38","parent_span_id":"458c3428fbcb4406","start_timestamp":1744315300.232971,"timestamp":1744315300.2344031,"description":"WeatherController#index","op":"view.process_action.action_controller","status":"ok","tags":{},"data":{"http.response.status_code":200,"format":"text/html","method":"GET","path":"/","params":{"controller":"weather","action":"index"}},"origin":"auto.view.rails"},{"trace_id":"f27ea55da3e24dff80199aaf809dee3b","span_id":"6ba43deacece40ec","parent_span_id":"29f72bc9bc644b38","start_timestamp":1744315300.2332659,"timestamp":1744315300.2333658,"description":"/Users/stevenchau/Programming/weather-app/app/views/weather/index.html.erb","op":"template.render_template.action_view","status":null,"tags":{},"data":{},"origin":"auto.template.rails"}],"start_timestamp":1744315300.232543,"measurements":{}}
+    headers:
+      Content-Type:
+      - application/x-sentry-envelope
+      Content-Encoding:
+      - ''
+      User-Agent:
+      - sentry-ruby/5.23.0
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=sentry-ruby/5.23.0, sentry_timestamp=1744315300,
+        sentry_key=c82d5787df86b4b23549b5d2ff517b56
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 10 Apr 2025 20:01:40 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"891e420ffff3423c8a2f65475a330e27"}'
+  recorded_at: Thu, 10 Apr 2025 20:01:40 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=Seattle,%20WA&key=<GOOGLE_MAPS_API_KEY>&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Sentry-Trace:
+      - 49959f1ac6084f8493c56abc2ca59cc3-b76807ab631d40ce-1
+      Baggage:
+      - sentry-trace_id=49959f1ac6084f8493c56abc2ca59cc3,sentry-sample_rate=1.0,sentry-sampled=true,sentry-environment=test,sentry-release=03b36f93c3fc23bc2dedddc89372c733edefb96d,sentry-public_key=c82d5787df86b4b23549b5d2ff517b56
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 10 Apr 2025 20:01:40 GMT
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Goog-Maps-Metro-Area:
+      - Seattle, WA
+      Content-Security-Policy-Report-Only:
+      - script-src 'none'; form-action 'none'; frame-src 'none'; report-uri https://csp.withgoogle.com/csp/scaffolding/msaifdggmnwc:228:0
+      Cross-Origin-Opener-Policy-Report-Only:
+      - same-origin; report-to=msaifdggmnwc:228:0
+      Report-To:
+      - '{"group":"msaifdggmnwc:228:0","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/scaffolding/msaifdggmnwc:228:0"}],}'
+      Server:
+      - mafe
+      Content-Length:
+      - '2158'
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server-Timing:
+      - gfet4t7; dur=15
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: "{\n   \"results\" : \n   [\n      {\n         \"address_components\"
+        : \n         [\n            {\n               \"long_name\" : \"Seattle\",\n
+        \              \"short_name\" : \"Seattle\",\n               \"types\" : \n
+        \              [\n                  \"locality\",\n                  \"political\"\n
+        \              ]\n            },\n            {\n               \"long_name\"
+        : \"King County\",\n               \"short_name\" : \"King County\",\n               \"types\"
+        : \n               [\n                  \"administrative_area_level_2\",\n
+        \                 \"political\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"Washington\",\n               \"short_name\"
+        : \"WA\",\n               \"types\" : \n               [\n                  \"administrative_area_level_1\",\n
+        \                 \"political\"\n               ]\n            },\n            {\n
+        \              \"long_name\" : \"United States\",\n               \"short_name\"
+        : \"US\",\n               \"types\" : \n               [\n                  \"country\",\n
+        \                 \"political\"\n               ]\n            }\n         ],\n
+        \        \"formatted_address\" : \"Seattle, WA, USA\",\n         \"geometry\"
+        : \n         {\n            \"bounds\" : \n            {\n               \"northeast\"
+        : \n               {\n                  \"lat\" : 47.73528,\n                  \"lng\"
+        : -122.219822\n               },\n               \"southwest\" : \n               {\n
+        \                 \"lat\" : 47.48215,\n                  \"lng\" : -122.4597739\n
+        \              }\n            },\n            \"location\" : \n            {\n
+        \              \"lat\" : 47.6061389,\n               \"lng\" : -122.3328481\n
+        \           },\n            \"location_type\" : \"APPROXIMATE\",\n            \"viewport\"
+        : \n            {\n               \"northeast\" : \n               {\n                  \"lat\"
+        : 47.73528,\n                  \"lng\" : -122.219822\n               },\n
+        \              \"southwest\" : \n               {\n                  \"lat\"
+        : 47.48215,\n                  \"lng\" : -122.4597739\n               }\n
+        \           }\n         },\n         \"place_id\" : \"ChIJVTPokywQkFQRmtVEaUZlJRA\",\n
+        \        \"types\" : \n         [\n            \"locality\",\n            \"political\"\n
+        \        ]\n      }\n   ],\n   \"status\" : \"OK\"\n}"
+  recorded_at: Thu, 10 Apr 2025 20:01:40 GMT
 recorded_with: VCR 6.3.1

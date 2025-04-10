@@ -35,7 +35,7 @@ RSpec.describe WeatherRequest, type: :model do
         expect {
           request = WeatherRequest.new(location: "Seattle, WA")
           request.perform
-        }.to(change { Rails.cache.exist?("301177253_seattle") }.from(false).to(true))
+        }.to(change { Rails.cache.exist?("place_id__ChIJVTPokywQkFQRmtVEaUZlJRA") }.from(false).to(true))
       end
     end
   end

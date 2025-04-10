@@ -44,6 +44,18 @@ RSpec.describe "Weathers", type: :request do
       end
     end
 
+    context "when search is empty" do
+      let(:location) { '' }
+
+      it "should not show a flash" do
+        show_request
+        expect(response).to redirect_to(controller: :weather, action: :index)
+
+        follow_redirect!
+        expect(flash[:alert]).to be_nil
+      end
+    end
+
     context "when location is a Canadian Address" do
       include_context "cache enabled"
 
@@ -58,7 +70,7 @@ RSpec.describe "Weathers", type: :request do
       it "caches the result" do
         expect {
           show_request
-        }.to(change { Rails.cache.exist?("weather_V5P") }.from(false).to(true))
+        }.to(change { Rails.cache.exist?("weather_v5p-3w9") }.from(false).to(true))
       end
     end
 
@@ -105,6 +117,7 @@ RSpec.describe "Weathers", type: :request do
         expect(response).to redirect_to(controller: :weather, action: :index)
 
         follow_redirect!
+        expect(flash[:alert]).to be_present
         expect(response.body).to include("We are unable to find the weather")
       end
     end

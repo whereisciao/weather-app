@@ -20,9 +20,9 @@ To save on weather API requests, additional caching was added to save on municip
 
 # Getting Started
 
-1. An Open Weather Map API Key is required to request weather data. A key should be provided by your contact, or you could register your own  by visiting https://openweathermap.org/.
+1. Gather API keys. An Open Weather Map API Key is required to request weather data. A key should be provided by your contact, or you could register your own by visiting https://openweathermap.org/. A `GOOGLE_MAPS_API` is required for autocomplete. A key should be provided by your contact, or you could register your own by following [Google's Get API Key](https://developers.google.com/maps/documentation/places/web-service/get-api-key) instructions.
 
-2. Copy `.env.example` and rename the file to `.env`. Set `OPEN_WEATHER_MAP_API` to key in step 1.
+2. Copy `.env.example` and rename the file to `.env`. Set `OPEN_WEATHER_MAP_API` and `GOOGLE_MAPS_API` from step 1.
 
 3. Run `bundle install` to install dependencies.
 
@@ -34,5 +34,8 @@ To save on weather API requests, additional caching was added to save on municip
 
 `WeatherRequest` - The plain old ruby object responsible for geocoding a location, fetching weather data, and transforming the data into a `Forecast` to display.
 
+`WeatherRequest::Forecast` - Data class for storing weather data.
+
 `OpenWeatherMap` - A Ruby API wrapper around OpenWeather's Onecall API. The API returns essential weather data, both short-term and long-term forecast.
 
+`PlacesAutocompleteRequest` - Request class for fetching place suggestions.

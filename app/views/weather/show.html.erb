@@ -5,7 +5,7 @@
     <dd><%= weather_icon(@request.current_forecast, size: 50) %></dd>
     <dd><%= @request.current_forecast.weather.first["main"] %></dd>
     <dt>Location</dt>
-    <dd><%= @request.location %></dd>
+    <dd><%= @request.formatted_address %></dd>
     <dt>Current Temperature</dt>
     <dd><%= format_temp @request.current_forecast.temp %></dd>
     <dt>Current High Temperature</dt>
@@ -15,7 +15,7 @@
     <dt>Wind speed (miles/hour)</dt>
     <dd><%= @request.current_forecast.wind_speed %>
     <dt>Cache Status</dt>
-    <dd><%= cache_status(@report) %></dd>
+    <dd><%= cache_status(@request) %></dd>
   </dl>
 </section>
 <section class="forecast-daily pb-5">
