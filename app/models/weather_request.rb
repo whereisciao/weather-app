@@ -13,12 +13,29 @@ class WeatherRequest
   # https://nominatim.org/release-docs/latest/customize/Ranking/#search-rank
   PLACE_RANK_CITY_RANGE = (13..16)
 
-  attr_reader :location,
-    :lat,
-    :lon,
-    :weather_response,
-    :current_forecast,
-    :daily_forecasts
+  # @return [String]
+  #   The location to retrieve weather forecast.
+  attr_reader :location
+
+  # @return [Float]
+  #   Latitude of the first geocoded result
+  attr_reader :lat
+
+  # @return [Float]
+  #   Longitude of the first geocoded result
+  attr_reader :lon
+
+  # @return [Hash]
+  #   Forecast data from weather source
+  attr_reader :weather_response
+
+  # @return [WeatherRequest::Forecast]
+  #   Current weather forecast
+  attr_reader :current_forecast
+
+  # @return [Array<WeatherRequest::Forecast>]
+  #   Array of daily weather forecast for the next 8 days, includes the current day.
+  attr_reader :daily_forecasts
 
   def initialize(location:)
     @location = location
