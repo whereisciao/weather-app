@@ -14,7 +14,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Thu, 10 Apr 2025 18:21:01 GMT
+      - Thu, 10 Apr 2025 20:40:14 GMT
       X-Goog-Api-Client:
       - gl-ruby/3.4.2 gdcl/1.33.0
       Content-Type:
@@ -31,7 +31,7 @@ http_interactions:
       Content-Encoding:
       - gzip
       Date:
-      - Thu, 10 Apr 2025 18:21:01 GMT
+      - Thu, 10 Apr 2025 20:40:14 GMT
       Server:
       - scaffolding on HTTPServer2
       X-Xss-Protection:
@@ -41,7 +41,7 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Server-Timing:
-      - gfet4t7; dur=23
+      - gfet4t7; dur=14
       Alt-Svc:
       - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
       Transfer-Encoding:
@@ -77,8 +77,8 @@ http_interactions:
                   }
                 },
                 "types": [
-                  "premise",
-                  "geocode"
+                  "geocode",
+                  "premise"
                 ]
               }
             },
@@ -139,8 +139,8 @@ http_interactions:
                   }
                 },
                 "types": [
-                  "premise",
-                  "geocode"
+                  "geocode",
+                  "premise"
                 ]
               }
             },
@@ -201,12 +201,12 @@ http_interactions:
                   }
                 },
                 "types": [
-                  "premise",
-                  "geocode"
+                  "geocode",
+                  "premise"
                 ]
               }
             }
           ]
         }
-  recorded_at: Thu, 10 Apr 2025 18:21:01 GMT
+  recorded_at: Thu, 10 Apr 2025 20:40:14 GMT
 recorded_with: VCR 6.3.1
