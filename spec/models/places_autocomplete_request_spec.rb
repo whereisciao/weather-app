@@ -11,7 +11,6 @@ RSpec.describe PlacesAutocompleteRequest do
           "1233 Andover Park East, Tukwila, WA",
           "1231 116th Avenue Northeast, Bellevue, WA",
           "1232 Andover Park West, Tukwila, WA",
-          "123 Broadway, Seattle, WA",
           "12311 SE 166th St, Renton, WA"
         ])
       end

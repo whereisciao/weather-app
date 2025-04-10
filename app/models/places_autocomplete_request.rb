@@ -33,12 +33,16 @@ class PlacesAutocompleteRequest
     Sentry.capture_exception(error)
   end
 
-  # Extract suggestions from response. Transform strings into desired format.
+  # Extract suggestions from response. Transform strings into desired format. Filter for specific types of suggestions.
   def suggestions
     return [] if response.nil?
 
-    response.suggestions.map do |suggestion|
-      suggestion.place_prediction.text.text.sub(/\, USA\z/, "")
+    response.suggestions.filter_map do |suggestion|
+      place_prediction = suggestion.place_prediction
+
+      if suggestion.place_prediction.types.include?("premise") || suggestion.place_prediction.types.include?("locality")
+        place_prediction.text.text.sub(/\, USA\z/, "")
+      end
     end
   end
 

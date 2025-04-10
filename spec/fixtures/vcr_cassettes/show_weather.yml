@@ -1011,4 +1011,166 @@ http_interactions:
         \        \"types\" : \n         [\n            \"locality\",\n            \"political\"\n
         \        ]\n      }\n   ],\n   \"status\" : \"OK\"\n}"
   recorded_at: Thu, 10 Apr 2025 20:01:40 GMT
+- request:
+    method: post
+    uri: https://o4509125442207744.ingest.us.sentry.io/api/4509125443190784/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"62cbd61e1cff4db18b3d022a3161d645","dsn":"https://c82d5787df86b4b23549b5d2ff517b56@o4509125442207744.ingest.us.sentry.io/4509125443190784","sdk":{"name":"sentry.ruby","version":"5.23.0"},"sent_at":"2025-04-10T20:38:36Z","trace":{"trace_id":"ce92aa536443458b8bbfe90336ac5bda","sample_rate":"1.0","sampled":"true","environment":"test","release":"7d7cd62000f909c811ce749fc0bb2ec322ecc985","public_key":"c82d5787df86b4b23549b5d2ff517b56"}}
+        {"type":"transaction","content_type":"application/json"}
+        {"event_id":"62cbd61e1cff4db18b3d022a3161d645","level":"error","timestamp":1744317516.182393,"release":"7d7cd62000f909c811ce749fc0bb2ec322ecc985","environment":"test","server_name":"mac.lan","modules":{"rake":"13.2.1","base64":"0.2.0","benchmark":"0.4.0","bigdecimal":"3.1.9","concurrent-ruby":"1.3.5","connection_pool":"2.5.0","drb":"2.2.1","i18n":"1.14.7","logger":"1.7.0","minitest":"5.25.5","securerandom":"0.4.1","tzinfo":"2.0.6","uri":"1.0.3","activesupport":"8.0.2","builder":"3.3.0","erubi":"1.13.1","racc":"1.8.1","nokogiri":"1.18.7","rails-dom-testing":"2.2.0","crass":"1.0.6","loofah":"2.24.0","rails-html-sanitizer":"1.6.2","actionview":"8.0.2","rack":"3.1.12","rack-session":"2.1.0","rack-test":"2.2.0","useragent":"0.16.11","actionpack":"8.0.2","nio4r":"2.7.4","websocket-extensions":"0.1.5","websocket-driver":"0.7.7","zeitwerk":"2.7.2","actioncable":"8.0.2","globalid":"1.2.1","activejob":"8.0.2","activemodel":"8.0.2","timeout":"0.4.3","activerecord":"8.0.2","marcel":"1.0.4","activestorage":"8.0.2","mini_mime":"1.1.5","date":"3.4.1","net-protocol":"0.2.2","net-imap":"0.5.6","net-pop":"0.1.2","net-smtp":"0.5.1","mail":"2.8.1","actionmailbox":"8.0.2","actionmailer":"8.0.2","actiontext":"8.0.2","public_suffix":"6.0.1","addressable":"2.8.7","ast":"2.4.3","bcrypt_pbkdf":"1.1.1","bindex":"0.8.1","msgpack":"1.8.0","bootsnap":"1.18.4","brakeman":"7.0.2","bundler":"2.6.7","matrix":"0.4.2","regexp_parser":"2.10.0","xpath":"3.2.0","capybara":"3.40.0","rexml":"3.4.1","crack":"1.0.0","prettyprint":"0.2.0","pp":"0.6.2","stringio":"3.1.6","psych":"5.2.3","rdoc":"6.13.1","io-console":"0.8.0","reline":"0.6.1","irb":"1.15.2","rackup":"2.2.1","thor":"1.3.2","railties":"8.0.2","cssbundling-rails":"1.4.3","csv":"3.3.3","debug":"1.10.0","declarative":"0.0.20","diff-lcs":"1.6.1","docile":"1.4.1","dotenv":"3.1.8","ed25519":"1.3.0","et-orbi":"1.2.11","net-http":"0.6.0","faraday-net_http":"3.4.0","json":"2.10.2","faraday":"2.13.0","raabro":"1.4.0","fugit":"1.11.1","geocoder":"1.8.5","google-cloud-env":"2.2.2","google-logging-utils":"0.1.0","jwt":"2.10.1","multi_json":"1.15.0","os":"1.1.4","signet":"0.19.0","googleauth":"1.14.0","mutex_m":"0.3.0","httpclient":"2.9.0","trailblazer-option":"0.1.2","uber":"0.1.0","representable":"3.2.0","retriable":"3.1.2","google-apis-core":"0.16.0","google-apis-places_v1":"0.33.0","hashdiff":"1.1.2","multi_xml":"0.7.1","httparty":"0.23.1","importmap-rails":"2.1.0","jbuilder":"2.13.0","net-ssh":"7.3.0","net-scp":"4.1.0","net-sftp":"4.0.0","ostruct":"0.6.1","sshkit":"1.24.0","kamal":"2.5.3","language_server-protocol":"3.17.0.4","lint_roller":"1.1.0","parallel":"1.26.3","parser":"3.3.7.4","prism":"1.4.0","propshaft":"1.1.0","puma":"6.6.0","rails":"8.0.2","rails-controller-testing":"1.0.5","rainbow":"3.1.1","rspec-support":"3.13.2","rspec-core":"3.13.3","rspec-expectations":"3.13.3","rspec-mocks":"3.13.2","rspec-rails":"7.1.1","rubocop-ast":"1.44.0","ruby-progressbar":"1.13.0","unicode-emoji":"4.0.4","unicode-display_width":"3.1.4","rubocop":"1.75.2","rubocop-performance":"1.25.0","rubocop-rails":"2.31.0","rubocop-rails-omakase":"1.1.0","rubyzip":"2.4.1","websocket":"1.2.11","selenium-webdriver":"4.31.0","sentry-ruby":"5.23.0","sentry-rails":"5.23.0","simplecov-html":"0.13.1","simplecov_json_formatter":"0.1.4","simplecov":"0.22.0","solid_cable":"3.0.7","solid_cache":"1.0.7","solid_queue":"1.1.4","sqlite3":"2.6.0","stimulus-rails":"1.3.4","thruster":"0.1.12","turbo-rails":"2.0.13","vcr":"6.3.1","web-console":"4.2.1","webmock":"3.25.1","cgi":"0.4.1","delegate":"0.4.0","did_you_mean":"2.0.0","digest":"3.2.0","english":"0.8.0","erb":"4.0.4","error_highlight":"0.7.0","etc":"1.4.5","fcntl":"1.2.0","fiddle":"1.1.6","fileutils":"1.7.3","find":"0.2.0","forwardable":"1.3.3","io-nonblock":"0.3.1","io-wait":"0.3.1","ipaddr":"1.2.7","open-uri":"0.5.0","open3":"0.2.1","openssl":"3.3.0","optparse":"0.6.0","pathname":"0.4.0","pstore":"0.1.4","readline":"0.0.4","resolv":"0.6.0","ruby2_keywords":"0.0.5","set":"1.1.1","shellwords":"0.2.2","singleton":"0.3.0","strscan":"3.1.2","syntax_suggest":"2.0.2","tempfile":"0.3.1","time":"0.4.1","tmpdir":"0.3.1","tsort":"0.2.0","un":"0.3.0","weakref":"0.1.3","yaml":"0.4.0","zlib":"3.2.1"},"message":"","user":{},"tags":{"request_id":"28de77d0-2eea-41f8-acb4-43e3d66ff618"},"contexts":{"os":{"name":"Darwin","version":"Darwin Kernel Version 24.3.0: Thu Jan  2 20:24:23 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8122","build":"24.3.0","kernel_version":"Darwin Kernel Version 24.3.0: Thu Jan  2 20:24:23 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8122","machine":"arm64"},"runtime":{"name":"ruby","version":"ruby 3.4.2 (2025-02-15 revision d2930f8e7a) +PRISM [arm64-darwin24]"},"trace":{"trace_id":"ce92aa536443458b8bbfe90336ac5bda","span_id":"d09da001439c4568","parent_span_id":null,"description":null,"op":"http.server","status":"ok","origin":"auto.http.rails","data":{"http.response.status_code":200}}},"extra":{},"fingerprint":[],"breadcrumbs":{"values":[{"category":"start_processing.action_controller","data":{"controller":"PlacesAutocompleteController","action":"get","params":{"input":"new","controller":"places_autocomplete","action":"get"},"format":"html","method":"GET","path":"/autocomplete?input=new"},"level":null,"message":"","timestamp":1744317516,"type":null},{"category":"process_action.action_controller","data":{"controller":"PlacesAutocompleteController","action":"get","params":{"input":"new","controller":"places_autocomplete","action":"get"},"format":"html","method":"GET","path":"/autocomplete?input=new","status":200,"view_runtime":0.1709999442100525,"db_runtime":0.0},"level":null,"message":"","timestamp":1744317516,"type":null}]},"transaction":"PlacesAutocompleteController#get","transaction_info":{"source":"view"},"platform":"ruby","sdk":{"name":"sentry.ruby","version":"5.23.0"},"type":"transaction","request":{"url":"http://www.example.com/autocomplete","method":"GET","headers":{"Host":"www.example.com","Accept":"text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5","X-Request-Id":"28de77d0-2eea-41f8-acb4-43e3d66ff618"},"env":{"SERVER_NAME":"www.example.com","SERVER_PORT":"80"}},"spans":[{"trace_id":"ce92aa536443458b8bbfe90336ac5bda","span_id":"0c1d39aeb46d443c","parent_span_id":"d09da001439c4568","start_timestamp":1744317516.042637,"timestamp":1744317516.182065,"description":"PlacesAutocompleteController#get","op":"view.process_action.action_controller","status":"ok","tags":{},"data":{"http.response.status_code":200,"format":"text/html","method":"GET","path":"/autocomplete?input=new","params":{"input":"new","controller":"places_autocomplete","action":"get"}},"origin":"auto.view.rails"}],"start_timestamp":1744317516.0388758,"measurements":{}}
+    headers:
+      Content-Type:
+      - application/x-sentry-envelope
+      Content-Encoding:
+      - ''
+      User-Agent:
+      - sentry-ruby/5.23.0
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=sentry-ruby/5.23.0, sentry_timestamp=1744317516,
+        sentry_key=c82d5787df86b4b23549b5d2ff517b56
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 10 Apr 2025 20:38:36 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"62cbd61e1cff4db18b3d022a3161d645"}'
+  recorded_at: Thu, 10 Apr 2025 20:38:36 GMT
+- request:
+    method: post
+    uri: https://o4509125442207744.ingest.us.sentry.io/api/4509125443190784/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"e0d3f09b769a4da48a98a7b1dfbe219d","dsn":"https://c82d5787df86b4b23549b5d2ff517b56@o4509125442207744.ingest.us.sentry.io/4509125443190784","sdk":{"name":"sentry.ruby","version":"5.23.0"},"sent_at":"2025-04-10T20:39:40Z","trace":{"trace_id":"9f157423bebf4580972e1e09e3fdea8e","sample_rate":"1.0","sampled":"true","environment":"test","release":"7d7cd62000f909c811ce749fc0bb2ec322ecc985","public_key":"c82d5787df86b4b23549b5d2ff517b56"}}
+        {"type":"transaction","content_type":"application/json"}
+        {"event_id":"e0d3f09b769a4da48a98a7b1dfbe219d","level":"error","timestamp":1744317580.665299,"release":"7d7cd62000f909c811ce749fc0bb2ec322ecc985","environment":"test","server_name":"mac.lan","modules":{"rake":"13.2.1","base64":"0.2.0","benchmark":"0.4.0","bigdecimal":"3.1.9","concurrent-ruby":"1.3.5","connection_pool":"2.5.0","drb":"2.2.1","i18n":"1.14.7","logger":"1.7.0","minitest":"5.25.5","securerandom":"0.4.1","tzinfo":"2.0.6","uri":"1.0.3","activesupport":"8.0.2","builder":"3.3.0","erubi":"1.13.1","racc":"1.8.1","nokogiri":"1.18.7","rails-dom-testing":"2.2.0","crass":"1.0.6","loofah":"2.24.0","rails-html-sanitizer":"1.6.2","actionview":"8.0.2","rack":"3.1.12","rack-session":"2.1.0","rack-test":"2.2.0","useragent":"0.16.11","actionpack":"8.0.2","nio4r":"2.7.4","websocket-extensions":"0.1.5","websocket-driver":"0.7.7","zeitwerk":"2.7.2","actioncable":"8.0.2","globalid":"1.2.1","activejob":"8.0.2","activemodel":"8.0.2","timeout":"0.4.3","activerecord":"8.0.2","marcel":"1.0.4","activestorage":"8.0.2","mini_mime":"1.1.5","date":"3.4.1","net-protocol":"0.2.2","net-imap":"0.5.6","net-pop":"0.1.2","net-smtp":"0.5.1","mail":"2.8.1","actionmailbox":"8.0.2","actionmailer":"8.0.2","actiontext":"8.0.2","public_suffix":"6.0.1","addressable":"2.8.7","ast":"2.4.3","bcrypt_pbkdf":"1.1.1","bindex":"0.8.1","msgpack":"1.8.0","bootsnap":"1.18.4","brakeman":"7.0.2","bundler":"2.6.7","matrix":"0.4.2","regexp_parser":"2.10.0","xpath":"3.2.0","capybara":"3.40.0","rexml":"3.4.1","crack":"1.0.0","prettyprint":"0.2.0","pp":"0.6.2","stringio":"3.1.6","psych":"5.2.3","rdoc":"6.13.1","io-console":"0.8.0","reline":"0.6.1","irb":"1.15.2","rackup":"2.2.1","thor":"1.3.2","railties":"8.0.2","cssbundling-rails":"1.4.3","csv":"3.3.3","debug":"1.10.0","declarative":"0.0.20","diff-lcs":"1.6.1","docile":"1.4.1","dotenv":"3.1.8","ed25519":"1.3.0","et-orbi":"1.2.11","net-http":"0.6.0","faraday-net_http":"3.4.0","json":"2.10.2","faraday":"2.13.0","raabro":"1.4.0","fugit":"1.11.1","geocoder":"1.8.5","google-cloud-env":"2.2.2","google-logging-utils":"0.1.0","jwt":"2.10.1","multi_json":"1.15.0","os":"1.1.4","signet":"0.19.0","googleauth":"1.14.0","mutex_m":"0.3.0","httpclient":"2.9.0","trailblazer-option":"0.1.2","uber":"0.1.0","representable":"3.2.0","retriable":"3.1.2","google-apis-core":"0.16.0","google-apis-places_v1":"0.33.0","hashdiff":"1.1.2","multi_xml":"0.7.1","httparty":"0.23.1","importmap-rails":"2.1.0","jbuilder":"2.13.0","net-ssh":"7.3.0","net-scp":"4.1.0","net-sftp":"4.0.0","ostruct":"0.6.1","sshkit":"1.24.0","kamal":"2.5.3","language_server-protocol":"3.17.0.4","lint_roller":"1.1.0","parallel":"1.26.3","parser":"3.3.7.4","prism":"1.4.0","propshaft":"1.1.0","puma":"6.6.0","rails":"8.0.2","rails-controller-testing":"1.0.5","rainbow":"3.1.1","rspec-support":"3.13.2","rspec-core":"3.13.3","rspec-expectations":"3.13.3","rspec-mocks":"3.13.2","rspec-rails":"7.1.1","rubocop-ast":"1.44.0","ruby-progressbar":"1.13.0","unicode-emoji":"4.0.4","unicode-display_width":"3.1.4","rubocop":"1.75.2","rubocop-performance":"1.25.0","rubocop-rails":"2.31.0","rubocop-rails-omakase":"1.1.0","rubyzip":"2.4.1","websocket":"1.2.11","selenium-webdriver":"4.31.0","sentry-ruby":"5.23.0","sentry-rails":"5.23.0","simplecov-html":"0.13.1","simplecov_json_formatter":"0.1.4","simplecov":"0.22.0","solid_cable":"3.0.7","solid_cache":"1.0.7","solid_queue":"1.1.4","sqlite3":"2.6.0","stimulus-rails":"1.3.4","thruster":"0.1.12","turbo-rails":"2.0.13","vcr":"6.3.1","web-console":"4.2.1","webmock":"3.25.1","cgi":"0.4.1","delegate":"0.4.0","did_you_mean":"2.0.0","digest":"3.2.0","english":"0.8.0","erb":"4.0.4","error_highlight":"0.7.0","etc":"1.4.5","fcntl":"1.2.0","fiddle":"1.1.6","fileutils":"1.7.3","find":"0.2.0","forwardable":"1.3.3","io-nonblock":"0.3.1","io-wait":"0.3.1","ipaddr":"1.2.7","open-uri":"0.5.0","open3":"0.2.1","openssl":"3.3.0","optparse":"0.6.0","pathname":"0.4.0","pstore":"0.1.4","readline":"0.0.4","resolv":"0.6.0","ruby2_keywords":"0.0.5","set":"1.1.1","shellwords":"0.2.2","singleton":"0.3.0","strscan":"3.1.2","syntax_suggest":"2.0.2","tempfile":"0.3.1","time":"0.4.1","tmpdir":"0.3.1","tsort":"0.2.0","un":"0.3.0","weakref":"0.1.3","yaml":"0.4.0","zlib":"3.2.1"},"message":"","user":{},"tags":{"request_id":"982a7c3f-f88a-41de-9a1c-741e95804b3d"},"contexts":{"os":{"name":"Darwin","version":"Darwin Kernel Version 24.3.0: Thu Jan  2 20:24:23 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8122","build":"24.3.0","kernel_version":"Darwin Kernel Version 24.3.0: Thu Jan  2 20:24:23 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8122","machine":"arm64"},"runtime":{"name":"ruby","version":"ruby 3.4.2 (2025-02-15 revision d2930f8e7a) +PRISM [arm64-darwin24]"},"trace":{"trace_id":"9f157423bebf4580972e1e09e3fdea8e","span_id":"a48657c143f34f96","parent_span_id":null,"description":null,"op":"http.server","status":"ok","origin":"auto.http.rails","data":{"http.response.status_code":200}}},"extra":{},"fingerprint":[],"breadcrumbs":{"values":[{"category":"start_processing.action_controller","data":{"controller":"PlacesAutocompleteController","action":"get","params":{"input":"new","controller":"places_autocomplete","action":"get"},"format":"html","method":"GET","path":"/autocomplete?input=new"},"level":null,"message":"","timestamp":1744317580,"type":null},{"category":"process_action.action_controller","data":{"controller":"PlacesAutocompleteController","action":"get","params":{"input":"new","controller":"places_autocomplete","action":"get"},"format":"html","method":"GET","path":"/autocomplete?input=new","status":200,"view_runtime":0.15999996662139893,"db_runtime":0.0},"level":null,"message":"","timestamp":1744317580,"type":null}]},"transaction":"PlacesAutocompleteController#get","transaction_info":{"source":"view"},"platform":"ruby","sdk":{"name":"sentry.ruby","version":"5.23.0"},"type":"transaction","request":{"url":"http://www.example.com/autocomplete","method":"GET","headers":{"Host":"www.example.com","Accept":"text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5","X-Request-Id":"982a7c3f-f88a-41de-9a1c-741e95804b3d"},"env":{"SERVER_NAME":"www.example.com","SERVER_PORT":"80"}},"spans":[{"trace_id":"9f157423bebf4580972e1e09e3fdea8e","span_id":"243b266bf28e41ef","parent_span_id":"a48657c143f34f96","start_timestamp":1744317580.523853,"timestamp":1744317580.664972,"description":"PlacesAutocompleteController#get","op":"view.process_action.action_controller","status":"ok","tags":{},"data":{"http.response.status_code":200,"format":"text/html","method":"GET","path":"/autocomplete?input=new","params":{"input":"new","controller":"places_autocomplete","action":"get"}},"origin":"auto.view.rails"}],"start_timestamp":1744317580.520811,"measurements":{}}
+    headers:
+      Content-Type:
+      - application/x-sentry-envelope
+      Content-Encoding:
+      - ''
+      User-Agent:
+      - sentry-ruby/5.23.0
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=sentry-ruby/5.23.0, sentry_timestamp=1744317580,
+        sentry_key=c82d5787df86b4b23549b5d2ff517b56
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 10 Apr 2025 20:39:40 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"e0d3f09b769a4da48a98a7b1dfbe219d"}'
+  recorded_at: Thu, 10 Apr 2025 20:39:40 GMT
+- request:
+    method: post
+    uri: https://o4509125442207744.ingest.us.sentry.io/api/4509125443190784/envelope/
+    body:
+      encoding: UTF-8
+      string: |-
+        {"event_id":"25cfd554e3b74e3bb969c57f82836f68","dsn":"https://c82d5787df86b4b23549b5d2ff517b56@o4509125442207744.ingest.us.sentry.io/4509125443190784","sdk":{"name":"sentry.ruby","version":"5.23.0"},"sent_at":"2025-04-10T20:40:14Z","trace":{"trace_id":"b0b6922628444bd096aaedec988a5d51","sample_rate":"1.0","sampled":"true","environment":"test","release":"7d7cd62000f909c811ce749fc0bb2ec322ecc985","public_key":"c82d5787df86b4b23549b5d2ff517b56"}}
+        {"type":"transaction","content_type":"application/json"}
+        {"event_id":"25cfd554e3b74e3bb969c57f82836f68","level":"error","timestamp":1744317614.2024488,"release":"7d7cd62000f909c811ce749fc0bb2ec322ecc985","environment":"test","server_name":"mac.lan","modules":{"rake":"13.2.1","base64":"0.2.0","benchmark":"0.4.0","bigdecimal":"3.1.9","concurrent-ruby":"1.3.5","connection_pool":"2.5.0","drb":"2.2.1","i18n":"1.14.7","logger":"1.7.0","minitest":"5.25.5","securerandom":"0.4.1","tzinfo":"2.0.6","uri":"1.0.3","activesupport":"8.0.2","builder":"3.3.0","erubi":"1.13.1","racc":"1.8.1","nokogiri":"1.18.7","rails-dom-testing":"2.2.0","crass":"1.0.6","loofah":"2.24.0","rails-html-sanitizer":"1.6.2","actionview":"8.0.2","rack":"3.1.12","rack-session":"2.1.0","rack-test":"2.2.0","useragent":"0.16.11","actionpack":"8.0.2","nio4r":"2.7.4","websocket-extensions":"0.1.5","websocket-driver":"0.7.7","zeitwerk":"2.7.2","actioncable":"8.0.2","globalid":"1.2.1","activejob":"8.0.2","activemodel":"8.0.2","timeout":"0.4.3","activerecord":"8.0.2","marcel":"1.0.4","activestorage":"8.0.2","mini_mime":"1.1.5","date":"3.4.1","net-protocol":"0.2.2","net-imap":"0.5.6","net-pop":"0.1.2","net-smtp":"0.5.1","mail":"2.8.1","actionmailbox":"8.0.2","actionmailer":"8.0.2","actiontext":"8.0.2","public_suffix":"6.0.1","addressable":"2.8.7","ast":"2.4.3","bcrypt_pbkdf":"1.1.1","bindex":"0.8.1","msgpack":"1.8.0","bootsnap":"1.18.4","brakeman":"7.0.2","bundler":"2.6.7","matrix":"0.4.2","regexp_parser":"2.10.0","xpath":"3.2.0","capybara":"3.40.0","rexml":"3.4.1","crack":"1.0.0","prettyprint":"0.2.0","pp":"0.6.2","stringio":"3.1.6","psych":"5.2.3","rdoc":"6.13.1","io-console":"0.8.0","reline":"0.6.1","irb":"1.15.2","rackup":"2.2.1","thor":"1.3.2","railties":"8.0.2","cssbundling-rails":"1.4.3","csv":"3.3.3","debug":"1.10.0","declarative":"0.0.20","diff-lcs":"1.6.1","docile":"1.4.1","dotenv":"3.1.8","ed25519":"1.3.0","et-orbi":"1.2.11","net-http":"0.6.0","faraday-net_http":"3.4.0","json":"2.10.2","faraday":"2.13.0","raabro":"1.4.0","fugit":"1.11.1","geocoder":"1.8.5","google-cloud-env":"2.2.2","google-logging-utils":"0.1.0","jwt":"2.10.1","multi_json":"1.15.0","os":"1.1.4","signet":"0.19.0","googleauth":"1.14.0","mutex_m":"0.3.0","httpclient":"2.9.0","trailblazer-option":"0.1.2","uber":"0.1.0","representable":"3.2.0","retriable":"3.1.2","google-apis-core":"0.16.0","google-apis-places_v1":"0.33.0","hashdiff":"1.1.2","multi_xml":"0.7.1","httparty":"0.23.1","importmap-rails":"2.1.0","jbuilder":"2.13.0","net-ssh":"7.3.0","net-scp":"4.1.0","net-sftp":"4.0.0","ostruct":"0.6.1","sshkit":"1.24.0","kamal":"2.5.3","language_server-protocol":"3.17.0.4","lint_roller":"1.1.0","parallel":"1.26.3","parser":"3.3.7.4","prism":"1.4.0","propshaft":"1.1.0","puma":"6.6.0","rails":"8.0.2","rails-controller-testing":"1.0.5","rainbow":"3.1.1","rspec-support":"3.13.2","rspec-core":"3.13.3","rspec-expectations":"3.13.3","rspec-mocks":"3.13.2","rspec-rails":"7.1.1","rubocop-ast":"1.44.0","ruby-progressbar":"1.13.0","unicode-emoji":"4.0.4","unicode-display_width":"3.1.4","rubocop":"1.75.2","rubocop-performance":"1.25.0","rubocop-rails":"2.31.0","rubocop-rails-omakase":"1.1.0","rubyzip":"2.4.1","websocket":"1.2.11","selenium-webdriver":"4.31.0","sentry-ruby":"5.23.0","sentry-rails":"5.23.0","simplecov-html":"0.13.1","simplecov_json_formatter":"0.1.4","simplecov":"0.22.0","solid_cable":"3.0.7","solid_cache":"1.0.7","solid_queue":"1.1.4","sqlite3":"2.6.0","stimulus-rails":"1.3.4","thruster":"0.1.12","turbo-rails":"2.0.13","vcr":"6.3.1","web-console":"4.2.1","webmock":"3.25.1","cgi":"0.4.1","delegate":"0.4.0","did_you_mean":"2.0.0","digest":"3.2.0","english":"0.8.0","erb":"4.0.4","error_highlight":"0.7.0","etc":"1.4.5","fcntl":"1.2.0","fiddle":"1.1.6","fileutils":"1.7.3","find":"0.2.0","forwardable":"1.3.3","io-nonblock":"0.3.1","io-wait":"0.3.1","ipaddr":"1.2.7","open-uri":"0.5.0","open3":"0.2.1","openssl":"3.3.0","optparse":"0.6.0","pathname":"0.4.0","pstore":"0.1.4","readline":"0.0.4","resolv":"0.6.0","ruby2_keywords":"0.0.5","set":"1.1.1","shellwords":"0.2.2","singleton":"0.3.0","strscan":"3.1.2","syntax_suggest":"2.0.2","tempfile":"0.3.1","time":"0.4.1","tmpdir":"0.3.1","tsort":"0.2.0","un":"0.3.0","weakref":"0.1.3","yaml":"0.4.0","zlib":"3.2.1"},"message":"","user":{},"tags":{"request_id":"5c099f3e-9b86-4a3b-96ef-aeb5b4425f1b"},"contexts":{"os":{"name":"Darwin","version":"Darwin Kernel Version 24.3.0: Thu Jan  2 20:24:23 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8122","build":"24.3.0","kernel_version":"Darwin Kernel Version 24.3.0: Thu Jan  2 20:24:23 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8122","machine":"arm64"},"runtime":{"name":"ruby","version":"ruby 3.4.2 (2025-02-15 revision d2930f8e7a) +PRISM [arm64-darwin24]"},"trace":{"trace_id":"b0b6922628444bd096aaedec988a5d51","span_id":"d7cdd9ed6cc349fc","parent_span_id":null,"description":null,"op":"http.server","status":"ok","origin":"auto.http.rails","data":{"http.response.status_code":200}}},"extra":{},"fingerprint":[],"breadcrumbs":{"values":[{"category":"start_processing.action_controller","data":{"controller":"PlacesAutocompleteController","action":"get","params":{"input":"123","controller":"places_autocomplete","action":"get"},"format":"html","method":"GET","path":"/autocomplete?input=123"},"level":null,"message":"","timestamp":1744317614,"type":null},{"category":"process_action.action_controller","data":{"controller":"PlacesAutocompleteController","action":"get","params":{"input":"123","controller":"places_autocomplete","action":"get"},"format":"html","method":"GET","path":"/autocomplete?input=123","status":200,"view_runtime":0.15399998426437378,"db_runtime":0.0},"level":null,"message":"","timestamp":1744317614,"type":null}]},"transaction":"PlacesAutocompleteController#get","transaction_info":{"source":"view"},"platform":"ruby","sdk":{"name":"sentry.ruby","version":"5.23.0"},"type":"transaction","request":{"url":"http://www.example.com/autocomplete","method":"GET","headers":{"Host":"www.example.com","Accept":"text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5","X-Request-Id":"5c099f3e-9b86-4a3b-96ef-aeb5b4425f1b"},"env":{"SERVER_NAME":"www.example.com","SERVER_PORT":"80"}},"spans":[{"trace_id":"b0b6922628444bd096aaedec988a5d51","span_id":"3cb96a2893eb4b2a","parent_span_id":"d7cdd9ed6cc349fc","start_timestamp":1744317614.086058,"timestamp":1744317614.202181,"description":"PlacesAutocompleteController#get","op":"view.process_action.action_controller","status":"ok","tags":{},"data":{"http.response.status_code":200,"format":"text/html","method":"GET","path":"/autocomplete?input=123","params":{"input":"123","controller":"places_autocomplete","action":"get"}},"origin":"auto.view.rails"}],"start_timestamp":1744317614.083099,"measurements":{}}
+    headers:
+      Content-Type:
+      - application/x-sentry-envelope
+      Content-Encoding:
+      - ''
+      User-Agent:
+      - sentry-ruby/5.23.0
+      X-Sentry-Auth:
+      - Sentry sentry_version=7, sentry_client=sentry-ruby/5.23.0, sentry_timestamp=1744317614,
+        sentry_key=c82d5787df86b4b23549b5d2ff517b56
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 10 Apr 2025 20:40:14 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '41'
+      Vary:
+      - origin, access-control-request-method, access-control-request-headers
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - x-sentry-error,x-sentry-rate-limits,retry-after
+      Cross-Origin-Resource-Policy:
+      - cross-origin
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+    body:
+      encoding: UTF-8
+      string: '{"id":"25cfd554e3b74e3bb969c57f82836f68"}'
+  recorded_at: Thu, 10 Apr 2025 20:40:14 GMT
 recorded_with: VCR 6.3.1
