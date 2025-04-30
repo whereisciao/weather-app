@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://places.googleapis.com/v1/places:autocomplete?key=<GOOGLE_MAPS_API_KEY>
+    body:
+      encoding: UTF-8
+      string: '{"includedRegionCodes":["us"],"input":"Like marinara''s fiery cousin,
+        this classic tomato sauce comes together in about 30 minutes"}'
+    headers:
+      User-Agent:
+      - unknown/0.0.0 google-apis-places_v1/0.33.0 Mac OS X/15.3.2 (gzip)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Wed, 30 Apr 2025 23:14:03 GMT
+      X-Goog-Api-Client:
+      - gl-ruby/3.2.2 gdcl/1.33.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Vary:
+      - "*"
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Encoding:
+      - gzip
+      Date:
+      - Wed, 30 Apr 2025 23:14:03 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Server-Timing:
+      - gfet4t7; dur=85
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: "{}\n"
+  recorded_at: Wed, 30 Apr 2025 23:14:03 GMT
+recorded_with: VCR 6.3.1

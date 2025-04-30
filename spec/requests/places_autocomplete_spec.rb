@@ -2,13 +2,27 @@ require 'rails_helper'
 
 RSpec.describe "PlacesAutocompletes", type: :request do
   describe "GET /index" do
-    subject(:get_request) { get "/autocomplete?input=123" }
+    subject(:get_request) { get "/autocomplete?input=#{input}" }
+
+    let(:input) { "123" }
 
     it "returns a list of places" do
       VCR.use_cassette("place_suggestions") do
         get_request
 
         expect(response.parsed_body).to match("suggestions" => be_kind_of(Array))
+      end
+    end
+
+    context "when input is invalid" do
+      let(:input) { 'Like marinara\'s fiery cousin, this classic tomato sauce comes together in about 30 minutes' }
+
+      it "returns an error" do
+        VCR.use_cassette("invalid_input") do
+          get_request
+
+          expect(response.parsed_body).to eq({ "suggestions" => [] })
+        end
       end
     end
 

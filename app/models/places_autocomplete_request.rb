@@ -35,7 +35,7 @@ class PlacesAutocompleteRequest
 
   # Extract suggestions from response. Transform strings into desired format. Filter for specific types of suggestions.
   def suggestions
-    return [] if response.nil?
+    return [] if response&.suggestions.blank?
 
     response.suggestions.filter_map do |suggestion|
       place_prediction = suggestion.place_prediction
