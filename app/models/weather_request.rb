@@ -9,6 +9,9 @@ class WeatherRequest
   # Duration of cache lifespan
   CACHE_TTL = 30.minutes
 
+  # Max Location character length
+  MAX_LOCATION_LENGTH = 100
+
   # @return [String]
   #   The location to retrieve weather forecast.
   attr_reader :location
@@ -38,7 +41,7 @@ class WeatherRequest
   attr_reader :daily_forecasts
 
   def initialize(location:)
-    @location = location
+    @location = location[0...MAX_LOCATION_LENGTH] if location.present?
   end
 
   # Locations with a geocode result is valid enough to attempt to fetch the weather forecast

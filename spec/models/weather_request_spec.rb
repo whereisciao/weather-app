@@ -37,6 +37,19 @@ RSpec.describe WeatherRequest, type: :model do
           request.perform
         }.to(change { Rails.cache.exist?("place_id__ChIJVTPokywQkFQRmtVEaUZlJRA") }.from(false).to(true))
       end
+
+      it "truncates location to a reasonable length" do
+        request = WeatherRequest.new(location: "a" * 150)
+
+        expect(request.location.length).to eq(100)
+      end
+
+      it "noops when location is nil" do
+        expect {
+          request = WeatherRequest.new(location: nil)
+          request.perform
+        }.not_to raise_error
+      end
     end
   end
 end
