@@ -12,8 +12,8 @@
     <dd><%= format_temp @request.current_forecast.high_temp %>
     <dt>Current Low Temperature</dt>
     <dd><%= format_temp @request.current_forecast.low_temp %>
-    <dt>Wind speed (miles/hour)</dt>
-    <dd><%= @request.current_forecast.wind_speed %>
+    <dt>Wind speed</dt>
+    <dd><%= format_windspeed @request.current_forecast.wind_speed %>
     <dt>Cache Status</dt>
     <dd><%= cache_status(@request) %></dd>
   </dl>
@@ -26,7 +26,7 @@
         <th scope="col">Date</th>
         <th scope="col">Summary</th>
         <th scope="col">Temperature</th>
-        <th scope="col">Wind speed (miles/hour)</th>
+        <th scope="col">Wind speed</th>
       </tr>
     </thead>
     <tbody>
@@ -38,7 +38,7 @@
             <%= forecast.summary %>
           </td>
           <td><%= format_temp forecast.high_temp %> / <%= format_temp forecast.low_temp %></td>
-          <td><%= forecast.wind_speed %></td>
+          <td><%= format_windspeed forecast.wind_speed %></td>
         </tr>
       <% end %>
     </tbody>

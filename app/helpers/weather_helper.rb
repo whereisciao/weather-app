@@ -19,4 +19,9 @@ module WeatherHelper
       image_tag("https://openweathermap.org/img/wn/#{weather["icon"]}@2x.png", size:)
     end
   end
+
+  # Formats windspeed
+  def format_windspeed(value)
+    "#{value} mph"
+  end
 end

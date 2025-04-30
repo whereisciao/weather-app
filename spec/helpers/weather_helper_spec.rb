@@ -39,4 +39,10 @@ RSpec.describe WeatherHelper, type: :helper do
       )
     end
   end
+
+  describe "#format_windspeed" do
+    it "formats windspeed" do
+      expect(helper.format_temp(8.23)).to eq("8.23 &deg;F")
+    end
+  end
 end
